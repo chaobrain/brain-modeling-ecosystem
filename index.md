@@ -1,4 +1,4 @@
-# Ecosystem for Brain Dynamics Programming
+# Brain Dynamics Programming Ecosystem 
 
 
 We are building an ecosystem for general-purpose bain dynamics programming (BDP).
@@ -30,7 +30,6 @@ Whether you are developing simple brain dynamics models or complex simulations, 
 
 brainstate
 ----------
-
 
 
 

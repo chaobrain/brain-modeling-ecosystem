@@ -28,8 +28,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'brainint'
-copyright = '2024, brainint'
+project = 'BDP Ecosystem'
+copyright = '2024, BDP Ecosystem'
 author = 'BDP Ecosystem'
 
 # The full version, including alpha/beta/rc tags
@@ -90,11 +90,11 @@ myst_enable_extensions = [
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = "sphinx_book_theme"
-html_logo = "_static/brainint.png"
-html_title = "brainint"
+html_logo = "_static/bdp-ecosystem.png"
+html_title = "BDP Ecosystem"
 html_copy_source = True
 html_sourcelink_suffix = ""
-html_favicon = "_static/brainint.png"
+html_favicon = "_static/bdp-ecosystem.png"
 html_last_updated_fmt = ""
 
 # Add any paths that contain custom static files (such as style sheets) here,
