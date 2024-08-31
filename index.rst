@@ -11,10 +11,9 @@ The BDP ecosystem is designed to be modular, so you can use as much or as little
 We welcome contributions from the community, so if you have an idea for a new tool or library, please let us know!
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
+.. contents::
+    :local:
+    :depth: 2
 
 
 BrainPy
