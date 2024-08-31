@@ -21,8 +21,8 @@ In terms of performance, BrainPy achieves significant improvements through objec
 
 Resources related to ``BrainPy``:
 
-- The documentation for BrainPy can be found in: https://brainpy.readthedocs.io/
-- The ample examples for BrainPy can be found in: https://brainpy-examples.readthedocs.io/
+- The documentation for BrainPy can be found in: [https://brainpy.readthedocs.io/](https://brainpy.readthedocs.io/)
+- The ample examples for BrainPy can be found in: [https://brainpy-examples.readthedocs.io/](https://brainpy-examples.readthedocs.io/)
 
 
 If you are using `BrainPy=2.x`, please use:
@@ -76,7 +76,7 @@ Starting from [``brainunit``](https://github.com/chaoming0625/brainunit), we are
 
 Resources related to ``brainunit``:
 
-- The documentation for brainunit can be found in: https://brainunit.readthedocs.io/
+- The documentation for brainunit can be found in: [https://brainunit.readthedocs.io/](https://brainunit.readthedocs.io/)
 
 
 
@@ -90,7 +90,7 @@ dendritex
 
 Resources related to ``dendritex``:
 
-- The documentation for dendritex can be found in: https://dendrite.readthedocs.io/
+- The documentation for dendritex can be found in: [https://dendrite.readthedocs.io/](https://dendrite.readthedocs.io/)
 
 
 
@@ -105,7 +105,7 @@ It is the foundation for the new version of BDP ecosystem.
 
 Resources related to ``brainstate``:
 
-- The documentation for brainstate can be found in: https://brainstate.readthedocs.io/
+- The documentation for brainstate can be found in: [https://brainstate.readthedocs.io/](https://brainstate.readthedocs.io/)
 
 
 
@@ -121,7 +121,7 @@ Nowadays, [``braintaichi``](https://github.com/chaoming0625/braintaichi) provide
 
 Resources related to ``braintaichi``:
 
-- The documentation for braintaichi can be found in: https://braintaichi.readthedocs.io/
+- The documentation for braintaichi can be found in: [https://braintaichi.readthedocs.io/](https://braintaichi.readthedocs.io/)
 
 
 
@@ -133,7 +133,7 @@ brainscale
 
 Resources related to ``brainscale``:
 
-- The documentation for braintaichi can be found in: https://brainscale.readthedocs.io/
+- The documentation for braintaichi can be found in: [https://brainscale.readthedocs.io/](https://brainscale.readthedocs.io/)
 
 
 
@@ -146,5 +146,5 @@ braintools
 
 Resources related to ``braintools``:
 
-- The documentation for braintools can be found in: https://braintools.readthedocs.io/
+- The documentation for braintools can be found in: [https://braintools.readthedocs.io/](https://braintools.readthedocs.io/)
 
