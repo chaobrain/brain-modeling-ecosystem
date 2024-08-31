@@ -129,7 +129,7 @@ Resources related to ``braintaichi``:
 brainscale
 -----------
 
-[``brainscale``](https://github.com/chaoming0625/brainscale) provides a scalable online learning framework for brain dynamics. It achieve $\mathcal(O)(N)$ memory and computational complexity for SNN online computation, and $\mathcal(O)(N^2)$ complexity for RNN computation. 
+[``brainscale``](https://github.com/chaoming0625/brainscale) provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation. 
 
 Resources related to ``brainscale``:
 
@@ -147,5 +147,4 @@ braintools
 Resources related to ``braintools``:
 
 - The documentation for braintools can be found in: https://braintools.readthedocs.io/
-
 
