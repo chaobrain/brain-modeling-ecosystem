@@ -1,4 +1,3 @@
-
 Brain Dynamics Programming Ecosystem
 ====================================
 
@@ -9,6 +8,8 @@ The BDP ecosystem is a collection of tools, libraries, and frameworks that can b
 The BDP ecosystem is designed to be modular, so you can use as much or as little of it as you need. 
 
 We welcome contributions from the community, so if you have an idea for a new tool or library, please let us know!
+
+Please email us at: `chao.brain@qq.com <mailto:chao.brain@qq.com>`_.
 
 
 .. contents::
@@ -31,40 +32,11 @@ Resources related to ``BrainPy``:
 * The documentation for BrainPy can be found in: `https://brainpy.readthedocs.io/ <https://brainpy.readthedocs.io/>`_
 * The ample examples for BrainPy can be found in: `https://brainpy-examples.readthedocs.io/ <https://brainpy-examples.readthedocs.io/>`_
 
-If you are using ``BrainPy=2.x``, please use:
 
-.. code-block:: bibtex
 
-   @article {wang2023brainpy,
-       article_type = {journal},
-       title = {BrainPy, a flexible, integrative, efficient, and extensible framework for general-purpose brain dynamics programming},
-       author = {Wang, Chaoming and Zhang, Tianqiu and Chen, Xiaoyu and He, Sichao and Li, Shangyang and Wu, Si},
-       editor = {Stimberg, Marcel},
-       volume = 12,
-       year = 2023,
-       month = {dec},
-       pub_date = {2023-12-22},
-       pages = {e86365},
-       citation = {eLife 2023;12:e86365},
-       doi = {10.7554/eLife.86365},
-       url = {https://doi.org/10.7554/eLife.86365},
-       journal = {eLife},
-       issn = {2050-084X},
-       publisher = {eLife Sciences Publications, Ltd},
-   }
 
-If you are using ``BrainPy=1.x``, please use:
 
-.. code-block:: bibtex
 
-   @inproceedings{wang2021just,
-     title={A Just-In-Time Compilation Approach for Neural Dynamics Simulation},
-     author={Wang, Chaoming and Jiang, Yingqian and Liu, Xinyu and Lin, Xiaohan and Zou, Xiaolong and Ji, Zilong and Wu, Si},
-     booktitle={International Conference on Neural Information Processing},
-     pages={15--26},
-     year={2021},
-     organization={Springer}
-   }
 
 brainunit
 ---------
@@ -79,8 +51,14 @@ Starting from `\ ``brainunit`` <https://github.com/chaoming0625/brainunit>`_, we
 
 Resources related to ``brainunit``:
 
-
 * The documentation for brainunit can be found in: `https://brainunit.readthedocs.io/ <https://brainunit.readthedocs.io/>`_
+
+
+
+
+
+
+
 
 dendritex
 ---------
@@ -93,6 +71,13 @@ Resources related to ``dendritex``:
 
 
 * The documentation for dendritex can be found in: `https://dendrite.readthedocs.io/ <https://dendrite.readthedocs.io/>`_
+
+
+
+
+
+
+
 
 brainstate
 ----------
@@ -108,6 +93,12 @@ Resources related to ``brainstate``:
 
 * The documentation for brainstate can be found in: `https://brainstate.readthedocs.io/ <https://brainstate.readthedocs.io/>`_
 
+
+
+
+
+
+
 braintaichi
 -----------
 
@@ -119,8 +110,12 @@ Nowadays, `\ ``braintaichi`` <https://github.com/chaoming0625/braintaichi>`_ pro
 
 Resources related to ``braintaichi``:
 
-
 * The documentation for braintaichi can be found in: `https://braintaichi.readthedocs.io/ <https://braintaichi.readthedocs.io/>`_
+
+
+
+
+
 
 brainscale
 ----------
@@ -129,8 +124,10 @@ brainscale
 
 Resources related to ``brainscale``:
 
-
 * The documentation for braintaichi can be found in: `https://brainscale.readthedocs.io/ <https://brainscale.readthedocs.io/>`_
+
+
+
 
 braintools
 ----------
@@ -141,3 +138,15 @@ Resources related to ``braintools``:
 
 
 * The documentation for braintools can be found in: `https://braintools.readthedocs.io/ <https://braintools.readthedocs.io/>`_
+
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Tutorials
+
+   citation.rst
+
