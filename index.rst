@@ -38,7 +38,7 @@ Resources related to ``BrainPy``:
 
 
 
-`brainunit` for Physical Units
+`brainunit`: Physical Units
 ------------------------------
 
 Starting from `brainunit <https://github.com/chaoming0625/brainunit>`_, we are going to develop a new ecosystem for brain dynamics programming.
@@ -60,7 +60,7 @@ Resources related to ``brainunit``:
 
 
 
-`dendritex` for Dendritic Computation
+`dendritex`: Dendritic Computation
 -------------------------------------
 
 `dendritex <https://github.com/chaoming0625/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
@@ -79,7 +79,7 @@ Resources related to ``dendritex``:
 
 
 
-`brainstate` for JIT Compilation
+`brainstate`: JIT Compilation
 --------------------------------
 
 Brain dynamics is characterized by intrinsic memory-intensive computations. Most operations are element-wise computation and should be optimized by JIT compilation. Therefore, we are developing `brainstate <https://github.com/chaoming0625/brainstate>`_ for a easy-to-use JIT transformation system for BDP.
@@ -99,7 +99,7 @@ Resources related to ``brainstate``:
 
 
 
-`braintaichi` for Event-Driven Computation
+`braintaichi`: Event-Driven Computation
 ------------------------------------------
 
 Brain dynamics is charaterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication. 
@@ -117,7 +117,7 @@ Resources related to ``braintaichi``:
 
 
 
-`brainscale` for Scalable Online Learning
+`brainscale`: Scalable Online Learning
 -----------------------------------------
 
 `brainscale <https://github.com/chaoming0625/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
@@ -129,7 +129,7 @@ Resources related to ``brainscale``:
 
 
 
-`braintools` for Commonly Used Tools
+`braintools`: Commonly Used Tools
 ------------------------------------
 
 `braintools <https://github.com/chaoming0625/braintools>`_ is a collection of tools for brain dynamics programming. It provides a set of tools for analyzing brain dynamics.
