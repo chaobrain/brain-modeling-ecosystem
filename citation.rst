@@ -65,6 +65,23 @@ If you are using ``BrainPy=1.x``, please use the following citation:
 If you are using ``brainunit``, please use the following citation:
 
 
+.. code-block:: bibtex
+
+   @article {Wang2024brainunit,
+	author = {Wang, Chaoming and He, Sichao and Luo, Shouwei and Huan, Yuxiang and Wu, Si},
+	title = {BrainUnit: Integrating Physical Units into High-Performance AI-Driven Scientific Computing},
+	elocation-id = {2024.09.20.614111},
+	year = {2024},
+	doi = {10.1101/2024.09.20.614111},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Artificial intelligence (AI) is revolutionizing scientific research across various disciplines. The foundation of scientific research lies in rigorous scientific computing based on standardized physical units. However, current mainstream high-performance numerical computing libraries for AI generally lack native support for physical units, significantly impeding the integration of AI methodologies into scientific research. To fill this gap, we introduce BrainUnit, a unit system designed to seamlessly integrate physical units into AI libraries, with a focus on compatibility with JAX. BrainUnit offers a comprehensive library of over 2000 physical units and more than 300 unit-aware mathematical functions. It is fully compatible with JAX transformations, allowing for automatic differentiation, just-in-time compilation, vectorization, and parallelization while maintaining unit consistency. We demonstrate BrainUnit{\textquoteright}s efficacy through several use cases in brain dynamics modeling, including detailed biophysical neuron simulations, multiscale brain network modeling, neuronal activity fitting, and cognitive task training. Our results show that BrainUnit enhances the accuracy, reliability, and interpretability of scientific computations across scales, from ion channels to whole-brain networks, without significantly impacting performance. By bridging the gap between abstract computational frameworks and physical units, BrainUnit represents a crucial step towards more robust and physically grounded AI-driven scientific computing.Competing Interest StatementThe authors have declared no competing interest.},
+	URL = {https://www.biorxiv.org/content/early/2024/09/22/2024.09.20.614111},
+	eprint = {https://www.biorxiv.org/content/early/2024/09/22/2024.09.20.614111.full.pdf},
+	journal = {bioRxiv}
+   }
+
+
+
 
 
 ``brainscale``
@@ -73,7 +90,20 @@ If you are using ``brainunit``, please use the following citation:
 If you are using ``brainscale``, please use the following citation:
 
 
+.. code-block:: bibtex
 
+   @article {Wang2024brainscale,
+        author = {Wang, Chaoming and Dong, Xingsi and Jiang, Jiedong and Ji, Zilong and Liu, Xiao and Wu, Si},
+        title = {BrainScale: Enabling Scalable Online Learning in Spiking Neural Networks},
+        elocation-id = {2024.09.24.614728},
+        year = {2024},
+        doi = {10.1101/2024.09.24.614728},
+        publisher = {Cold Spring Harbor Laboratory},
+        abstract = {Whole-brain simulation stands as one of the most ambitious endeavors of our time, yet it remains constrained by significant technical challenges. A critical obstacle in this pursuit is the absence of a scalable online learning framework capable of supporting the efficient training of complex, diverse, and large-scale spiking neural networks (SNNs). To address this limitation, we introduce BrainScale, a framework specifically designed to enable scalable online learning in SNNs. BrainScale achieves three key advancements for scalability. (1) Model diversity: BrainScale accommodates the complex dynamics of brain function by supporting a wide spectrum of SNNs through a streamlined abstraction of synaptic interactions. (2) Efficient scaling: Leveraging SNN intrinsic characteristics, BrainScale achieves an online learning algorithm with linear memory complexity. (3) User-friendly programming: BrainScale provides a programming environment that automates the derivation and execution of online learning computations for any user-defined models. Our comprehensive evaluations demonstrate BrainScale{\textquoteright}s efficiency and robustness, showing a hundred-fold improvement in memory utilization and several-fold acceleration in training speed while maintaining performance on long-term dependency tasks and neuromorphic datasets. These results suggest that BrainScale represents a crucial step towards brain-scale SNN training and whole-brain simulation.Competing Interest StatementThe authors have declared no competing interest.},
+        URL = {https://www.biorxiv.org/content/early/2024/09/24/2024.09.24.614728},
+        eprint = {https://www.biorxiv.org/content/early/2024/09/24/2024.09.24.614728.full.pdf},
+        journal = {bioRxiv}
+   }
 
 
 
