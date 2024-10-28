@@ -1,7 +1,7 @@
 Brain Dynamics Programming Ecosystem
 ====================================
 
-We are building an ecosystem for general-purpose bain dynamics programming (BDP).
+We are building an ecosystem for general-purpose bain dynamics programming (BDP), evolving from our previously experimental `BrainPy project <https://github.com/brainpy/BrainPy>`_.
 
 The BDP ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.
 
@@ -53,13 +53,13 @@ Resources related to ``BrainPy``:
   :alt: brainunit logo
 
 
-Starting from `brainunit <https://github.com/chaoming0625/brainunit>`_, we are going to develop a new ecosystem for brain dynamics programming.
+Starting from `brainunit <https://github.com/chaobrain/brainunit>`_, we are going to develop a new ecosystem for brain dynamics programming.
 
-`brainunit <https://github.com/chaoming0625/brainunit>`_ provides comprehensive physical units and unit-aware mathematical system for brain dynamics. It is designed to be fully compatible with JAX's transformation systems, including ``jax.jit``, ``jax.grad``, ``jax.vmap``, ``jax.pmap``, and others.
+`brainunit <https://github.com/chaobrain/brainunit>`_ provides comprehensive physical units and unit-aware mathematical system for brain dynamics. It is designed to be fully compatible with JAX's transformation systems, including ``jax.jit``, ``jax.grad``, ``jax.vmap``, ``jax.pmap``, and others.
 
-`brainunit <https://github.com/chaoming0625/brainunit>`_ provides more than 2000+ commonly used physical units, and 200+ mathematical operations taking aware of these units.
+`brainunit <https://github.com/chaobrain/brainunit>`_ provides more than 2000+ commonly used physical units, and 200+ mathematical operations taking aware of these units.
 
-`brainunit <https://github.com/chaoming0625/brainunit>`_ is very easy to use, and also very useful for brain dynamics programming. Since most brain dynamics models are based on physical equations, it is very important to use physical units to ensure the correctness of the models.
+`brainunit <https://github.com/chaobrain/brainunit>`_ is very easy to use, and also very useful for brain dynamics programming. Since most brain dynamics models are based on physical equations, it is very important to use physical units to ensure the correctness of the models.
 
 Resources related to ``brainunit``:
 
@@ -79,9 +79,9 @@ Resources related to ``brainunit``:
   :alt: dendritex logo
 
 
-`dendritex <https://github.com/chaoming0625/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
+`dendritex <https://github.com/chaobrain/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
 
-`dendritex <https://github.com/chaoming0625/dendritex>`_ is designed to be highly parallel for dendritic modeling. The computation for compartments and neurons are all parallelized in the single device, thus providing the extraordinary performance.
+`dendritex <https://github.com/chaobrain/dendritex>`_ is designed to be highly parallel for dendritic modeling. The computation for compartments and neurons are all parallelized in the single device, thus providing the extraordinary performance.
 
 Resources related to ``dendritex``:
 
@@ -104,9 +104,9 @@ Resources related to ``dendritex``:
 
 
 
-Brain dynamics is characterized by intrinsic memory-intensive computations. Most operations are element-wise computation and should be optimized by JIT compilation. Therefore, we are developing `brainstate <https://github.com/chaoming0625/brainstate>`_ for a easy-to-use JIT transformation system for BDP.
+Brain dynamics is characterized by intrinsic memory-intensive computations. Most operations are element-wise computation and should be optimized by JIT compilation. Therefore, we are developing `brainstate <https://github.com/chaobrain/brainstate>`_ for a easy-to-use JIT transformation system for BDP.
 
-``jax``\ 's JIT interface is hard to directly applied to highly complex brain dynamics. On the contrary,  `brainstate <https://github.com/chaoming0625/brainstate>`_ provides a ``State``\ -based transformation system which is higy intuitive for compiling BDP models. `brainstate <https://github.com/chaoming0625/brainstate>`_ now provides various commonly used transformation functions, including gradient computation, control flows, and JIT compilation.
+``jax``\ 's JIT interface is hard to directly applied to highly complex brain dynamics. On the contrary,  `brainstate <https://github.com/chaobrain/brainstate>`_ provides a ``State``\ -based transformation system which is higy intuitive for compiling BDP models. `brainstate <https://github.com/chaobrain/brainstate>`_ now provides various commonly used transformation functions, including gradient computation, control flows, and JIT compilation.
 
 It is the foundation for the new version of BDP ecosystem. 
 
@@ -126,9 +126,9 @@ Resources related to ``brainstate``:
 
 Brain dynamics is charaterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication. 
 
-`braintaichi <https://github.com/chaoming0625/braintaichi>`_ is designed for customizing event-driven operators in brain dynamics. It leverages `Taichi Lang <https://www.taichi-lang.org/>`_, a domain-specific language embedded in Python that helps easily write high-performance parallel programs in CPUs and GPUs, and can be embeded into JAX/XLA process.
+`braintaichi <https://github.com/chaobrain/braintaichi>`_ is designed for customizing event-driven operators in brain dynamics. It leverages `Taichi Lang <https://www.taichi-lang.org/>`_, a domain-specific language embedded in Python that helps easily write high-performance parallel programs in CPUs and GPUs, and can be embeded into JAX/XLA process.
 
-Nowadays, `braintaichi <https://github.com/chaoming0625/braintaichi>`_ provides two levels of interface: (1) It provides a framework for customizing event-driven brain dynamics operators. (2) It implements several commonly used operators, including even-driven matrix-vector multiplication, `just-in-time connectivity operators <https://arxiv.org/abs/2311.05106>`_, and common sparse routines.
+Nowadays, `braintaichi <https://github.com/chaobrain/braintaichi>`_ provides two levels of interface: (1) It provides a framework for customizing event-driven brain dynamics operators. (2) It implements several commonly used operators, including even-driven matrix-vector multiplication, `just-in-time connectivity operators <https://arxiv.org/abs/2311.05106>`_, and common sparse routines.
 
 Resources related to ``braintaichi``:
 
@@ -147,7 +147,7 @@ Resources related to ``braintaichi``:
   :alt: brainscale logo
 
 
-`brainscale <https://github.com/chaoming0625/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
+`brainscale <https://github.com/chaobrain/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
 
 Resources related to ``brainscale``:
 
@@ -166,7 +166,7 @@ Resources related to ``brainscale``:
   :alt: braintools logo
 
 
-`braintools <https://github.com/chaoming0625/braintools>`_ is a collection of tools for brain dynamics programming. It provides a set of tools for analyzing brain dynamics.
+`braintools <https://github.com/chaobrain/braintools>`_ is a collection of tools for brain dynamics programming. It provides a set of tools for analyzing brain dynamics.
 
 Resources related to ``braintools``:
 
