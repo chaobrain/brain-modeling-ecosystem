@@ -96,7 +96,7 @@ Resources related to ``dendritex``:
 --------------------------------
 
 
-.. image:: https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainscale.jpg
+.. image:: https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png
    :width: 250
    :alt: brainstate logo
    :align: center
