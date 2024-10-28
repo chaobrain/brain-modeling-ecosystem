@@ -21,10 +21,9 @@ BrainPy
 -------
 
 
-.. image:: https://github.com/brainpy/BrainPy/blob/master/images/logo.png
-  :width: 300
-  :alt: brainpy logo
-
+.. image:: https://raw.githubusercontent.com/brainpy/BrainPy/master/images/logo.png
+   :alt: brainpy logo
+   :align: center
 
 `BrainPy <https://github.com/brainpy/BrainPy>`_ represents the first platform we created for brain dynamics programming.
 
@@ -48,10 +47,10 @@ Resources related to ``BrainPy``:
 ------------------------------
 
 
-.. image:: https://github.com/chaobrain/brainunit/blob/main/docs/_static/brainunit.png
-  :width: 300
-  :alt: brainunit logo
-
+.. image:: https://raw.githubusercontent.com/chaobrain/brainunit/main/docs/_static/brainunit.png
+   :width: 250
+   :alt: brainunit logo
+   :align: center
 
 Starting from `brainunit <https://github.com/chaobrain/brainunit>`_, we are going to develop a new ecosystem for brain dynamics programming.
 
@@ -74,10 +73,10 @@ Resources related to ``brainunit``:
 -------------------------------------
 
 
-.. image:: https://github.com/chaobrain/dendritex/blob/main/docs/_static/dendritex.png
-  :width: 300
-  :alt: dendritex logo
-
+.. image:: https://raw.githubusercontent.com/chaobrain/dendritex/main/docs/_static/dendritex.png
+   :width: 250
+   :alt: dendritex logo
+   :align: center
 
 `dendritex <https://github.com/chaobrain/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
 
@@ -97,10 +96,10 @@ Resources related to ``dendritex``:
 --------------------------------
 
 
-.. image:: https://github.com/chaobrain/brainscale/blob/main/docs/_static/brainscale.jpg
-  :width: 300
-  :alt: brainstate logo
-
+.. image:: https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainscale.jpg
+   :width: 250
+   :alt: brainstate logo
+   :align: center
 
 
 
@@ -142,9 +141,9 @@ Resources related to ``braintaichi``:
 `brainscale`: Scalable Online Learning
 -----------------------------------------
 
-.. image:: https://github.com/chaobrain/brainscale/blob/main/docs/_static/brainscale.jpg
-  :width: 300
-  :alt: brainscale logo
+.. image:: https://raw.githubusercontent.com/chaobrain/brainscale/main/docs/_static/brainscale.jpg
+   :width: 250
+   :alt: brainscale logo
 
 
 `brainscale <https://github.com/chaobrain/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
@@ -161,10 +160,10 @@ Resources related to ``brainscale``:
 
 
 
-.. image:: https://github.com/chaobrain/braintools/blob/main/docs/_static/braintools.jpg
-  :width: 300
-  :alt: braintools logo
-
+.. image:: https://raw.githubusercontent.com/chaobrain/braintools/main/docs/_static/braintools.jpg
+   :width: 250
+   :alt: braintools logo
+   :align: center
 
 `braintools <https://github.com/chaobrain/braintools>`_ is a collection of tools for brain dynamics programming. It provides a set of tools for analyzing brain dynamics.
 
