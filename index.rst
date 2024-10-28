@@ -20,6 +20,12 @@ Please email us at: `chao.brain@qq.com <mailto:chao.brain@qq.com>`_.
 BrainPy
 -------
 
+
+.. image:: https://github.com/brainpy/BrainPy/blob/master/images/logo.png
+  :width: 300
+  :alt: brainpy logo
+
+
 `BrainPy <https://github.com/brainpy/BrainPy>`_ represents the first platform we created for brain dynamics programming.
 
 This framework offers high flexibility, allowing users to freely define brain dynamics models. It integrates tools such as event-driven operators, differential equation solvers, and model construction interfaces, enabling users to flexibly customize models as needed. BrainPy supports various application scenarios such as brain dynamics simulation, training, and analysis. Within a single model, users can carray out experiments for simulation, offline learning, online learning, or backpropagation training, or further perform low-dimensional bifurcation analysis or high-dimensional slow-point analysis. 
@@ -41,6 +47,12 @@ Resources related to ``BrainPy``:
 `brainunit`: Physical Units
 ------------------------------
 
+
+.. image:: https://github.com/chaobrain/brainunit/blob/main/docs/_static/brainunit.png
+  :width: 300
+  :alt: brainunit logo
+
+
 Starting from `brainunit <https://github.com/chaoming0625/brainunit>`_, we are going to develop a new ecosystem for brain dynamics programming.
 
 `brainunit <https://github.com/chaoming0625/brainunit>`_ provides comprehensive physical units and unit-aware mathematical system for brain dynamics. It is designed to be fully compatible with JAX's transformation systems, including ``jax.jit``, ``jax.grad``, ``jax.vmap``, ``jax.pmap``, and others.
@@ -58,10 +70,14 @@ Resources related to ``brainunit``:
 
 
 
-
-
 `dendritex`: Dendritic Computation
 -------------------------------------
+
+
+.. image:: https://github.com/chaobrain/dendritex/blob/main/docs/_static/dendritex.png
+  :width: 300
+  :alt: dendritex logo
+
 
 `dendritex <https://github.com/chaoming0625/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
 
@@ -77,10 +93,16 @@ Resources related to ``dendritex``:
 
 
 
-
-
 `brainstate`: JIT Compilation
 --------------------------------
+
+
+.. image:: https://github.com/chaobrain/brainscale/blob/main/docs/_static/brainscale.jpg
+  :width: 300
+  :alt: brainstate logo
+
+
+
 
 Brain dynamics is characterized by intrinsic memory-intensive computations. Most operations are element-wise computation and should be optimized by JIT compilation. Therefore, we are developing `brainstate <https://github.com/chaoming0625/brainstate>`_ for a easy-to-use JIT transformation system for BDP.
 
@@ -120,6 +142,11 @@ Resources related to ``braintaichi``:
 `brainscale`: Scalable Online Learning
 -----------------------------------------
 
+.. image:: https://github.com/chaobrain/brainscale/blob/main/docs/_static/brainscale.jpg
+  :width: 300
+  :alt: brainscale logo
+
+
 `brainscale <https://github.com/chaoming0625/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
 
 Resources related to ``brainscale``:
@@ -131,6 +158,13 @@ Resources related to ``brainscale``:
 
 `braintools`: Commonly Used Tools
 ------------------------------------
+
+
+
+.. image:: https://github.com/chaobrain/braintools/blob/main/docs/_static/braintools.jpg
+  :width: 300
+  :alt: braintools logo
+
 
 `braintools <https://github.com/chaoming0625/braintools>`_ is a collection of tools for brain dynamics programming. It provides a set of tools for analyzing brain dynamics.
 
