@@ -182,5 +182,6 @@ Resources related to ``braintools``:
    :caption: More Information
 
    citation.rst
-   papers_usng_us.md
+   book.md
+   papers_using_us.md
 
