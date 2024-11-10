@@ -179,7 +179,8 @@ Resources related to ``braintools``:
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Citation and Publication
+   :caption: More Information
 
    citation.rst
+   papers_usng_us.md
 

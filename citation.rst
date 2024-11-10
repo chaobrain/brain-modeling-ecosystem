@@ -2,17 +2,22 @@ Citation
 ========
 
 
-If our BPD ecosystem has been significant in your research, and you would like to acknowledge
+If our brain dynamics programming ecosystem has been significant in your research, and you would like to acknowledge
 the project in your academic publication, we suggest citing the following papers.
 
 
 
 
-BrainPy
--------
+``BrainPy``
+-----------
 
 
 If you are using ``BrainPy=2.x``, please use the following citation:
+
+
+- Wang C, Zhang T, Chen X, et al. BrainPy, a flexible, integrative, efficient, and extensible framework for general-purpose brain dynamics programming[J]. elife, 2023, 12: e86365.
+- Wang C, Zhang T, He S, et al. A differentiable brain simulator bridging brain simulation and brain-inspired computing[C]//The Twelfth International Conference on Learning Representations. 2024.
+
 
 .. code-block:: bibtex
 
@@ -65,6 +70,9 @@ If you are using ``BrainPy=1.x``, please use the following citation:
 If you are using ``brainunit``, please use the following citation:
 
 
+- Wang C, He S, Luo S, et al. BrainUnit: Integrating Physical Units into High-Performance AI-Driven Scientific Computing[J]. bioRxiv, 2024: 2024.09. 20.614111.
+
+
 .. code-block:: bibtex
 
    @article {Wang2024brainunit,
@@ -89,6 +97,8 @@ If you are using ``brainunit``, please use the following citation:
 
 If you are using ``brainscale``, please use the following citation:
 
+
+- Wang C, Dong X, Jiang J, et al. BrainScale: Enabling scalable online learning in spiking neural networks[J]. bioRxiv, 2024: 2024.09. 24.614728.
 
 .. code-block:: bibtex
 
