@@ -183,5 +183,6 @@ Resources related to ``braintools``:
 
    citation.rst
    book.md
+   courses.md
    papers_using_us.md
 

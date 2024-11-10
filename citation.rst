@@ -1,5 +1,5 @@
-Citation
-========
+Citations
+=========
 
 
 If our brain dynamics programming ecosystem has been significant in your research, and you would like to acknowledge
