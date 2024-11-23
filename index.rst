@@ -196,3 +196,19 @@ Resources related to ``braintools``:
    courses.md
    papers_using_us.md
 
+
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Documentation
+
+   brainunit <https://brainunit.readthedocs.io/>
+   dendritex <https://dendrite.readthedocs.io/>
+   brainstate <https://brainstate.readthedocs.io/>
+   braintaichi <https://braintaichi.readthedocs.io/>
+   brainscale <https://brainscale.readthedocs.io/>
+   braintools <https://braintools.readthedocs.io/>
+
