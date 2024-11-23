@@ -17,13 +17,15 @@ Please email us at: `chao.brain@qq.com <mailto:chao.brain@qq.com>`_.
     :depth: 2
 
 
-BrainPy
--------
+`BrainPy`: Legacy & Classical Framework
+---------------------------------------
 
 
 .. image:: https://raw.githubusercontent.com/brainpy/BrainPy/master/images/logo.png
    :alt: brainpy logo
    :align: center
+
+
 
 `BrainPy <https://github.com/brainpy/BrainPy>`_ represents the first platform we created for brain dynamics programming.
 
@@ -39,6 +41,10 @@ Resources related to ``BrainPy``:
 
 
 
+
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
 
 
 
@@ -118,12 +124,16 @@ Resources related to ``brainstate``:
 
 
 
-
-
 `braintaichi`: Event-Driven Computation
 ------------------------------------------
 
-Brain dynamics is charaterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication. 
+.. image:: https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png
+   :width: 250
+   :alt: braintaichi logo
+   :align: center
+
+
+Brain dynamics is characterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication.
 
 `braintaichi <https://github.com/chaobrain/braintaichi>`_ is designed for customizing event-driven operators in brain dynamics. It leverages `Taichi Lang <https://www.taichi-lang.org/>`_, a domain-specific language embedded in Python that helps easily write high-performance parallel programs in CPUs and GPUs, and can be embeded into JAX/XLA process.
 
@@ -144,7 +154,7 @@ Resources related to ``braintaichi``:
 .. image:: https://raw.githubusercontent.com/chaobrain/brainscale/main/docs/_static/brainscale.jpg
    :width: 250
    :alt: brainscale logo
-
+   :align: center
 
 `brainscale <https://github.com/chaobrain/brainscale>`_ provides a scalable online learning framework for brain dynamics. It achieve O(N) memory and computational complexity for SNN online computation, and O(N^2) complexity for RNN computation.
 
