@@ -205,6 +205,7 @@ Resources related to ``braintools``:
    :maxdepth: 2
    :caption: Documentation
 
+   brainpy <https://brainpy.readthedocs.io/>
    brainunit <https://brainunit.readthedocs.io/>
    dendritex <https://dendrite.readthedocs.io/>
    brainstate <https://brainstate.readthedocs.io/>

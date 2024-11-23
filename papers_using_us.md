@@ -1,7 +1,7 @@
 
 # Latest Publications
 
-BDP Ecosystem has been used in the following publications. If you don't see your paper on the list, but you used our BDP ecosystem please fork this repository (https://github.com/chaobrain/brain-dynamics-ecosystem), add your paper to the list, and submit a pull request.
+BDP Ecosystem has been used in the following publications. If you don't see your paper on the list, but you used our BDP ecosystem please fork this repository ([https://github.com/chaobrain/brain-dynamics-ecosystem](https://github.com/chaobrain/brain-dynamics-ecosystem)), add your paper to the list, and submit a pull request.
 
 
 > Tianhao Chu, Zilong Ji, Junfeng Zuo, Yuanyuan Mi, Wen-hao Zhang, Tiejun Huang, Daniel Bush, Neil Burgess, Si Wu (2024) Firing rate adaptation affords place cell theta sweeps, phase precession, and procession. **eLife** 12:RP87055 https://doi.org/10.7554/eLife.87055.4
