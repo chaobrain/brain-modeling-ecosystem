@@ -64,10 +64,36 @@ If you are using ``BrainPy=1.x``, please use the following citation:
 
 
 
+``braintaichi`` (previous known as ``brainpylib``)
+--------------------------------------------------
+
+
+``BrainTaichi`` was previously known as ``brainpylib``, and has been published and released in
+the pypi package index as `https://pypi.org/project/brainpylib <https://pypi.org/project/brainpylib>`_.
+
+If you are using `BrainTaichi <https://github.com/chaobrain/braintaichi>`_ or
+`brainpylib <https://pypi.org/project/brainpylib>`_, please use the following citation:
+
+
+- Wang C, Zhang T, He S, et al. A differentiable brain simulator bridging brain simulation and brain-inspired computing[C]//The Twelfth International Conference on Learning Representations. 2024.
+
+
+.. code-block:: bibtex
+
+   @inproceedings{wang2024brainpy,
+      title={A differentiable brain simulator bridging brain simulation and brain-inspired computing},
+      author={Wang, Chaoming and Zhang, Tianqiu and He, Sichao and Gu, Hongyaoxing and Li, Shangyang and Wu, Si},
+      booktitle={The Twelfth International Conference on Learning Representations},
+      year={2024}
+  }
+
+
+
+
 ``brainunit``
 --------------
 
-If you are using ``brainunit``, please use the following citation:
+If you are using `brainunit <https://github.com/chaobrain/brainunit>`_ , please use the following citation:
 
 
 - Wang C, He S, Luo S, et al. BrainUnit: Integrating Physical Units into High-Performance AI-Driven Scientific Computing[J]. bioRxiv, 2024: 2024.09. 20.614111.
@@ -95,7 +121,7 @@ If you are using ``brainunit``, please use the following citation:
 ``brainscale``
 --------------
 
-If you are using ``brainscale``, please use the following citation:
+If you are using `brainscale <https://github.com/chaobrain/brainscale>`_, please use the following citation:
 
 
 - Wang C, Dong X, Jiang J, et al. BrainScale: Enabling scalable online learning in spiking neural networks[J]. bioRxiv, 2024: 2024.09. 24.614728.
