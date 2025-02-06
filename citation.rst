@@ -40,7 +40,7 @@ If you are using ``BrainPy=2.x``, please use the following citation:
    }
 
 
-   @inproceedings{wang2024brainpy,
+   @inproceedings{wang2024differentiable,
       title={A differentiable brain simulator bridging brain simulation and brain-inspired computing},
       author={Wang, Chaoming and Zhang, Tianqiu and He, Sichao and Gu, Hongyaoxing and Li, Shangyang and Wu, Si},
       booktitle={The Twelfth International Conference on Learning Representations},
@@ -70,6 +70,8 @@ If you are using ``BrainPy=1.x``, please use the following citation:
 
 ``BrainTaichi`` was previously known as ``brainpylib``, and has been published and released in
 the pypi package index as `https://pypi.org/project/brainpylib <https://pypi.org/project/brainpylib>`_.
+Now it has been renamed to `BrainTaichi <https://github.com/chaobrain/braintaichi>`_, and is released
+in the pypi package index as `https://pypi.org/project/braintaichi <https://pypi.org/project/braintaichi>`_.
 
 If you are using `BrainTaichi <https://github.com/chaobrain/braintaichi>`_ or
 `brainpylib <https://pypi.org/project/brainpylib>`_, please use the following citation:
@@ -80,7 +82,7 @@ If you are using `BrainTaichi <https://github.com/chaobrain/braintaichi>`_ or
 
 .. code-block:: bibtex
 
-   @inproceedings{wang2024brainpy,
+   @inproceedings{wang2024differentiable,
       title={A differentiable brain simulator bridging brain simulation and brain-inspired computing},
       author={Wang, Chaoming and Zhang, Tianqiu and He, Sichao and Gu, Hongyaoxing and Li, Shangyang and Wu, Si},
       booktitle={The Twelfth International Conference on Learning Representations},
