@@ -53,7 +53,7 @@ Resources related to ``BrainPy``:
 ------------------------------
 
 
-.. image:: https://raw.githubusercontent.com/chaobrain/brainunit/main/docs/_static/brainunit.png
+.. image:: https://raw.githubusercontent.com/chaobrain/saiunit/main/docs/_static/brainunit.png
    :width: 250
    :alt: brainunit logo
    :align: center
