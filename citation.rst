@@ -8,6 +8,11 @@ the project in your academic publication, we suggest citing the following papers
 
 
 
+
+
+
+
+
 ``BrainPy``
 -----------
 
@@ -142,6 +147,25 @@ If you are using `brainscale <https://github.com/chaobrain/brainscale>`_, please
         eprint = {https://www.biorxiv.org/content/early/2024/09/24/2024.09.24.614728.full.pdf},
         journal = {bioRxiv}
    }
+
+
+
+
+
+Others
+-------
+
+
+- Wang, Chaoming, et al. "A Differentiable Approach to Multi-scale Brain Modeling." *ICML 2024 Workshop on Differentiable Almost Everything: Differentiable Relaxations, Algorithms, Operators, and Simulators*.
+
+.. code-block:: bibtex
+
+    @inproceedings{wang2024diffappro,
+      title={A Differentiable Approach to Multi-scale Brain Modeling},
+      author={Wang, Chaoming and Lyu, Muyang and Zhang, Tianqiu and He, Sichao and Wu, Si},
+      booktitle={ICML 2024 Workshop on Differentiable Almost Everything: Differentiable Relaxations, Algorithms, Operators, and Simulators}
+    }
+
 
 
 
