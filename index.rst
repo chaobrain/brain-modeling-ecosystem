@@ -1,5 +1,5 @@
-Brain Dynamics Programming Ecosystem
-====================================
+Brain Modeling Ecosystem
+========================
 
 We are building an ecosystem for general-purpose bain dynamics programming (BDP), evolving from our previously experimental `BrainPy project <https://github.com/brainpy/BrainPy>`_.
 
@@ -75,23 +75,23 @@ Resources related to ``brainunit``:
 
 
 
-`dendritex`: Dendritic Computation
--------------------------------------
+`braincell`: Biologically Detailed Brain Cell Modeling
+------------------------------------------------------
 
 
-.. image:: https://raw.githubusercontent.com/chaobrain/dendritex/main/docs/_static/dendritex.png
+.. image:: https://raw.githubusercontent.com/chaobrain/braincell/main/docs/_static/braincell.png
    :width: 250
-   :alt: dendritex logo
+   :alt: braincell logo
    :align: center
 
-`dendritex <https://github.com/chaobrain/dendritex>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
+`braincell <https://github.com/chaobrain/braincell>`_ is a package for dendritic computation in our BDP ecosystem. It provides a set of tools for building dendritic computation models, including the construction of dendritic trees, the definition of dendritic compartments, and the implementation of various ions and channels in a neuron.
 
-`dendritex <https://github.com/chaobrain/dendritex>`_ is designed to be highly parallel for dendritic modeling. The computation for compartments and neurons are all parallelized in the single device, thus providing the extraordinary performance.
+`braincell <https://github.com/chaobrain/braincell>`_ is designed to be highly parallel for dendritic modeling. The computation for compartments and neurons are all parallelized in the single device, thus providing the extraordinary performance.
 
-Resources related to ``dendritex``:
+Resources related to ``braincell``:
 
 
-* The documentation for dendritex can be found in: `https://dendrite.readthedocs.io/ <https://dendrite.readthedocs.io/>`_
+* The documentation for braincell can be found in: `https://dendrite.readthedocs.io/ <https://dendrite.readthedocs.io/>`_
 
 
 
@@ -207,7 +207,7 @@ Resources related to ``braintools``:
 
    brainpy <https://brainpy.readthedocs.io/>
    brainunit <https://brainunit.readthedocs.io/>
-   dendritex <https://dendrite.readthedocs.io/>
+   braincell <https://braincell.readthedocs.io/>
    brainstate <https://brainstate.readthedocs.io/>
    braintaichi <https://braintaichi.readthedocs.io/>
    brainscale <https://brainscale.readthedocs.io/>
