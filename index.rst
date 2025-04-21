@@ -1,11 +1,9 @@
 Brain Modeling Ecosystem
 ========================
 
-We are building an ecosystem for general-purpose bain dynamics programming (BDP), evolving from our previously experimental `BrainPy project <https://github.com/brainpy/BrainPy>`_.
+We are building an ecosystem for general-purpose brain modeling. This ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.
 
-The BDP ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.
-
-The BDP ecosystem is designed to be modular, so you can use as much or as little of it as you need. 
+The brain modeling ecosystem is designed to be modular, so you can use as much or as little of it as you need.
 
 We welcome contributions from the community, so if you have an idea for a new tool or library, please let us know!
 
@@ -15,38 +13,6 @@ Please email us at: `chao.brain@qq.com <mailto:chao.brain@qq.com>`_.
 .. contents::
     :local:
     :depth: 2
-
-
-`BrainPy`: Legacy & Classical Framework
----------------------------------------
-
-
-.. image:: https://raw.githubusercontent.com/brainpy/BrainPy/master/images/logo.png
-   :alt: brainpy logo
-   :align: center
-
-
-
-`BrainPy <https://github.com/brainpy/BrainPy>`_ represents the first platform we created for brain dynamics programming.
-
-This framework offers high flexibility, allowing users to freely define brain dynamics models. It integrates tools such as event-driven operators, differential equation solvers, and model construction interfaces, enabling users to flexibly customize models as needed. BrainPy supports various application scenarios such as brain dynamics simulation, training, and analysis. Within a single model, users can carray out experiments for simulation, offline learning, online learning, or backpropagation training, or further perform low-dimensional bifurcation analysis or high-dimensional slow-point analysis. 
-
-In terms of performance, BrainPy achieves significant improvements through object-oriented just-in-time compilation (JIT) and specialized operators tailored for brain dynamics characteristics. However, its JIT interface and event-driven operators have several drawbacks so we try to improve it in the following packages. Additionally, BrainPy has good extensibility. New features and extensions can be easily implemented through plugin modules. This allows BrainPy to adapt to the evolving field of brain dynamics and meet the changing research needs. 
-
-Resources related to ``BrainPy``:
-
-
-* The documentation for BrainPy can be found in: `https://brainpy.readthedocs.io/ <https://brainpy.readthedocs.io/>`_
-* The ample examples for BrainPy can be found in: `https://brainpy-examples.readthedocs.io/ <https://brainpy-examples.readthedocs.io/>`_
-
-
-
-
--------------------------------------------------------------------
-
--------------------------------------------------------------------
-
-
 
 
 `brainunit`: Physical Units
@@ -91,15 +57,15 @@ Resources related to ``brainunit``:
 Resources related to ``braincell``:
 
 
-* The documentation for braincell can be found in: `https://dendrite.readthedocs.io/ <https://dendrite.readthedocs.io/>`_
+* The documentation for braincell can be found in: `https://braincell.readthedocs.io/ <https://braincell.readthedocs.io/>`_
 
 
 
 
 
 
-`brainstate`: JIT Compilation
---------------------------------
+`brainstate`: ``State``-based Compilation
+-----------------------------------------
 
 
 .. image:: https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png
@@ -124,8 +90,8 @@ Resources related to ``brainstate``:
 
 
 
-`braintaichi`: Event-Driven Computation
-------------------------------------------
+`braintaichi`: Event-Driven Computation Framework
+-------------------------------------------------
 
 .. image:: https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png
    :width: 250
@@ -192,9 +158,6 @@ Resources related to ``braintools``:
    :caption: More Information
 
    citation.rst
-   book.md
-   courses.md
-   papers_using_us.md
 
 
 
@@ -205,7 +168,6 @@ Resources related to ``braintools``:
    :maxdepth: 2
    :caption: Documentation
 
-   brainpy <https://brainpy.readthedocs.io/>
    brainunit <https://brainunit.readthedocs.io/>
    braincell <https://braincell.readthedocs.io/>
    brainstate <https://brainstate.readthedocs.io/>

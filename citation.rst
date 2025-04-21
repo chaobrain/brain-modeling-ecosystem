@@ -103,23 +103,22 @@ If you are using `BrainTaichi <https://github.com/chaobrain/braintaichi>`_ or
 If you are using `brainunit <https://github.com/chaobrain/brainunit>`_ , please use the following citation:
 
 
-- Wang C, He S, Luo S, et al. BrainUnit: Integrating Physical Units into High-Performance AI-Driven Scientific Computing[J]. bioRxiv, 2024: 2024.09. 20.614111.
+- Wang, Chaoming, et al. "Integrating physical units into high-performance AI-driven scientific computing." *Nature Communications* 16.1 (2025): 3609.
 
 
 .. code-block:: bibtex
 
-   @article {Wang2024brainunit,
-	author = {Wang, Chaoming and He, Sichao and Luo, Shouwei and Huan, Yuxiang and Wu, Si},
-	title = {BrainUnit: Integrating Physical Units into High-Performance AI-Driven Scientific Computing},
-	elocation-id = {2024.09.20.614111},
-	year = {2024},
-	doi = {10.1101/2024.09.20.614111},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {Artificial intelligence (AI) is revolutionizing scientific research across various disciplines. The foundation of scientific research lies in rigorous scientific computing based on standardized physical units. However, current mainstream high-performance numerical computing libraries for AI generally lack native support for physical units, significantly impeding the integration of AI methodologies into scientific research. To fill this gap, we introduce BrainUnit, a unit system designed to seamlessly integrate physical units into AI libraries, with a focus on compatibility with JAX. BrainUnit offers a comprehensive library of over 2000 physical units and more than 300 unit-aware mathematical functions. It is fully compatible with JAX transformations, allowing for automatic differentiation, just-in-time compilation, vectorization, and parallelization while maintaining unit consistency. We demonstrate BrainUnit{\textquoteright}s efficacy through several use cases in brain dynamics modeling, including detailed biophysical neuron simulations, multiscale brain network modeling, neuronal activity fitting, and cognitive task training. Our results show that BrainUnit enhances the accuracy, reliability, and interpretability of scientific computations across scales, from ion channels to whole-brain networks, without significantly impacting performance. By bridging the gap between abstract computational frameworks and physical units, BrainUnit represents a crucial step towards more robust and physically grounded AI-driven scientific computing.Competing Interest StatementThe authors have declared no competing interest.},
-	URL = {https://www.biorxiv.org/content/early/2024/09/22/2024.09.20.614111},
-	eprint = {https://www.biorxiv.org/content/early/2024/09/22/2024.09.20.614111.full.pdf},
-	journal = {bioRxiv}
-   }
+   @article{wang2025integrating,
+      title={Integrating physical units into high-performance AI-driven scientific computing},
+      author={Wang, Chaoming and He, Sichao and Luo, Shouwei and Huan, Yuxiang and Wu, Si},
+      journal={Nature Communications},
+      volume={16},
+      number={1},
+      pages={3609},
+      year={2025},
+      publisher={Nature Publishing Group UK London},
+      url={https://doi.org/10.1038/s41467-025-58626-4}
+    }
 
 
 
