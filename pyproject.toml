@@ -63,8 +63,8 @@ name = "brainmodeling"
 
 
 [project.urls]
-homepage = 'http://github.com/chaobrain/brainmodeling'
-repository = 'http://github.com/chaobrain/brainmodeling'
+homepage = 'http://github.com/chaobrain/brain-modeling-ecosystem'
+repository = 'http://github.com/chaobrain/brain-modeling-ecosystem'
 
 
 [project.optional-dependencies]

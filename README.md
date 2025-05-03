@@ -5,7 +5,7 @@
 
 
 <p align="center">
-  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brainmodeling/main/docs/_static/bdp-ecosystem.png" width=50%>
+  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brain-modeling-ecosystem/main/docs/_static/bdp-ecosystem.png" width=50%>
 </p> 
 
 
@@ -13,8 +13,6 @@
 
 Ecosystem for Brain Modeling provides comprehensive framework for computational neuroscience and brain simulation. 
 It provides tools and libraries for researchers to model, simulate, train, and analyze neural systems at different scales.
-
-For complete documentation, please see [Brain Modeling Ecosystem](https://brainmodeling.readthedocs.io).
 
 **Core components** in this ecosystem includes:
 
@@ -112,7 +110,7 @@ If you use the Brain Modeling Ecosystem in your research, please use the followi
 
 ## Support
 
-For questions and support, please [open an issue](https://github.com/chaobrain/brainmodeling/issues) or email to us: chao.brain@qq.com
+For questions and support, please [open an issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues) or email to us: chao.brain@qq.com
 
 
 

@@ -63,11 +63,11 @@ setup(
     packages=packages,
     python_requires='>=3.10',
     install_requires=requirements,
-    url='https://github.com/chaobrain/brainmodeling',
+    url='https://github.com/chaobrain/brain-modeling-ecosystem',
     project_urls={
-        "Bug Tracker": "https://github.com/chaobrain/brainmodeling/issues",
+        "Bug Tracker": "https://github.com/chaobrain/brain-modeling-ecosystem/issues",
         "Documentation": "https://brainmodeling.readthedocs.io/",
-        "Source Code": "https://github.com/chaobrain/brainmodeling",
+        "Source Code": "https://github.com/chaobrain/brain-modeling-ecosystem",
     },
     extras_require={
         'cpu': ['jaxlib'],
