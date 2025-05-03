@@ -37,6 +37,10 @@ with io.open(os.path.join(here, 'README.md'), 'r', encoding='utf-8') as f:
     README = f.read()
 
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
+
 # installation packages
 packages = find_packages(
     exclude=[
@@ -56,7 +60,7 @@ packages = find_packages(
 
 # setup
 setup(
-    name='brain_modeling_ecosystem',
+    name='brain-modeling-ecosystem',
     version=version,
     description='Brain Modeling Ecosystem.',
     long_description=README,
@@ -65,7 +69,7 @@ setup(
     author_email='chao.brain@qq.com',
     packages=packages,
     python_requires='>=3.10',
-    install_requires=['numpy>=1.15', 'jax', 'brainunit>=0.0.8'],
+    install_requires=requirements,
     url='https://github.com/chaobrain/brain-modeling-ecosystem',
     project_urls={
         "Bug Tracker": "https://github.com/chaobrain/brain-modeling-ecosystem/issues",

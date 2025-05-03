@@ -23,7 +23,7 @@ universal = true
 
 
 [project]
-name = "brain_modeling_ecosystem"
+name = "brain-modeling-ecosystem"
 description = "Brain Modeling Ecosystem."
 readme = 'README.md'
 license = { text = 'Apache-2.0 license' }
@@ -47,27 +47,19 @@ classifiers = [
     'Topic :: Scientific/Engineering :: Artificial Intelligence',
     'Topic :: Software Development :: Libraries',
 ]
-
-
 keywords = [
     'computational neuroscience',
     'brain-inspired computation',
     'brain dynamics programming',
 ]
+dynamic = ['version', 'dependencies']
 
-
-dependencies = [
-    'numpy>=1.15',
-    'jax',
-    'brainunit>=0.0.8',
-]
-
-
-dynamic = ['version']
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 
 [tool.flit.module]
-name = "brain_modeling_ecosystem"
+name = "brain-modeling-ecosystem"
 
 
 [project.urls]
