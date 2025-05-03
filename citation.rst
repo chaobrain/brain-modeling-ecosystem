@@ -7,12 +7,6 @@ the project in your academic publication, we suggest citing the following papers
 
 
 
-
-
-
-
-
-
 ``BrainPy``
 -----------
 
@@ -69,8 +63,8 @@ If you are using ``BrainPy=1.x``, please use the following citation:
 
 
 
-``braintaichi`` (previous known as ``brainpylib``)
---------------------------------------------------
+``braintaichi`` (previous ``brainpylib``)
+-----------------------------------------
 
 
 ``BrainTaichi`` was previously known as ``brainpylib``, and has been published and released in
@@ -132,6 +126,7 @@ If you are using `brainscale <https://github.com/chaobrain/brainscale>`_, please
 
 - Wang C, Dong X, Jiang J, et al. BrainScale: Enabling scalable online learning in spiking neural networks[J]. bioRxiv, 2024: 2024.09. 24.614728.
 
+
 .. code-block:: bibtex
 
    @article {Wang2024brainscale,
@@ -150,12 +145,94 @@ If you are using `brainscale <https://github.com/chaobrain/brainscale>`_, please
 
 
 
+``brainevent``
+--------------
+
+
+If you are using `brainevent <https://github.com/chaobrain/brainevent>`_, please use the following citation:
+
+
+- Chaoming Wang, & Sichao He. (2025). chaobrain/brainevent: Version 0.1.0 (V0.1.0). Zenodo. https://doi.org/10.5281/zenodo.15324452
+
+
+.. code-block:: bibtex
+
+   @software{chaoming_wang_2025_15324452,
+      author       = {Chaoming Wang and
+                      Sichao He},
+      title        = {chaobrain/brainevent: Version 0.1.0},
+      month        = may,
+      year         = 2025,
+      publisher    = {Zenodo},
+      version      = {V0.1.0},
+      doi          = {10.5281/zenodo.15324452},
+      url          = {https://doi.org/10.5281/zenodo.15324452},
+   }
+
+
+
+
+``brainstate``
+--------------
+
+
+If you are using `brainstate <https://github.com/chaobrain/brainstate>`_, please use the following citation:
+
+
+- Chaoming Wang, Lyu Muyang, Sichao He, Tianqiu Zhang, & hjflo. (2025). chaobrain/brainstate: Version 0.1.0 (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.14970016
+
+
+.. code-block:: bibtex
+
+    @software{chaoming_wang_2025_14970016,
+      author       = {Chaoming Wang and
+                      Lyu Muyang and
+                      Sichao He and
+                      Tianqiu Zhang and
+                      hjflo},
+      title        = {chaobrain/brainstate: Version 0.1.0},
+      month        = mar,
+      year         = 2025,
+      publisher    = {Zenodo},
+      version      = {v0.1.0},
+      doi          = {10.5281/zenodo.14970016},
+      url          = {https://doi.org/10.5281/zenodo.14970016},
+    }
+
+
+
+
+``braincell``
+-------------
+
+
+If you are using `braincell <https://github.com/chaobrain/braincell>`_, please use the following citation:
+
+
+- Chaoming Wang, & Shouwei Luo. (2025). chaobrain/braincell: Version 0.0.1 (v0.0.1). Zenodo. https://doi.org/10.5281/zenodo.14969988
+
+
+.. code-block:: bibtex
+
+    @software{chaoming_wang_2025_14969988,
+      author       = {Chaoming Wang and Shouwei Luo},
+      title        = {chaobrain/braincell: Version 0.0.1},
+      month        = mar,
+      year         = 2025,
+      publisher    = {Zenodo},
+      version      = {v0.0.1},
+      doi          = {10.5281/zenodo.14969988},
+      url          = {https://doi.org/10.5281/zenodo.14969988},
+    }
+
+
 
 Others
 -------
 
 
 - Wang, Chaoming, et al. "A Differentiable Approach to Multi-scale Brain Modeling." *ICML 2024 Workshop on Differentiable Almost Everything: Differentiable Relaxations, Algorithms, Operators, and Simulators*.
+
 
 .. code-block:: bibtex
 
