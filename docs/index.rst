@@ -1,5 +1,5 @@
-Brain Modeling Ecosystem
-========================
+Ecosystem for Brain Modeling
+============================
 
 We are building an ecosystem for general-purpose brain modeling, evolving from our previously experimental `BrainPy project <https://github.com/brainpy/BrainPy>`_.
 This ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.

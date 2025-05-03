@@ -50,7 +50,7 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brain_modeling_ecosystem/
+          pytest brainmodeling/
 
 
   test_macos:
@@ -80,7 +80,7 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brain_modeling_ecosystem/
+          pytest brainmodeling/
 
 
   test_windows:
@@ -110,5 +110,5 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brain_modeling_ecosystem/ -p no:faulthandler
+          pytest brainmodeling/ -p no:faulthandler
 

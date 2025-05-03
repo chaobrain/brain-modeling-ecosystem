@@ -24,7 +24,7 @@ universal = true
 
 [project]
 name = "brainmodeling"
-description = "Brain Modeling Ecosystem."
+description = "Ecosystem for Brain Modeling."
 readme = 'README.md'
 license = { text = 'Apache-2.0 license' }
 requires-python = '>=3.10'

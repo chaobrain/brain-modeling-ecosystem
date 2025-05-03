@@ -1,4 +1,4 @@
-# Brain Modeling Ecosystem
+# Ecosystem for Brain Modeling 
 
 [![PyPI version](https://img.shields.io/pypi/v/brainmodeling)](https://pypi.org/project/brainmodeling/)
 ![Read the Docs](https://img.shields.io/readthedocs/brainmodeling)
@@ -11,7 +11,7 @@
 
 ## Overview
 
-Brain Modeling Ecosystem is a comprehensive framework for computational neuroscience and brain simulation. 
+Ecosystem for Brain Modeling provides comprehensive framework for computational neuroscience and brain simulation. 
 It provides tools and libraries for researchers to model, simulate, train, and analyze neural systems at different scales.
 
 For complete documentation, please see [Brain Modeling Ecosystem](https://brainmodeling.readthedocs.io).

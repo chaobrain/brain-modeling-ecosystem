@@ -18,12 +18,9 @@
 import io
 import os
 import re
-import sys
-import time
 
 from setuptools import find_packages
 from setuptools import setup
-
 
 # version
 here = os.path.abspath(os.path.dirname(__file__))
@@ -31,15 +28,12 @@ with open(os.path.join(here, 'brainmodeling/', '__init__.py'), 'r') as f:
     init_py = f.read()
 version = re.search('__version__ = "(.*)"', init_py).groups()[0]
 
-
 # obtain long description from README
 with io.open(os.path.join(here, 'README.md'), 'r', encoding='utf-8') as f:
     README = f.read()
 
-
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
-
 
 # installation packages
 packages = find_packages(
@@ -57,12 +51,11 @@ packages = find_packages(
     ]
 )
 
-
 # setup
 setup(
     name='brainmodeling',
     version=version,
-    description='Brain Modeling Ecosystem.',
+    description='Ecosystem for Brain Modeling.',
     long_description=README,
     long_description_content_type="text/markdown",
     author='BrainEvent Developers',

@@ -2,7 +2,7 @@ Citations
 =========
 
 
-If our brain dynamics programming ecosystem has been significant in your research, and you would like to acknowledge
+If our brain modeling ecosystem has been significant in your research, and you would like to acknowledge
 the project in your academic publication, we suggest citing the following papers.
 
 
