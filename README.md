@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  	<img alt="Header image of Brain Modeling Ecosystem." src="https://github.com/chaobrain/brain-modeling-ecosystem/blob/main/_static/bdp-ecosystem.png" width=50%>
+  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brain-modeling-ecosystem/blob/main/docs/_static/bdp-ecosystem.png" width=50%>
 </p> 
 
 
