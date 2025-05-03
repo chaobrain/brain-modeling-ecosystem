@@ -47,6 +47,7 @@ jobs:
           python -m pip cache purge
           python -m pip install --upgrade pip setuptools   --no-cache-dir
           python -m pip install -r requirements.txt  --no-cache-dir
+          python -m pip install pytest  --no-cache-dir
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
@@ -77,6 +78,7 @@ jobs:
           python -m pip cache purge
           python -m pip install --upgrade pip setuptools  --no-cache-dir
           python -m pip install -r requirements.txt  --no-cache-dir
+          python -m pip install pytest  --no-cache-dir
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
@@ -107,8 +109,9 @@ jobs:
           python -m pip cache purge
           python -m pip install --upgrade pip setuptools  --no-cache-dir
           python -m pip install -r requirements.txt  --no-cache-dir
+          python -m pip install pytest  --no-cache-dir
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brainmodeling/ -p no:faulthandler
+          pytest brainmodeling/ 
 
