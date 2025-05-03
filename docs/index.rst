@@ -159,6 +159,7 @@ Resources related to ``braintools``:
    :caption: More Information
 
    citation.rst
+   book.md
 
 
 

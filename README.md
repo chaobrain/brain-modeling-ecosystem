@@ -1,11 +1,11 @@
 # Brain Modeling Ecosystem
 
-[![PyPI version](https://img.shields.io/pypi/v/brain-modeling-ecosystem)](https://pypi.org/project/brain-modeling-ecosystem/)
+[![PyPI version](https://img.shields.io/pypi/v/brainmodeling)](https://pypi.org/project/brainmodeling/)
 ![Read the Docs](https://img.shields.io/readthedocs/brainmodeling)
 
 
 <p align="center">
-  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brain-modeling-ecosystem/blob/main/docs/_static/bdp-ecosystem.png" width=50%>
+  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brainmodeling/main/docs/_static/bdp-ecosystem.png" width=50%>
 </p> 
 
 
@@ -38,7 +38,7 @@ For complete documentation, please see [Brain Modeling Ecosystem](https://brainm
 The ecosystem can be installed with the following command:
 
 ```bash
-pip install brain-modeling-ecosystem
+pip install brainmodeling
 ```
 
 This pins particular versions of component projects which are known to work correctly together via the integration tests in this repository. 
@@ -112,7 +112,7 @@ If you use the Brain Modeling Ecosystem in your research, please use the followi
 
 ## Support
 
-For questions and support, please [open an issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues) or email to us: chao.brain@qq.com
+For questions and support, please [open an issue](https://github.com/chaobrain/brainmodeling/issues) or email to us: chao.brain@qq.com
 
 
 

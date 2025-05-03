@@ -16,7 +16,7 @@
 # -*- coding: utf-8 -*-
 
 
-import brain_modeling_ecosystem as bme
+import brainmodeling as bme
 
 
 class Test:

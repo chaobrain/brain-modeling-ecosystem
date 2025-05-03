@@ -10,7 +10,7 @@ Please:
 - [ ] Provide a complete example of how to reproduce the bug, wrapped in triple backticks like this:
 
 ```python
-import brain_modeling_ecosystem
+import brainmodeling
 ```
 
 - [ ] If applicable, include full error messages/tracebacks.

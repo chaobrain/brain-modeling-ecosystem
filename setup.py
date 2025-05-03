@@ -27,7 +27,7 @@ from setuptools import setup
 
 # version
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'brain_modeling_ecosystem/', '__init__.py'), 'r') as f:
+with open(os.path.join(here, 'brainmodeling/', '__init__.py'), 'r') as f:
     init_py = f.read()
 version = re.search('__version__ = "(.*)"', init_py).groups()[0]
 
@@ -51,16 +51,16 @@ packages = find_packages(
         "experiments*",
         "build*",
         "dist*",
-        "brain_modeling_ecosystem.egg-info*",
-        "brain_modeling_ecosystem/__pycache__*",
-        "brain_modeling_ecosystem/__init__.py"
+        "brainmodeling.egg-info*",
+        "brainmodeling/__pycache__*",
+        "brainmodeling/__init__.py"
     ]
 )
 
 
 # setup
 setup(
-    name='brain-modeling-ecosystem',
+    name='brainmodeling',
     version=version,
     description='Brain Modeling Ecosystem.',
     long_description=README,
@@ -70,11 +70,11 @@ setup(
     packages=packages,
     python_requires='>=3.10',
     install_requires=requirements,
-    url='https://github.com/chaobrain/brain-modeling-ecosystem',
+    url='https://github.com/chaobrain/brainmodeling',
     project_urls={
-        "Bug Tracker": "https://github.com/chaobrain/brain-modeling-ecosystem/issues",
+        "Bug Tracker": "https://github.com/chaobrain/brainmodeling/issues",
         "Documentation": "https://brainmodeling.readthedocs.io/",
-        "Source Code": "https://github.com/chaobrain/brain-modeling-ecosystem",
+        "Source Code": "https://github.com/chaobrain/brainmodeling",
     },
     extras_require={
         'cpu': ['jaxlib'],

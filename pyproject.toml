@@ -12,9 +12,9 @@ exclude = [
     "benchmark*",
     "build*",
     "dist*",
-    "brain_modeling_ecosystem.egg-info*",
-    "brain_modeling_ecosystem/__pycache__*",
-    "brain_modeling_ecosystem/__init__.py"
+    "brainmodeling.egg-info*",
+    "brainmodeling/__pycache__*",
+    "brainmodeling/__init__.py"
 ]
 
 
@@ -23,7 +23,7 @@ universal = true
 
 
 [project]
-name = "brain-modeling-ecosystem"
+name = "brainmodeling"
 description = "Brain Modeling Ecosystem."
 readme = 'README.md'
 license = { text = 'Apache-2.0 license' }
@@ -59,12 +59,12 @@ dependencies = {file = ["requirements.txt"]}
 
 
 [tool.flit.module]
-name = "brain-modeling-ecosystem"
+name = "brainmodeling"
 
 
 [project.urls]
-homepage = 'http://github.com/chaobrain/brain-modeling-ecosystem'
-repository = 'http://github.com/chaobrain/brain-modeling-ecosystem'
+homepage = 'http://github.com/chaobrain/brainmodeling'
+repository = 'http://github.com/chaobrain/brainmodeling'
 
 
 [project.optional-dependencies]

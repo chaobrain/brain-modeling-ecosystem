@@ -2,7 +2,7 @@
 
 ## Reporting a bug in Brain Modeling Ecosystem
 
-Report security bugs in BrainPy via [Github Issue](https://github.com/brainpy/braincore/issues).
+Report security bugs in BrainPy via [Github Issue](https://github.com/chaobrain/brainmodeling/issues).
 
 Normally your report will be acknowledged within 5 days, and you'll receive a more detailed response 
 to your report within 10 days indicating the next steps in handling your submission. These timelines 
