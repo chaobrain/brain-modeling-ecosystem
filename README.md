@@ -1,6 +1,6 @@
 # Ecosystem for Brain Modeling 
 
-[![PyPI version](https://img.shields.io/pypi/v/brainmodeling)](https://pypi.org/project/brainmodeling/)
+[![PyPI version](https://img.shields.io/pypi/v/brainx)](https://pypi.org/project/brainx/)
 ![Read the Docs](https://img.shields.io/readthedocs/brainmodeling)
 [![Continuous Integration](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml/badge.svg)](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml)
 
@@ -37,58 +37,18 @@ It provides tools and libraries for researchers to model, simulate, train, and a
 The ecosystem can be installed with the following command:
 
 ```bash
-pip install brainmodeling
+pip install BrainX
 ```
 
-This pins particular versions of component projects which are known to work correctly together via the integration tests in this repository. 
+This command installs the core package and pins specific versions of the component projects known to work together, ensuring compatibility based on integration tests.
 
-
-
-
-## Quick Start
-
-```python
-import braintools
-import brainstate
-import brainunit as u
-
-
-class EINet(brainstate.nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.n_exc = 3200
-        self.n_inh = 800
-        self.num = self.n_exc + self.n_inh
-        self.N = brainstate.nn.LIFRef(
-            self.num, V_rest=-60. * u.mV, V_th=-50. * u.mV, V_reset=-60. * u.mV,
-            tau=20. * u.ms, tau_ref=5. * u.ms,
-            V_initializer=brainstate.init.Normal(-55., 2., unit=u.mV)
-        )
-        self.E = brainstate.nn.AlignPostProj(
-            comm=brainstate.nn.EventFixedProb(self.n_exc, self.num, 0.02, 0.6 * u.mS),
-            syn=brainstate.nn.Expon.desc(self.num, tau=5. * u.ms),
-            out=brainstate.nn.COBA.desc(E=0. * u.mV),
-            post=self.N
-        )
-        self.I = brainstate.nn.AlignPostProj(
-            comm=brainstate.nn.EventFixedProb(self.n_inh, self.num, 0.02, 6.7 * u.mS),
-            syn=brainstate.nn.Expon.desc(self.num, tau=10. * u.ms),
-            out=brainstate.nn.COBA.desc(E=-80. * u.mV),
-            post=self.N
-        )
-
-    def update(self, t, inp):
-        with brainstate.environ.context(t=t):
-            spk = self.N.get_spike() != 0.
-            self.E(spk[:self.n_exc])
-            self.I(spk[self.n_exc:])
-            self.N(inp)
-            return self.N.get_spike()
-    
-    def save_checkpoint(self):
-        braintools.file.msgpack_save('states.msgpack', self.states())
-
+For development, you might want to clone the repository and install it in editable mode:
+```bash
+git clone https://github.com/chaobrain/brain-modeling-ecosystem.git
+cd brain-modeling-ecosystem
+pip install -e .
 ```
+
 
 ## Documentation
 
@@ -102,16 +62,21 @@ We welcome contributions from the community! Please see our [Contributing Guidel
 
 ## License
 
-This project is licensed under the [Apache License v2.0](LICENSE).
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+
 
 ## Citation
 
-If you use the Brain Modeling Ecosystem in your research, please use the following link: https://brainmodeling.readthedocs.io/citation.html
+If you use the Brain Modeling Ecosystem in your research, please cite it appropriately. Refer to the [citation guide](https://brainmodeling.readthedocs.io/citation.html) on our documentation portal.
 
 
 ## Support
 
-For questions and support, please [open an issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues) or email to us: chao.brain@qq.com
+If you have questions, encounter issues, or need support, please:
+*   Check the [documentation](https://brainmodeling.readthedocs.io).
+*   Search the [existing issues](https://github.com/chaobrain/brain-modeling-ecosystem/issues).
+*   [Open a new issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues/new/choose) if your problem is not addressed.
+*   Contact us via email: `chao.brain@qq.com`.
 
 
 

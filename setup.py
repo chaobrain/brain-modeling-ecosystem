@@ -24,7 +24,7 @@ from setuptools import setup
 
 # version
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'brainmodeling/', '__init__.py'), 'r') as f:
+with open(os.path.join(here, 'brainx/', '__init__.py'), 'r') as f:
     init_py = f.read()
 version = re.search('__version__ = "(.*)"', init_py).groups()[0]
 
@@ -45,15 +45,15 @@ packages = find_packages(
         "experiments*",
         "build*",
         "dist*",
-        "brainmodeling.egg-info*",
-        "brainmodeling/__pycache__*",
-        "brainmodeling/__init__.py"
+        "brainx.egg-info*",
+        "brainx/__pycache__*",
+        "brainx/__init__.py"
     ]
 )
 
 # setup
 setup(
-    name='brainmodeling',
+    name='BrainX',
     version=version,
     description='Ecosystem for Brain Modeling.',
     long_description=README,

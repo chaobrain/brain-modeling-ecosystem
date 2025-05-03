@@ -12,9 +12,9 @@ exclude = [
     "benchmark*",
     "build*",
     "dist*",
-    "brainmodeling.egg-info*",
-    "brainmodeling/__pycache__*",
-    "brainmodeling/__init__.py"
+    "brainx.egg-info*",
+    "brainx/__pycache__*",
+    "brainx/__init__.py"
 ]
 
 
@@ -23,7 +23,7 @@ universal = true
 
 
 [project]
-name = "brainmodeling"
+name = "BrainX"
 description = "Ecosystem for Brain Modeling."
 readme = 'README.md'
 license = { text = 'Apache-2.0 license' }
@@ -59,7 +59,7 @@ dependencies = {file = ["requirements.txt"]}
 
 
 [tool.flit.module]
-name = "brainmodeling"
+name = "BrainX"
 
 
 [project.urls]

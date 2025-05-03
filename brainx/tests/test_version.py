@@ -16,7 +16,7 @@
 # -*- coding: utf-8 -*-
 
 
-import brainmodeling as bme
+import brainx as bme
 
 
 class Test:
