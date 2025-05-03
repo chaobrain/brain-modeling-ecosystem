@@ -2,6 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/brainmodeling)](https://pypi.org/project/brainmodeling/)
 ![Read the Docs](https://img.shields.io/readthedocs/brainmodeling)
+[![Continuous Integration](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml/badge.svg)](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml)
 
 
 <p align="center">
