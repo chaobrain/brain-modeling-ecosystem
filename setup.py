@@ -58,7 +58,7 @@ setup(
     description='Ecosystem for Brain Modeling.',
     long_description=README,
     long_description_content_type="text/markdown",
-    author='BrainEvent Developers',
+    author='Brain Modeling Ecosystem Developers',
     author_email='chao.brain@qq.com',
     packages=packages,
     python_requires='>=3.10',
