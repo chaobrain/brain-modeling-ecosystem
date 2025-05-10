@@ -16,6 +16,43 @@ Please email us at: `chao.brain@qq.com <mailto:chao.brain@qq.com>`_.
     :depth: 2
 
 
+
+----
+
+
+Installation
+------------
+
+To install the latest version of this ecosystem, you can use the following command:
+
+
+
+.. tab-set::
+
+    .. tab-item:: CPU
+
+       .. code-block:: bash
+
+          pip install BrainX[cpu] -U
+
+    .. tab-item:: GPU (CUDA 12.0)
+
+       .. code-block:: bash
+
+          pip install BrainX[cuda12] -U
+
+    .. tab-item:: TPU
+
+       .. code-block:: bash
+
+          pip install BrainX[tpu] -U
+
+----
+
+
+
+
+
 `brainunit`: Physical Units
 ------------------------------
 
@@ -115,6 +152,45 @@ Resources related to ``braintaichi``:
 
 
 
+
+
+`brainevent`: Event-Driven Algorithms for Brain Dynamics
+--------------------------------------------------------
+
+
+`BrainEvent` provides a set of data structures and algorithms for such event-driven computation on
+**CPUs**, **GPUs**, **TPUs**, and maybe more, which can be used to model the brain dynamics in an
+efficient and biologically plausible way.
+
+Particularly, it provides the following class to represent binary events in the brain:
+
+- ``EventArray``: representing array with a vector/matrix of events.
+
+Furthermore, it implements the following commonly used data structures for event-driven computation
+of the above class:
+
+- ``COO``: a sparse matrix in COO format for sparse and event-driven computation.
+- ``CSR``: a sparse matrix in CSR format for sparse and event-driven computation.
+- ``CSC``: a sparse matrix in CSC format for sparse and event-driven computation.
+- ``JITCHomoR``: a just-in-time connectivity matrix with homogenous weight for sparse and event-driven computation.
+- ``JITCNormalR``: a just-in-time connectivity matrix with normal distribution weight for sparse and event-driven
+  computation.
+- ``JITCUniformR``: a just-in-time connectivity matrix with uniform distribution weight for sparse and event-driven
+  computation.
+- ``FixedPreNumConn``: a fixed number of pre-synaptic connections for sparse and event-driven computation.
+- ``FixedPostNumConn``: a fixed number of post-synaptic connections for sparse and event-driven computation.
+- ...
+
+
+Resources related to ``brainevent``:
+
+* The documentation for brainevent can be found in: `https://brainevent.readthedocs.io/ <https://brainevent.readthedocs.io/>`_
+
+
+
+
+
+
 `brainscale`: Scalable Online Learning
 -----------------------------------------
 
@@ -173,7 +249,8 @@ Resources related to ``braintools``:
    brainunit <https://brainunit.readthedocs.io/>
    braincell <https://braincell.readthedocs.io/>
    brainstate <https://brainstate.readthedocs.io/>
-   braintaichi <https://braintaichi.readthedocs.io/>
+   brainevent <https://brainevent.readthedocs.io/>
    brainscale <https://brainscale.readthedocs.io/>
    braintools <https://braintools.readthedocs.io/>
+   braintaichi <https://braintaichi.readthedocs.io/>
 

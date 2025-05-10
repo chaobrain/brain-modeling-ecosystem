@@ -1,7 +1,9 @@
 numpy>=1.15
 jax>=0.4.35
-brainunit>=0.0.10
-brainevent>=0.0.1.post20250502
-brainstate>=0.1.0.post20250503
-braincell>=0.0.1.post20250216
-braintools>=0.0.4.post20250423
+brainunit>=0.0.11
+brainevent>=0.0.1.post20250508, <0.0.2
+brainstate>=0.1.0.post20250503, <0.2.0
+braincell>=0.0.1.post20250508, <0.0.2
+braintools>=0.0.4.post20250423, <0.0.5
+msgpack>=1.1.0
+matplotlib

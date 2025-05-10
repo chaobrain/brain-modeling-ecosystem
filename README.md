@@ -37,10 +37,34 @@ It provides tools and libraries for researchers to model, simulate, train, and a
 The ecosystem can be installed with the following command:
 
 ```bash
-pip install BrainX
+pip install BrainX -U
 ```
 
 This command installs the core package and pins specific versions of the component projects known to work together, ensuring compatibility based on integration tests.
+
+
+On CPU platforms, the following command can be used to install the ecosystem with all components:
+
+```bash
+pip install BrainX[cpu] -U
+```
+
+
+On GPU platforms, the following command can be used to install the ecosystem with all components:
+
+```bash
+pip install BrainX[cuda12] -U
+```
+
+
+
+On TPU platforms, the following command can be used to install the ecosystem with all components:
+
+```bash
+pip install BrainX[tpu] -U
+```
+
+
 
 For development, you might want to clone the repository and install it in editable mode:
 ```bash

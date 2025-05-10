@@ -35,6 +35,37 @@ with io.open(os.path.join(here, 'README.md'), 'r', encoding='utf-8') as f:
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
+
+def add_option_to_brain_dependencies(lines: list, symbol: str):
+    modified_lines = []
+    for line in lines:
+        line = line.strip()
+        # Skip empty lines
+        if not line:
+            continue
+
+        # Check if line starts with "brain"
+        if line.startswith('brain') or line.startswith('jax'):
+            # Find where the version specification starts
+            for i, char in enumerate(line):
+                if char in ['>', '<', '=', '~', '!']:
+                    # Add [cuda12] before version specifiers
+                    modified_line = f"{line[:i]}[{symbol}]{line[i:]}"
+                    modified_lines.append(modified_line)
+                    break
+            else:
+                # If no version specifier is found, just append [cuda12]
+                modified_lines.append(f"{line}[{symbol}]")
+        else:
+            modified_lines.append(line)
+
+    return modified_lines
+
+
+cpu_requirements = add_option_to_brain_dependencies(requirements, 'cpu')
+gpu_requirements = add_option_to_brain_dependencies(requirements, 'cuda12')
+tpu_requirements = add_option_to_brain_dependencies(requirements, 'tpu')
+
 # installation packages
 packages = find_packages(
     exclude=[
@@ -70,9 +101,10 @@ setup(
         "Source Code": "https://github.com/chaobrain/brain-modeling-ecosystem",
     },
     extras_require={
-        'cpu': ['jaxlib'],
-        'cuda12': ['jaxlib[cuda12]'],
-        'tpu': ['jaxlib[tpu]'],
+        'cpu': cpu_requirements,
+        'cuda12': gpu_requirements,
+        'gpu': gpu_requirements,
+        'tpu': tpu_requirements,
     },
     keywords=(
         'computational neuroscience, '

@@ -55,11 +55,7 @@ keywords = [
 dynamic = ['version', 'dependencies']
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
-
-
-[tool.flit.module]
-name = "BrainX"
+dependencies = { file = ["requirements.txt"] }
 
 
 [project.urls]
