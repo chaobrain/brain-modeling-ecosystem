@@ -1,14 +1,9 @@
 Ecosystem for Brain Modeling
 ============================
 
-
-
-
 We are building an ecosystem for general-purpose brain modeling, evolving from our previously experimental `BrainPy project <https://github.com/brainpy/BrainPy>`_.
 
-This ecosystem is led by Prof. Chaoming Wang at `Guangdong Institute of Intelligence Science and Technology <https://www.gdiist.cn/>`_.
-
-It a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.
+This ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and applications.
 
 The brain modeling ecosystem is designed to be modular, so you can use as much or as little of it as you need.
 
