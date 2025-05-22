@@ -61,6 +61,7 @@ jobs:
           python -m pip cache purge
           python -m pip install --upgrade pip setuptools
           python -m pip install -r requirements.txt
+          python -m pip install pytest
           if [ "${{ matrix.jax-version }}" == "" ]; then
             python -m pip install jax || exit 1
           else
