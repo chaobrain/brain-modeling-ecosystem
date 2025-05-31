@@ -70,5 +70,5 @@ jobs:
           python -m pip install . || exit 1
       - name: Test with pytest
         run: |
-          pytest brainx/
+          pytest BrainX/
 

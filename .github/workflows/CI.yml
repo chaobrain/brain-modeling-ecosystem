@@ -51,7 +51,7 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brainx/
+          pytest BrainX/
 
 
   test_macos:
@@ -82,7 +82,7 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brainx/
+          pytest BrainX/
 
 
   test_windows:
@@ -113,5 +113,5 @@ jobs:
           pip install .  --no-cache-dir
       - name: Test with pytest
         run: |
-          pytest brainx/ 
+          pytest BrainX/ 
 

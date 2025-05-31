@@ -1,7 +1,7 @@
 numpy>=1.15
 jax>=0.4.35
 brainunit==0.0.13
-brainstate==0.1.2
+brainstate==0.1.3
 brainevent>=0.0.1.post20250508, <0.0.2
 braincell>=0.0.1.post20250508, <0.0.2
 braintools==0.0.5
