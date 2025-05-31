@@ -16,9 +16,9 @@
 # -*- coding: utf-8 -*-
 
 
-import brainx as bme
+import BrainX
 
 
 class Test:
     def test(self):
-        print(bme.__version__)
+        print(BrainX.__version__)

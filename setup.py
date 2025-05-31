@@ -19,19 +19,17 @@ import io
 import os
 import re
 
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
 
 # version
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'brainx/', '__init__.py'), 'r') as f:
+with open(os.path.join(here, 'BrainX/', '__init__.py'), 'r') as f:
     init_py = f.read()
 version = re.search('__version__ = "(.*)"', init_py).groups()[0]
 
 # obtain long description from README
 with io.open(os.path.join(here, 'README.md'), 'r', encoding='utf-8') as f:
     README = f.read()
-
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
@@ -76,9 +74,9 @@ packages = find_packages(
         "experiments*",
         "build*",
         "dist*",
-        "brainx.egg-info*",
-        "brainx/__pycache__*",
-        "brainx/__init__.py"
+        "BrainX.egg-info*",
+        "BrainX/__pycache__*",
+        "BrainX/__init__.py"
     ]
 )
 
