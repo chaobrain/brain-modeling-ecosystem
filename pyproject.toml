@@ -12,9 +12,9 @@ exclude = [
     "benchmark*",
     "build*",
     "dist*",
-    "brainx.egg-info*",
-    "brainx/__pycache__*",
-    "brainx/__init__.py"
+    "BrainX.egg-info*",
+    "BrainX/__pycache__*",
+    "BrainX/__init__.py"
 ]
 
 
