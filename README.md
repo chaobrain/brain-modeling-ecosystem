@@ -17,8 +17,6 @@ It provides tools and libraries for researchers to model, simulate, train, and a
 
 **Core components** in this ecosystem includes:
 
-- [BrainPy](https://github.com/brainpy/BrainPy): Legacy integrative simulation framework for brain dynamics.
-
 - [BrainUnit](https://github.com/chaobrain/brainunit): Comprehensive physical units and unit-aware mathematical system for brain dynamics.
 
 - [BrainCell](https://github.com/chaobrain/braincell): Intuitive, parallel, and efficient simulation for biologically detailed brain cell modeling. 

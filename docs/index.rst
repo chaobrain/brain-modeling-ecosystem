@@ -76,6 +76,32 @@ Resources related to ``BrainPy``:
 
 
 
+`braintaichi`: Event-Driven Computation Framework
+-------------------------------------------------
+
+.. image:: https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png
+   :width: 250
+   :alt: braintaichi logo
+   :align: center
+
+
+Brain dynamics is characterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication.
+
+`braintaichi <https://github.com/chaobrain/braintaichi>`_ is designed for customizing event-driven operators in brain dynamics. It leverages `Taichi Lang <https://www.taichi-lang.org/>`_, a domain-specific language embedded in Python that helps easily write high-performance parallel programs in CPUs and GPUs, and can be embeded into JAX/XLA process.
+
+Nowadays, `braintaichi <https://github.com/chaobrain/braintaichi>`_ provides two levels of interface: (1) It provides a framework for customizing event-driven brain dynamics operators. (2) It implements several commonly used operators, including even-driven matrix-vector multiplication, `just-in-time connectivity operators <https://arxiv.org/abs/2311.05106>`_, and common sparse routines.
+
+Resources related to ``braintaichi``:
+
+* The documentation for braintaichi can be found in: `https://braintaichi.readthedocs.io/ <https://braintaichi.readthedocs.io/>`_
+
+
+
+
+--------------------------------------------------------------
+
+
+
 `brainunit`: Physical Units
 ------------------------------
 
@@ -146,30 +172,6 @@ Resources related to ``brainstate``:
 
 
 * The documentation for brainstate can be found in: `https://brainstate.readthedocs.io/ <https://brainstate.readthedocs.io/>`_
-
-
-
-
-
-`braintaichi`: Event-Driven Computation Framework
--------------------------------------------------
-
-.. image:: https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png
-   :width: 250
-   :alt: braintaichi logo
-   :align: center
-
-
-Brain dynamics is characterized by event-driven sparse computations, which is not compatible with existing operators for matrix multiplication.
-
-`braintaichi <https://github.com/chaobrain/braintaichi>`_ is designed for customizing event-driven operators in brain dynamics. It leverages `Taichi Lang <https://www.taichi-lang.org/>`_, a domain-specific language embedded in Python that helps easily write high-performance parallel programs in CPUs and GPUs, and can be embeded into JAX/XLA process.
-
-Nowadays, `braintaichi <https://github.com/chaobrain/braintaichi>`_ provides two levels of interface: (1) It provides a framework for customizing event-driven brain dynamics operators. (2) It implements several commonly used operators, including even-driven matrix-vector multiplication, `just-in-time connectivity operators <https://arxiv.org/abs/2311.05106>`_, and common sparse routines.
-
-Resources related to ``braintaichi``:
-
-* The documentation for braintaichi can be found in: `https://braintaichi.readthedocs.io/ <https://braintaichi.readthedocs.io/>`_
-
 
 
 
@@ -258,23 +260,28 @@ Resources related to ``braintools``:
    :caption: More Information
 
    citation.rst
-   book.md
-
-
 
 
 
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Documentation
+   :caption: Documentation of Older Packages
 
    brainpy <https://brainpy.readthedocs.io/>
+   braintaichi <https://braintaichi.readthedocs.io/>
+   book.md
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Documentation of New Packages
+
    brainunit <https://brainunit.readthedocs.io/>
    braincell <https://braincell.readthedocs.io/>
    brainstate <https://brainstate.readthedocs.io/>
    brainevent <https://brainevent.readthedocs.io/>
    brainscale <https://brainscale.readthedocs.io/>
    braintools <https://braintools.readthedocs.io/>
-   braintaichi <https://braintaichi.readthedocs.io/>
 
