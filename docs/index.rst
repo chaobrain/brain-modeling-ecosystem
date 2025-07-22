@@ -271,6 +271,7 @@ Resources related to ``braintools``:
    brainpy <https://brainpy.readthedocs.io/>
    braintaichi <https://braintaichi.readthedocs.io/>
    book.md
+   courses.md
 
 
 .. toctree::
