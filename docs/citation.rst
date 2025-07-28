@@ -129,16 +129,15 @@ If you are using `brainscale <https://github.com/chaobrain/brainscale>`_, please
 
 .. code-block:: bibtex
 
-   @article {Wang2024brainscale,
-        author = {Wang, Chaoming and Dong, Xingsi and Jiang, Jiedong and Ji, Zilong and Liu, Xiao and Wu, Si},
+   @article {Wang2024.09.24.614728,
+        author = {Wang, Chaoming and Dong, Xingsi and Ji, Zilong and Jiang, Jiedong and Liu, Xiao and Wu, Si},
         title = {BrainScale: Enabling Scalable Online Learning in Spiking Neural Networks},
         elocation-id = {2024.09.24.614728},
-        year = {2024},
+        year = {2025},
         doi = {10.1101/2024.09.24.614728},
         publisher = {Cold Spring Harbor Laboratory},
-        abstract = {Whole-brain simulation stands as one of the most ambitious endeavors of our time, yet it remains constrained by significant technical challenges. A critical obstacle in this pursuit is the absence of a scalable online learning framework capable of supporting the efficient training of complex, diverse, and large-scale spiking neural networks (SNNs). To address this limitation, we introduce BrainScale, a framework specifically designed to enable scalable online learning in SNNs. BrainScale achieves three key advancements for scalability. (1) Model diversity: BrainScale accommodates the complex dynamics of brain function by supporting a wide spectrum of SNNs through a streamlined abstraction of synaptic interactions. (2) Efficient scaling: Leveraging SNN intrinsic characteristics, BrainScale achieves an online learning algorithm with linear memory complexity. (3) User-friendly programming: BrainScale provides a programming environment that automates the derivation and execution of online learning computations for any user-defined models. Our comprehensive evaluations demonstrate BrainScale{\textquoteright}s efficiency and robustness, showing a hundred-fold improvement in memory utilization and several-fold acceleration in training speed while maintaining performance on long-term dependency tasks and neuromorphic datasets. These results suggest that BrainScale represents a crucial step towards brain-scale SNN training and whole-brain simulation.Competing Interest StatementThe authors have declared no competing interest.},
-        URL = {https://www.biorxiv.org/content/early/2024/09/24/2024.09.24.614728},
-        eprint = {https://www.biorxiv.org/content/early/2024/09/24/2024.09.24.614728.full.pdf},
+        URL = {https://www.biorxiv.org/content/early/2025/07/27/2024.09.24.614728},
+        eprint = {https://www.biorxiv.org/content/early/2025/07/27/2024.09.24.614728.full.pdf},
         journal = {bioRxiv}
    }
 
