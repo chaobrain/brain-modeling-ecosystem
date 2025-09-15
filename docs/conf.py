@@ -50,7 +50,9 @@ extensions = [
   'sphinx_autodoc_typehints',
   'myst_nb',
   'sphinx_thebe',
-  'sphinx_design'
+  'sphinx_design',
+  'sphinx_copybutton',
+  'nbsphinx',
 ]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -87,7 +89,11 @@ myst_enable_extensions = [
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+    '_build',
+    '**.ipynb_checkpoints',
+    'jupyter_execute/**',  # 排除 jupyter_execute 目录
+    ]
 
 html_theme = "sphinx_book_theme"
 html_logo = "_static/bdp-ecosystem.png"
@@ -101,7 +107,10 @@ html_last_updated_fmt = ""
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-jupyter_execute_notebooks = "off"
+html_css_files = ['css/custom.css']
+# jupyter_execute_notebooks = "off"
+nb_execution_mode = "off"
+
 thebe_config = {
   "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
   "repository_branch": "master",
@@ -109,11 +118,13 @@ thebe_config = {
 
 html_theme_options = {
   'show_toc_level': 2,
+    'repository_url': 'https://github.com/brainpy/BrainPy',  # 添加GitHub链接
+    'use_repository_button': True,  # 显示GitHub按钮
 }
 
 # -- Options for myst ----------------------------------------------
 # Notebook cell execution timeout; defaults to 30.
-execution_timeout = 200
+nb_execution_timeout = 200
 
 autodoc_default_options = {
   'exclude-members': '....,default_rng',
