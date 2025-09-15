@@ -18,6 +18,21 @@ Brain Simulation Ecosystem
 
 .. toctree::
    :hidden:
+   :caption: Tutorials
+   :maxdepth: 1
+
+
+
+.. toctree::
+   :hidden:
+   :caption: Example applications
+   :maxdepth: 1
+
+   brainstate_spiking_gamma_oscillation.ipynb
+
+
+.. toctree::
+   :hidden:
    :maxdepth: 2
    :caption: More Resources
 
