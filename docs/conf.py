@@ -28,9 +28,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'BDP Ecosystem'
-copyright = '2024, BDP Ecosystem'
-author = 'BDP Ecosystem'
+project = 'Brain Modeling Ecosystem (BrainX)'
+copyright = '2024, Brain Modeling Ecosystem (BrainX)'
+author = 'BrainX Developers'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -41,18 +41,18 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-  'sphinx.ext.autodoc',
-  'sphinx.ext.autosummary',
-  'sphinx.ext.intersphinx',
-  'sphinx.ext.mathjax',
-  'sphinx.ext.napoleon',
-  'sphinx.ext.viewcode',
-  'sphinx_autodoc_typehints',
-  'myst_nb',
-  'sphinx_thebe',
-  'sphinx_design',
-  'sphinx_copybutton',
-  'nbsphinx',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'sphinx_autodoc_typehints',
+    'myst_nb',
+    'sphinx_thebe',
+    'sphinx_design',
+    'sphinx_copybutton',
+    'nbsphinx',
 ]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -68,36 +68,42 @@ autosummary_generate = True
 master_doc = 'index'
 
 intersphinx_mapping = {
-  "python": ("https://docs.python.org/3.13", None),
-  "sphinx": ("https://www.sphinx-doc.org/en/master", None),
+    "python": ("https://docs.python.org/3.13", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 }
 nitpick_ignore = [
-  ("py:class", "docutils.nodes.document"),
-  ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
+    ("py:class", "docutils.nodes.document"),
+    ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
 ]
 
-suppress_warnings = ["myst.domains", "ref.ref"]
+suppress_warnings = [
+    "myst.domains",
+    "ref.ref",
+]
 
 numfig = True
 
 myst_enable_extensions = [
-  "dollarmath",
-  "amsmath",
-  "deflist",
-  "colon_fence",
+    "dollarmath",
+    "amsmath",
+    "deflist",
+    "colon_fence",
 ]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+exclude_patterns = [
+    '_build',
+    'Thumbs.db',
+    '.DS_Store',
     '_build',
     '**.ipynb_checkpoints',
     'jupyter_execute/**',  # 排除 jupyter_execute 目录
-    ]
+]
 
 html_theme = "sphinx_book_theme"
 html_logo = "_static/bdp-ecosystem.png"
-html_title = "BDP Ecosystem"
+html_title = "Brain Modeling Ecosystem"
 html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/bdp-ecosystem.png"
@@ -112,13 +118,13 @@ html_css_files = ['css/custom.css']
 nb_execution_mode = "off"
 
 thebe_config = {
-  "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
-  "repository_branch": "master",
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
 }
 
 html_theme_options = {
-  'show_toc_level': 2,
-    'repository_url': 'https://github.com/brainpy/BrainPy',  # 添加GitHub链接
+    'show_toc_level': 2,
+    'repository_url': 'https://github.com/chaobrain/brain-modeling-ecosystem',  # 添加GitHub链接
     'use_repository_button': True,  # 显示GitHub按钮
 }
 
@@ -127,5 +133,5 @@ html_theme_options = {
 nb_execution_timeout = 200
 
 autodoc_default_options = {
-  'exclude-members': '....,default_rng',
+    'exclude-members': '....,default_rng',
 }

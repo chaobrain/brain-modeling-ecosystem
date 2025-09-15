@@ -1,0 +1,19 @@
+# Change log
+
+↗️ = updated since previous release
+
+
+## v2025.9.15
+- `BrainX` packages: 
+  - `numpy>=1.15` ️↗️ 
+  - `jax>=0.4.35,<0.8.0` ↗️ 
+  - `brainunit==0.1.1` ↗️
+  - `brainstate==0.1.10` ↗️
+  - `brainevent==0.0.4` ↗️
+  - `braincell==0.0.4` ↗️
+  - `braintools==0.0.11` ↗️
+  - `brainscale==0.0.9` ↗️
+  - `brainmass==0.0.3` ↗️
+  - `msgpack>=1.1.0` ↗️
+  - `matplotlib` ↗️
+

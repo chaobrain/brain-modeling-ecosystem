@@ -11,3 +11,4 @@ sphinx-remove-toctrees
 jupyter-sphinx>=0.3.2
 sphinx-design
 myst-parser[linkify]
+nbsphinx
