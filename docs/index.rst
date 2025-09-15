@@ -22,6 +22,6 @@ Brain Simulation Ecosystem
    :caption: More Information
 
    doclink.md
-   citation.rst
+   citation.md
    books.md
    ncmp_courses.md
