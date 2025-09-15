@@ -20,6 +20,7 @@ After working through this content, you may wish to visit the [JAX documentation
 ```{toctree}
 :maxdepth: 1
 
-brainunit_unit_aware_computations.ipynb
-brainstate_transformations.ipynb
+brainstate_EI_spiking_network.ipynb
+brainmass_jansenrit_node_simulation.ipynb
 ```
+

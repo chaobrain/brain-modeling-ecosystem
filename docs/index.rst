@@ -13,6 +13,7 @@ Brain Simulation Ecosystem
 
    install.md
    getting_started.md
+   basics.md
 
 
 
