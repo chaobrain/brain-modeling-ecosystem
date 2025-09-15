@@ -1,4 +1,5 @@
-# Basics for of BrainX ecosystem
+# Basics for BrainX modeling
+
 
 ```{toctree}
 :maxdepth: 1

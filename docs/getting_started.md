@@ -1,4 +1,4 @@
-# Getting started with BrainX for brain simulation
+# Getting started with BrainX simulation
 
 [JAX](http://jax.readthedocs.io) is a Python package for accelerator-oriented array computation and program transformation, and is the engine behind cutting-edge AI research and production models at Google and beyond.
 
