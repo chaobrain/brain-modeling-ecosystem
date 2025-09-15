@@ -35,7 +35,7 @@ Brain Simulation Ecosystem
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: More Resources
+   :caption: More resources
 
    doclink.md
    citation.md

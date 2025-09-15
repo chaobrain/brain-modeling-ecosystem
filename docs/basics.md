@@ -1,4 +1,4 @@
-# Basics for BrainX modeling
+# Modeling basics in BrainX
 
 
 ```{toctree}

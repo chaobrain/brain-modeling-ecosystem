@@ -1,4 +1,4 @@
-# Contributing to BrainX Documentation
+# Contributing to BrainX documentation
 
 This site documents the BrainX ecosystem. Documentation is authored primarily in Markdown and built with 
 [Sphinx](https://www.sphinx-doc.org/) using [MyST](https://myst-parser.readthedocs.io/) and 
