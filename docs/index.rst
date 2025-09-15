@@ -6,14 +6,13 @@ Brain Simulation Ecosystem
    :file: index.html
 
 
-
 .. toctree::
    :hidden:
    :caption: Getting started
    :maxdepth: 1
 
-    install
-    getting_started
+   install.md
+   getting_started.md
 
 
 
@@ -22,7 +21,7 @@ Brain Simulation Ecosystem
    :maxdepth: 2
    :caption: More Information
 
-   doclink.rst
+   doclink.md
    citation.rst
-   book.md
-   courses.md
+   books.md
+   ncmp_courses.md
