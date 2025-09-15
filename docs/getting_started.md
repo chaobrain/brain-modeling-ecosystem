@@ -1,19 +1,45 @@
 # Starting brain simulation with BrainX 
 
-[JAX](http://jax.readthedocs.io) is a Python package for accelerator-oriented array computation and program transformation, and is the engine behind cutting-edge AI research and production models at Google and beyond.
+[BrainX](https://github.com/chaobrain) provides a comprehensive platform for 
+simulating brain activity at multiple scales, from individual neurons to 
+large-scale brain networks. 
+
+This tutorial will guide you through the basics of setting up and running 
+your first brain simulation using ``BrainX``.
+
 
 ## Who is this tutorial for?
 
-This tutorial is for those who want to get started using JAX and JAX-based AI libraries - the JAX AI stack - to build and train a simple neural network model. [JAX](http://jax.readthedocs.io) is a Python library for hardware accelerator-oriented array computation and program transformation, and is the engine behind cutting-edge AI research and production models at Google, Google DeepMind, and beyond. This tutorial assumes some familiarity with numerical computing in Python with [NumPy](http://numpy.org), and assumes some conceptual familiarity with defining, training, and evaluating machine learning models.
+- Learners new to BrainX who want a gentle, practical start.
+- Students of computational neuroscience exploring multi‑scale modeling.
+- Researchers and engineers prototyping neuron, network, or rate‑model simulations.
+- Python users comfortable with Jupyter notebooks and basic numerical computing.
+
+Recommended prerequisites:
+
+- Python, Jupyter, and basic familiarity with differential equations and signals.
+- A working BrainX [installation](./install.md) as set up in your environment for this repo.
 
 ## What does this tutorial cover?
 
-JAX focuses on [array-based](https://jax.readthedocs.io/en/latest/key-concepts.html#jax-arrays-jax-array) computation, and is at the core of a growing ecosystem of domain-specific tools. This tutorial introduces part of that JAX ecosystem designed for AI-related tasks, including:
+This tutorial walks through BrainX across three model scales with runnable notebooks:
 
-- [Flax NNX](http://flax.readthedocs.io): A machine learning library designed for defining and building scalable neural networks using JAX.
-- [Optax](http://optax.readthedocs.io): A high-performance function optimization library that comes with built-in optimizers and loss functions.
+- Single‑neuron dynamics with Hodgkin–Huxley:
+  - `braincell_HH_neuron.ipynb` — build, stimulate, and analyze a HH neuron; inspect spikes, IV/fi curves, and parameter effects.
+- Excitatory/Inhibitory spiking microcircuits:
+  - `braincell_HH_EI_network.ipynb` — assemble a small HH E/I network; study balance, oscillations, and raster activity.
+- Neural‑mass (mesoscopic) modeling:
+  - `brainmass_jansenrit_node_simulation.ipynb` — simulate the Jansen–Rit cortical column; explore rhythms and parameter sweeps.
+- Network‑level spiking state examples:
+  - `brainstate_EI_spiking_network.ipynb` — configure and run a larger E/I spiking network; examine rates, spectra, and stability.
+- And many more ...
 
-After working through this content, you may wish to visit the [JAX documentation site](http://jax.readthedocs.io/) for a deeper dive into the core JAX concepts.
+
+Along the way you will:
+
+- Configure models and connectivity, set simulation parameters, and run time‑stepping.
+- Record and visualize results (time series, rasters, spectra) and export data.
+- Perform small parameter scans and note tips for reproducibility.
 
 ## Let's get started!
 
