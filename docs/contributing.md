@@ -1,9 +1,11 @@
 # Contributing to BrainX Documentation
 
-This site documents the BrainX ecosystem. Documentation is authored primarily in Markdown and built with Sphinx using MyST and the Sphinx Book Theme.
+This site documents the BrainX ecosystem. Documentation is authored primarily in Markdown and built with 
+[Sphinx](https://www.sphinx-doc.org/) using [MyST](https://myst-parser.readthedocs.io/) and 
+the [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io).
 
 ## Prerequisites
-- Python 3.9+
+- Python 3.10+
 - From the repo root: `pip install -r docs/requirements.txt`
 
 ## Where to edit
