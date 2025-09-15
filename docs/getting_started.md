@@ -22,5 +22,7 @@ After working through this content, you may wish to visit the [JAX documentation
 
 brainstate_EI_spiking_network.ipynb
 brainmass_jansenrit_node_simulation.ipynb
+braincell_HH_neuron.ipynb
+braincell_HH_EI_network.ipynb
 ```
 
