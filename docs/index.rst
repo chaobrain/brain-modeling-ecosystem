@@ -19,9 +19,20 @@ Brain Simulation Ecosystem
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: More Information
+   :caption: More Resources
 
    doclink.md
    citation.md
    books.md
    ncmp_courses.md
+
+
+
+.. toctree::
+   :hidden:
+   :caption: Developer resources
+   :maxdepth: 1
+
+   contributing.md
+   CHANGELOG.md
+
