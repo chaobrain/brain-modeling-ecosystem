@@ -127,13 +127,13 @@ If you want to know more about the ecosystem, please visit the following links:
 ```{toctree}
 :maxdepth: 1
 
-brainunit documentation <https://brainunit.readthedocs.io/>
-braincell documentation <https://braincell.readthedocs.io/>
-brainstate documentation <https://brainstate.readthedocs.io/>
-brainevent documentation <https://brainevent.readthedocs.io/>
-brainscale documentation <https://brainscale.readthedocs.io/>
-brainmass documentation <https://brainmass.readthedocs.io/>
-braintools documentation <https://braintools.readthedocs.io/>
-brainpy documentation <https://brainpy.readthedocs.io/>
-braintaichi documentation <https://braintaichi.readthedocs.io/>
+BrainUnit documentation <https://brainunit.readthedocs.io/>
+BrainCell documentation <https://braincell.readthedocs.io/>
+BrainState documentation <https://brainstate.readthedocs.io/>
+BrainEvent documentation <https://brainevent.readthedocs.io/>
+BrainScale documentation <https://brainscale.readthedocs.io/>
+BrainMass documentation <https://brainmass.readthedocs.io/>
+BrainTools documentation <https://braintools.readthedocs.io/>
+BrainPy documentation <https://brainpy.readthedocs.io/>
+BrainTaichi documentation <https://braintaichi.readthedocs.io/>
 ```
