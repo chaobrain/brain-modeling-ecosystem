@@ -13,8 +13,6 @@ Brain Simulation Ecosystem
 
    install.md
    getting_started.md
-   basics.md
-
 
 
 .. toctree::
@@ -22,6 +20,7 @@ Brain Simulation Ecosystem
    :caption: Tutorials
    :maxdepth: 1
 
+   basics.md
    brainstate_LIF_neuron.ipynb
 
 

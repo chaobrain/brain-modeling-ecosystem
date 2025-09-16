@@ -54,7 +54,7 @@
 
 **五、相关链接**：
 
-- [报名链接]([meeting.cns.org.cn/NCMP/](https://meeting.cns.org.cn/NCMP/))
+- [报名链接](https://meeting.cns.org.cn/NCMP/)
 - [GitHub链接](https://github.com/brainpy/1st-neural-modeling-and-programming-course)
 
 

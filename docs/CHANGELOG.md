@@ -12,7 +12,7 @@
   - `brainevent==0.0.4` ↗️
   - `braincell==0.0.4` ↗️
   - `braintools==0.0.11` ↗️
-  - `brainscale==0.0.9` ↗️
+  - `brainscale==0.0.10` ↗️
   - `brainmass==0.0.3` ↗️
   - `msgpack>=1.1.0` ↗️
   - `matplotlib` ↗️
