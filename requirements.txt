@@ -5,6 +5,6 @@ brainstate==0.1.9
 brainevent==0.0.4
 braincell==0.0.4
 braintools==0.0.10
-brainscale==0.0.9
+brainscale==0.0.10
 msgpack>=1.1.0
 matplotlib
