@@ -49,6 +49,8 @@ Along the way you will:
 brainstate_EI_spiking_network.ipynb
 brainmass_jansenrit_node_simulation.ipynb
 braincell_HH_neuron.ipynb
+braincell_HH_neuron-zh.ipynb
 braincell_HH_EI_network.ipynb
+braincell_HH_EI_network-zh.ipynb
 ```
 
