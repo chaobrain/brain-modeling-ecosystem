@@ -1,47 +1,84 @@
-# Installing the stack
+# Installing the ecosystem
 
-`BrainX` is a metapackage that can be installed with the following command:
+BrainX is a meta-package that installs a curated set of BrainX components known to work well together.
 
-```
-pip install BrainX
-```
+## Requirements
 
-This pins particular versions of component projects which are known to work correctly
-together via the integration tests in this repository. Packages include:
+- Python 3.10-3.13
+- pip 23+ (`python -m pip install --upgrade pip`)
+- Optional: GPU/TPU drivers and libraries if you plan to use accelerators
 
-- [BrainPy](https://github.com/brainpy/BrainPy)
--
+## Quick install
 
-## Pinned versions
-
-The `BrainX` meta-package does periodic releases, with date-based version strings. For
-example, if you'd like to pin the set of packages from September 2025, you can use this installation
-command:
-
-```
-pip install BrainX==2025.9.13
+```bash
+pip install -U BrainX
 ```
 
-For the full list of released versions and the pinned packages, refer to
-the [Change log](https://github.com/chaobrain/brain-modeling-ecosystem/blob/main/docs/CHANGELOG.md).
+This installs pinned versions of the core packages:
 
-## Hardware support
+- [brainunit](https://github.com/chaobrain/brainunit)
+- [brainstate](https://github.com/chaobrain/brainstate)
+- [brainevent](https://github.com/chaobrain/brainevent)
+- [braincell](https://github.com/chaobrain/braincell)
+- [brainscale](https://github.com/chaobrain/brainscale)
+- [brainmass](https://github.com/chaobrain/brainmass)
+- [braintools](https://github.com/chaobrain/braintools)
+- [jax](https://github.com/jax-ml/jax) 
+- and common utilities (numpy, msgpack, matplotlib)
 
-To install `BrainX` with hardware-specific JAX support, add the JAX installation
-command in the same `pip install` invocation. For example:
+## Hardware-specific installs
 
+Choose one that matches your platform and CUDA/toolchain:
+
+```bash
+# CPU only
+pip install -U BrainX[cpu]
+
+# NVIDIA GPU (CUDA 12.x)
+pip install -U BrainX[cuda12]
+
+# TPU
+pip install -U BrainX[tpu]
 ```
-pip install BrainX "jax[cuda]"  # JAX with GPU/CUDA support
-pip install BrainX "jax[tpu]"  # JAX with TPU support
+
+
+For detailed JAX wheel options and compatible CUDA/cuDNN versions,
+see [JAX installation](https://docs.jax.dev/en/latest/installation.html).
+
+
+
+
+
+## Pin a specific BrainX release
+
+Releases use date-style versions. Example:
+
+```bash
+pip install BrainX==2025.9.15
 ```
 
-Or:
+See the change log for the exact component versions: [docs/CHANGELOG.md](./CHANGELOG.md)
 
+## From source (development)
+
+```bash
+git clone https://github.com/chaobrain/brain-modeling-ecosystem.git
+cd brain-modeling-ecosystem
+python -m pip install -e .
 ```
-pip install BrainX[cuda12]  # with CUDA 12 support
-pip install BrainX[tpu]  # with TPU support
+
+Optional docs deps: `python -m pip install -r docs/requirements.txt`
+
+## Verify your installation
+
+```bash
+python -c "import BrainX, jax; print('BrainX OK'); print('JAX devices:', jax.devices())"
 ```
 
-For more information on available options for hardware-specific JAX installation, refer
-to [JAX installation](https://docs.jax.dev/en/latest/installation.html).
+If using a GPU, you should see a CUDA device listed.
 
+## Troubleshooting
+
+- Upgrade pip/setuptools/wheel: `python -m pip install -U pip setuptools wheel`
+- On GPU, ensure the installed JAX wheel matches your CUDA toolkit version
+- If import fails, try a clean env: `python -m venv .venv && .venv\\Scripts\\activate && pip install -U BrainX`
