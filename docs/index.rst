@@ -21,7 +21,6 @@ Brain Simulation Ecosystem
    :maxdepth: 1
 
    basics.md
-   brainstate_LIF_neuron.ipynb
 
 
 .. toctree::
@@ -35,7 +34,7 @@ Brain Simulation Ecosystem
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: More resources
+   :caption: User resources
 
    doclink.md
    citation.md

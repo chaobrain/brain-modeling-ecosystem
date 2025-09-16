@@ -46,10 +46,11 @@ Along the way you will:
 ```{toctree}
 :maxdepth: 1
 
+brainstate_LIF_neuron.ipynb
 brainstate_EI_spiking_network.ipynb
-brainmass_jansenrit_node_simulation.ipynb
 braincell_HH_neuron.ipynb
 braincell_HH_EI_network.ipynb
+brainmass_jansenrit_node_simulation.ipynb
 brainmass_Modeling_MEG_data_zh.ipynb
 ```
 
