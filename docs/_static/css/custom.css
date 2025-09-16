@@ -195,45 +195,18 @@ body:has(.hero) .bd-article > section > h1 {
     padding-inline: 50px;      /* 左右内边距 */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center;
     background: #ffffff;
-    border-radius: 16px;
-    /* 阴影效果 */
+    border-radius: 16px; */
+    /* 阴影效果
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    z-index: 2;  
+    z-index: 2;   */
 }
 
-/* 添加微妙的背景装饰 */
-.image-section .text-body::before {
-    content: ''; /* 伪元素内容 */
-    position: absolute;/* 绝对定位 */
-    top: -20px;/* 上偏移 */
-    right: -20px;/* 右偏移 */
-    width: 100px;/* 宽度 */
-    height: 100px;/* 高度 */
-    /* 渐变背景 */
-    background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
-    opacity: 0.05;/* 透明度 */
-    border-radius: 50%;/* 圆形 */
-    z-index: -1;/* 置于底层 */
-}
 
-/* 另一个装饰元素 */
-.image-section .text-body::after {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: -30px;
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);
-    opacity: 0.05;
-    border-radius: 50%;
-    z-index: -1;
-}
 
 /* 移除最后一个元素的底部外边距 */
 .image-section .text-body *:last-child {
