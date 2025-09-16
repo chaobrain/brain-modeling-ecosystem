@@ -28,7 +28,7 @@ Brain Simulation Ecosystem
    :caption: Example applications
    :maxdepth: 1
 
-   brainstate_spiking_gamma_oscillation.ipynb
+   brain_simulation_point_neuron.md
 
 
 .. toctree::
