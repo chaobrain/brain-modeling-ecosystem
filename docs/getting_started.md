@@ -53,6 +53,6 @@ braincell_HH_neuron-zh.ipynb
 braincell_HH_EI_network.ipynb
 brainmass_jansenrit_node_simulation.ipynb
 braincell_HH_EI_network-zh.ipynb
-brainmass_Modeling_MEG_data_zh.ipynb
+brainmass_Whole_brain_neural_mass_modeling_zh.ipynb
 ```
 
