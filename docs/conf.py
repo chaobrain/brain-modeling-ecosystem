@@ -13,6 +13,12 @@
 # limitations under the License.
 # ==============================================================================
 
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('./'))
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -28,12 +34,18 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Brain Modeling Ecosystem (BrainX)'
-copyright = '2024, Brain Modeling Ecosystem (BrainX)'
+project = 'Brain Simulation Ecosystem (BrainX)'
+copyright = '2024, Brain Simulation Ecosystem (BrainX)'
 author = 'BrainX Developers'
 
+import BrainX
+
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = BrainX.__version__
+
+from highlight_test_lexer import fix_ipython2_lexer_in_notebooks
+
+fix_ipython2_lexer_in_notebooks(os.path.abspath(__file__))
 
 # -- General configuration ---------------------------------------------------
 
