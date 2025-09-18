@@ -1,4 +1,4 @@
-# Documentation Links
+# Documentation links
 
 This ecosystem is a collection of tools, libraries, and frameworks that can be used to build brain dynamics models and
 applications.
