@@ -8,6 +8,14 @@ Brain Simulation Ecosystem
 
 .. toctree::
    :hidden:
+   :maxdepth: 1
+
+
+   core_components.rst
+
+
+.. toctree::
+   :hidden:
    :caption: Getting started
    :maxdepth: 1
 
