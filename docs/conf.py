@@ -45,7 +45,7 @@ release = BrainX.__version__
 
 from highlight_test_lexer import fix_ipython2_lexer_in_notebooks
 
-fix_ipython2_lexer_in_notebooks(os.path.abspath(__file__))
+fix_ipython2_lexer_in_notebooks(os.path.dirname(os.path.abspath(__file__)))
 
 # -- General configuration ---------------------------------------------------
 
@@ -147,3 +147,8 @@ nb_execution_timeout = 200
 autodoc_default_options = {
     'exclude-members': '....,default_rng',
 }
+
+# Add Plotly JS once for your whole site (optional but recommended)
+html_js_files = [
+    "https://cdn.plot.ly/plotly-latest.min.js",  # or pin a specific version
+]

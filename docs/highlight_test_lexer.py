@@ -107,6 +107,9 @@ def fix_ipython2_lexer_in_notebooks(directory_path):
 
 
 if __name__ == "__main__":
+    import os
+    print(os.path.dirname(os.path.abspath(__file__)))
+
     # 使用当前目录，或者指定您的文档目录路径
     target_directory = input("请输入包含.ipynb文件的目录路径(直接回车使用当前目录): ").strip()
 
