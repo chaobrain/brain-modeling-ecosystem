@@ -4,7 +4,7 @@ brainunit==0.1.1
 brainstate==0.1.10
 brainevent==0.0.4
 braincell==0.0.4
-braintools==0.0.11
+braintools==0.0.12
 brainscale==0.0.10
 brainmass==0.0.3
 msgpack>=1.1.0
