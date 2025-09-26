@@ -472,9 +472,6 @@ Brain Simulation Ecosystem Core Component
                             <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>   
-                </div>
-
-                <div class="card-grid">
 
                     <div class="card">
                         <div class="card-image">
