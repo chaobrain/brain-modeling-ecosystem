@@ -552,7 +552,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainScale</h3>
-                            <p class="card-description">Online learnng system for large-scale brain models.</p>
+                            <p class="card-description">Online learning system for large-scale brain models.</p>
                             <a href="https://brainscale.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
