@@ -447,7 +447,7 @@ Brain Simulation Ecosystem Core Component
                 <div class="hero-content">
                     <h1>Brain simulation ecosystem</h1>
                     <p>Advanced tools for brain dynamics modeling, simulation, and analysis.</p>
-                    <a href="#install" class="cta-button">Get Started</a>
+                    <a href="./getting_started.html" class="cta-button">Get Started</a>
                 </div>
                 <img src="./_static/bdp-ecosystem.png" class="hero-image">
             </div>
@@ -475,7 +475,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainState</h3>
-                            <p class="card-description">State-based compilation system for easy JIT transformation of brain models.</p>
+                            <p class="card-description">Modeling of point-based spiking neural networks.</p>
                             <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -486,7 +486,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainCell</h3>
-                            <p class="card-description">Dendritic computation package for biologically detailed brain cell modeling.</p>
+                            <p class="card-description">Modeling of biologically detailed Hodgkin–Huxley neurons and networks.</p>
                             <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -497,7 +497,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainMass</h3>
-                            <p class="card-description">Large-scale simulation tools for massive neural network models.</p>
+                            <p class="card-description">Whole-brain modeling with differentiable neural mass models.</p>
                             <a href="https://brainmass.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -515,7 +515,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainTaichi</h3>
-                            <p class="card-description">Event-driven computation framework for custom brain dynamics operators.</p>
+                            <p class="card-description">Event-driven operator customization based on Taichi Lang.</p>
                             <a href="https://braintaichi.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -526,7 +526,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainUnit</h3>
-                            <p class="card-description">Physical units and unit-aware mathematical system for brain dynamics.</p>
+                            <p class="card-description">Physical units and unit-aware mathematical system for brain modeling.</p>
                             <a href="https://brainunit.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -537,7 +537,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainEvent</h3>
-                            <p class="card-description">Event-driven algorithms and data structures for brain dynamics computation.</p>
+                            <p class="card-description">Event-driven algorithms and data structures for brain dynamics.</p>
                             <a href="https://brainevent.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -548,7 +548,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainScale</h3>
-                            <p class="card-description">Multi-scale modeling tools for bridging different levels of brain organization.</p>
+                            <p class="card-description">Online learnng system for large-scale brain models.</p>
                             <a href="https://brainscale.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -559,7 +559,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainTools</h3>
-                            <p class="card-description">Utilities and helper functions for brain simulation and analysis workflows.</p>
+                            <p class="card-description">Modeling tools for general-purpose brain simulation.</p>
                             <a href="https://braintools.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -576,7 +576,7 @@ Brain Simulation Ecosystem Core Component
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainState</h3>
-                            <p class="card-description">State-based compilation system for easy JIT transformation of brain models.</p>
+                            <p class="card-description">State-based IR compilation for brain models.</p>
                             <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div> 
