@@ -1,5 +1,7 @@
-Brain Simulation Ecosystem Core Component 
-=========================================
+Core components
+===============
+
+
 .. raw:: html
 
     <!DOCTYPE html>
@@ -137,7 +139,7 @@ Brain Simulation Ecosystem Core Component
                 transition: all 0.3s ease;
                 box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
                 align-self: flex-start;
-                width: max-content; 
+                width: max-content;
             }
             html[data-theme="dark"] .cta-button {
                 background: #8ab4f8;
@@ -201,7 +203,7 @@ Brain Simulation Ecosystem Core Component
                 margin-right: auto;
             }
 
-            
+
             .card {
                 background: white;
                 border-radius: 12px;
@@ -471,7 +473,7 @@ Brain Simulation Ecosystem Core Component
                             <p class="card-description">Legacy framework for brain dynamics programming with high flexibility and performance.</p>
                             <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
-                    </div>   
+                    </div>
 
                     <div class="card">
                         <div class="card-image">
@@ -510,9 +512,9 @@ Brain Simulation Ecosystem Core Component
 
             <div class="container">
                 <h2 class="section-title">Infrastructure</h2>
-                
+
                 <div class="card-grid">
-                    
+
                     <div class="card">
                         <div class="card-image">
                             <img src="https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png" alt="BrainTaichi Logo">
@@ -567,12 +569,12 @@ Brain Simulation Ecosystem Core Component
                             <a href="https://braintools.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
-                </div> 
-            </div>  
+                </div>
+            </div>
 
             <div class="container">
                 <h2 class="section-title">Compilation</h2>
-                
+
                 <div class="card-grid">
                     <div class="card">
                         <div class="card-image">
@@ -583,38 +585,39 @@ Brain Simulation Ecosystem Core Component
                             <p class="card-description">State-based IR compilation for brain models.</p>
                             <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
-                    </div> 
-                </div>  
-             
+                    </div>
+                </div>
+
                 
                 <section id="install" class="install-section">
-                        <h2 class="section-title">Installation</h2>
-                        
-                        <div class="tabs">
-                            <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
-                            <div class="tab" onclick="switchTab(event, 'gpu')">GPU (CUDA 12.0)</div>
-                            <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
+                    <h2 class="section-title">Installation</h2>
+                    
+                    <div class="tabs">
+                        <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
+                        <div class="tab" onclick="switchTab(event, 'gpu')">GPU</div>
+                        <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
+                    </div>
+
+                    <div id="cpu" class="tab-content active">
+                        <div class="code-block">
+                            pip install BrainX[cpu] -U
                         </div>
-                        
-                        <div id="cpu" class="tab-content active">
-                            <div class="code-block">
-                                pip install BrainX[cpu] -U
-                            </div>
+                    </div>
+
+                    <div id="gpu" class="tab-content" style="display:none;">
+                        <div class="code-block">
+                            pip install BrainX[cuda12] -U <br/>
+                            pip install BrainX[cuda13] -U
                         </div>
-                        
-                        <div id="gpu" class="tab-content" style="display:none;">
-                            <div class="code-block">
-                                pip install BrainX[cuda12] -U
-                            </div>
+                    </div>
+                    
+                    <div id="tpu" class="tab-content" style="display:none;">
+                        <div class="code-block">
+                            pip install BrainX[tpu] -U
                         </div>
-                        
-                        <div id="tpu" class="tab-content" style="display:none;">
-                            <div class="code-block">
-                                pip install BrainX[tpu] -U
-                            </div>
-                        </div>
-                    </section>
-            </div>           
+                    </div>
+                </section>
+            </div>
         </main>
         
         

@@ -61,7 +61,8 @@ def add_option_to_brain_dependencies(lines: list, symbol: str):
 
 
 cpu_requirements = add_option_to_brain_dependencies(requirements, 'cpu')
-gpu_requirements = add_option_to_brain_dependencies(requirements, 'cuda12')
+cuda12_requirements = add_option_to_brain_dependencies(requirements, 'cuda12')
+cuda13_requirements = add_option_to_brain_dependencies(requirements, 'cuda13')
 tpu_requirements = add_option_to_brain_dependencies(requirements, 'tpu')
 
 # installation packages
@@ -84,10 +85,10 @@ packages = find_packages(
 setup(
     name='BrainX',
     version=version,
-    description='Ecosystem for Brain Modeling.',
+    description='Ecosystem for Brain Simulation.',
     long_description=README,
     long_description_content_type="text/markdown",
-    author='Brain Modeling Ecosystem Developers',
+    author='BrainX Ecosystem',
     author_email='chao.brain@qq.com',
     packages=packages,
     python_requires='>=3.10',
@@ -100,15 +101,16 @@ setup(
     },
     extras_require={
         'cpu': cpu_requirements,
-        'cuda12': gpu_requirements,
-        'gpu': gpu_requirements,
+        'cuda12': cuda12_requirements,
+        'cuda13': cuda13_requirements,
         'tpu': tpu_requirements,
     },
-    keywords=(
-        'computational neuroscience, '
-        'brain-inspired computation, '
-        'brain dynamics programming'
-    ),
+    keywords=[
+        'computational neuroscience',
+        'brain-inspired computation',
+        'brain simulation',
+        'brain modeling',
+    ],
     classifiers=[
         'Natural Language :: English',
         'Operating System :: OS Independent',
