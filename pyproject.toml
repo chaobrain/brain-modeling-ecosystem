@@ -24,11 +24,11 @@ universal = true
 
 [project]
 name = "BrainX"
-description = "Ecosystem for Brain Modeling."
+description = "Ecosystem for Brain Simulation."
 readme = 'README.md'
 license = { text = 'Apache-2.0 license' }
 requires-python = '>=3.10'
-authors = [{ name = 'Brain Modeling Ecosystem Developers', email = 'chao.brain@qq.com' }]
+authors = [{ name = 'BrainX Ecosystem', email = 'chao.brain@qq.com' }]
 classifiers = [
     'Natural Language :: English',
     'Operating System :: OS Independent',
@@ -50,7 +50,8 @@ classifiers = [
 keywords = [
     'computational neuroscience',
     'brain-inspired computation',
-    'brain dynamics programming',
+    'brain simulation',
+    'brain modeling',
 ]
 dynamic = ['version', 'dependencies']
 

@@ -551,7 +551,7 @@ Core components
                     
                     <div class="tabs">
                         <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
-                        <div class="tab" onclick="switchTab(event, 'gpu')">GPU (CUDA 12.0)</div>
+                        <div class="tab" onclick="switchTab(event, 'gpu')">GPU</div>
                         <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
                     </div>
                     
@@ -563,7 +563,8 @@ Core components
                     
                     <div id="gpu" class="tab-content" style="display:none;">
                         <div class="code-block">
-                            pip install BrainX[cuda12] -U
+                            pip install BrainX[cuda12] -U <br/>
+                            pip install BrainX[cuda13] -U
                         </div>
                     </div>
                     
