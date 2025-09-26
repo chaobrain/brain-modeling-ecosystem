@@ -36,7 +36,13 @@ def fix_ipython2_lexer_in_notebooks(directory_path):
     for file_path in notebook_files:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+                original_content = f.read()
+
+            try:
+                data = json.loads(original_content)
+            except json.JSONDecodeError as e:
+                print(f"处理文件 {file_path} 时出错: {str(e)}")
+                continue
 
             needs_fix = False
 
@@ -88,7 +94,7 @@ def fix_ipython2_lexer_in_notebooks(directory_path):
                 # 创建备份
                 backup_path = file_path + '.backup'
                 with open(backup_path, 'w', encoding='utf-8') as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
+                    f.write(original_content)
 
                 # 保存修复后的文件
                 with open(file_path, 'w', encoding='utf-8') as f:
