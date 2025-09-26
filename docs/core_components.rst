@@ -189,12 +189,16 @@ Brain Simulation Ecosystem Core Component
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
                 gap: 2rem;
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .card-grid:has(.card:nth-child(1):last-child) {
                 grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
                 max-width: 430px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             
@@ -468,7 +472,7 @@ Brain Simulation Ecosystem Core Component
                             <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
-                    
+
                     <div class="card">
                         <div class="card-image">
                             <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
@@ -490,7 +494,10 @@ Brain Simulation Ecosystem Core Component
                             <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
+                    
+                </div>
 
+                <div class="card-grid">
                     <div class="card">
                         <div class="card-image">
                             <img src="./_static/brainmass.png" alt="BrainMass Logo">
