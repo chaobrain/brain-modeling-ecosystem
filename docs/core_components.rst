@@ -471,7 +471,10 @@ Brain Simulation Ecosystem Core Component
                             <p class="card-description">Legacy framework for brain dynamics programming with high flexibility and performance.</p>
                             <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
-                    </div>
+                    </div>   
+                </div>
+
+                <div class="card-grid">
 
                     <div class="card">
                         <div class="card-image">
@@ -494,10 +497,7 @@ Brain Simulation Ecosystem Core Component
                             <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
-                    
-                </div>
 
-                <div class="card-grid">
                     <div class="card">
                         <div class="card-image">
                             <img src="./_static/brainmass.png" alt="BrainMass Logo">
