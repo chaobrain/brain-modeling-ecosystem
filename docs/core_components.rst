@@ -1,7 +1,5 @@
-Core components
-===============
-
-
+Brain Simulation Ecosystem Core Component 
+=========================================
 .. raw:: html
 
     <!DOCTYPE html>
@@ -61,11 +59,14 @@ Core components
                 position: relative;
                 overflow: hidden;
                 margin: 0 auto 1rem;
-                width: 55%;
+                width: 100%;
+                max-width: 1400px;
                 transition: background 0.3s ease;
                 border: none;
                 box-shadow: none;
-                border-radius: 0px;
+                border-radius: 24px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+                background-size: cover;
             }
             
             html[data-theme="dark"] .hero {
@@ -94,6 +95,10 @@ Core components
                 position: relative;
                 z-index: 2;
                 width: 100%;
+                text-align: left; /* 改为左对齐 */
+                display: flex;
+                flex-direction: column;
+                padding-inline: 100px;
             }
             
             .hero h1 {
@@ -113,7 +118,7 @@ Core components
                 max-width: 800px;
                 margin: 0 auto 2rem;
                 opacity: 0.9;
-                color: white;
+                color: #bdc1c6;
                 transition: color 0.3s ease;
             }
             
@@ -123,14 +128,16 @@ Core components
             
             .cta-button {
                 display: inline-block;
-                background: #00bcd4;
-                color: white;
+                background: #1A73E8;
+                color:#ffffff !important;
                 padding: 1rem 2rem;
-                border-radius: 50px;
+                border-radius: 5px;
                 text-decoration: none;
                 font-weight: 600;
                 transition: all 0.3s ease;
                 box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+                align-self: flex-start;
+                width: max-content; 
             }
             html[data-theme="dark"] .cta-button {
                 background: #8ab4f8;
@@ -184,6 +191,12 @@ Core components
                 gap: 2rem;
                 margin-bottom: 4rem;
             }
+
+            .card-grid:has(.card:nth-child(1):last-child) {
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+                max-width: 430px;
+            }
+
             
             .card {
                 background: white;
@@ -241,6 +254,7 @@ Core components
             .card-title {
                 font-size: 1.5rem;
                 margin-bottom: 1rem;
+                margin-top: 1rem;
                 color: #0a1172;
                 transition: color 0.3s ease;
             }
@@ -431,9 +445,9 @@ Core components
         <header class="hero">
             <div class="container1">
                 <div class="hero-content">
-                    <h1>Brain Simulation Ecosystem</h1>
-                    <p>Advanced tools for brain dynamics modeling, simulation, and analysis</p>
-                    <a href="./getting_started.html" class="cta-button">Get Started</a>
+                    <h1>Brain simulation ecosystem</h1>
+                    <p>Advanced tools for brain dynamics modeling, simulation, and analysis.</p>
+                    <a href="#install" class="cta-button">Get Started</a>
                 </div>
                 <img src="./_static/bdp-ecosystem.png" class="hero-image">
             </div>
@@ -441,7 +455,7 @@ Core components
 
         <main class="main-content">
             <div class="container">
-                <h2 class="section-title">Core Components</h2>
+                <h2 class="section-title">Differentiable brain modeling</h2>
                 
                 <div class="card-grid">
                     <div class="card">
@@ -457,11 +471,51 @@ Core components
                     
                     <div class="card">
                         <div class="card-image">
+                            <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">BrainState</h3>
+                            <p class="card-description">State-based compilation system for easy JIT transformation of brain models.</p>
+                            <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://raw.githubusercontent.com/chaobrain/braincell/main/docs/_static/braincell.png" alt="BrainCell Logo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">BrainCell</h3>
+                            <p class="card-description">Dendritic computation package for biologically detailed brain cell modeling.</p>
+                            <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./_static/brainmass.png" alt="BrainMass Logo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">BrainMass</h3>
+                            <p class="card-description">Large-scale simulation tools for massive neural network models.</p>
+                            <a href="https://brainmass.readthedocs.io/" class="card-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="section-title">Infrastructure</h2>
+                
+                <div class="card-grid">
+                    
+                    <div class="card">
+                        <div class="card-image">
                             <img src="https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png" alt="BrainTaichi Logo">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainTaichi</h3>
-                            <p class="card-description">Event-driven computation based on Taichi Lang.</p>
+                            <p class="card-description">Event-driven computation framework for custom brain dynamics operators.</p>
                             <a href="https://braintaichi.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -476,36 +530,14 @@ Core components
                             <a href="https://brainunit.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://raw.githubusercontent.com/chaobrain/braincell/main/docs/_static/braincell.png" alt="BrainCell Logo">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">BrainCell</h3>
-                            <p class="card-description">Biologically detailed brain cell modeling.</p>
-                            <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">BrainState</h3>
-                            <p class="card-description">State-based transformation system for high-performance brain modeling.</p>
-                            <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                    
+
                     <div class="card">
                         <div class="card-image">
                             <img src="./_static/brainevent.png" alt="BrainEvent Logo">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainEvent</h3>
-                            <p class="card-description">Event-driven algorithms and data structures for brain dynamics.</p>
+                            <p class="card-description">Event-driven algorithms and data structures for brain dynamics computation.</p>
                             <a href="https://brainevent.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
@@ -516,19 +548,8 @@ Core components
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainScale</h3>
-                            <p class="card-description">Online learnng system for brain-scale models.</p>
+                            <p class="card-description">Multi-scale modeling tools for bridging different levels of brain organization.</p>
                             <a href="https://brainscale.readthedocs.io/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="./_static/brainmass.png" alt="BrainMass Logo">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">BrainMass</h3>
-                            <p class="card-description">Whole-brain modeling with differentiable neural mass models.</p>
-                            <a href="https://brainmass.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
 
@@ -538,42 +559,58 @@ Core components
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainTools</h3>
-                            <p class="card-description">Utilities and helper functions for brain simulation and analysis.</p>
+                            <p class="card-description">Utilities and helper functions for brain simulation and analysis workflows.</p>
                             <a href="https://braintools.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
+                </div> 
+            </div>  
 
-                </div>
-
+            <div class="container">
+                <h2 class="section-title">Compilation</h2>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">BrainState</h3>
+                            <p class="card-description">State-based compilation system for easy JIT transformation of brain models.</p>
+                            <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
+                        </div>
+                    </div> 
+                </div>  
+             
                 
                 <section id="install" class="install-section">
-                    <h2 class="section-title">Installation</h2>
-                    
-                    <div class="tabs">
-                        <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
-                        <div class="tab" onclick="switchTab(event, 'gpu')">GPU (CUDA 12.0)</div>
-                        <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
-                    </div>
-                    
-                    <div id="cpu" class="tab-content active">
-                        <div class="code-block">
-                            pip install BrainX[cpu] -U
+                        <h2 class="section-title">Installation</h2>
+                        
+                        <div class="tabs">
+                            <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
+                            <div class="tab" onclick="switchTab(event, 'gpu')">GPU (CUDA 12.0)</div>
+                            <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
                         </div>
-                    </div>
-                    
-                    <div id="gpu" class="tab-content" style="display:none;">
-                        <div class="code-block">
-                            pip install BrainX[cuda12] -U
+                        
+                        <div id="cpu" class="tab-content active">
+                            <div class="code-block">
+                                pip install BrainX[cpu] -U
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div id="tpu" class="tab-content" style="display:none;">
-                        <div class="code-block">
-                            pip install BrainX[tpu] -U
+                        
+                        <div id="gpu" class="tab-content" style="display:none;">
+                            <div class="code-block">
+                                pip install BrainX[cuda12] -U
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </div>
+                        
+                        <div id="tpu" class="tab-content" style="display:none;">
+                            <div class="code-block">
+                                pip install BrainX[tpu] -U
+                            </div>
+                        </div>
+                    </section>
+            </div>           
         </main>
         
         
