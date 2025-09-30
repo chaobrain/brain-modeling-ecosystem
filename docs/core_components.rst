@@ -470,19 +470,8 @@ Core components
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">BrainPy</h3>
-                            <p class="card-description">Legacy framework for brain dynamics programming with high flexibility and performance.</p>
-                            <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">BrainState</h3>
                             <p class="card-description">Modeling of point-based spiking neural networks.</p>
-                            <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
+                            <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                         </div>
                     </div>
 
