@@ -37,7 +37,7 @@ Along the way you will:
 - Perform small parameter scans and note tips for reproducibility.
 
 
-## Let's get started!
+## English version
 
 ```{toctree}
 :maxdepth: 1
@@ -45,11 +45,18 @@ Along the way you will:
 brainstate_LIF_neuron.ipynb
 brainstate_EI_spiking_network.ipynb
 braincell_HH_neuron.ipynb
+braincell_HH_EI_network.ipynb
+braincell_morphological_golgi_cell.ipynb
+brainmass_jansenrit_node_simulation.ipynb
+```
+
+
+## 中文版本
+
+```{toctree}
+:maxdepth: 1
 braincell_HH_neuron-zh.ipynb
 braincell_HH_EI_network.ipynb
 braincell_HH_EI_network-zh.ipynb
-braincell_morphological_golgi_cell.ipynb
-brainmass_jansenrit_node_simulation.ipynb
 brainmass_Modeling_MEG_data_zh.ipynb
 ```
-
