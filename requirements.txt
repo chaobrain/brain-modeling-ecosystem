@@ -1,11 +1,12 @@
 numpy>=1.15
-jax>=0.4.35,<0.8.0
+jax>=0.5.0,<0.8.0
+brainpy==3.0.0
 brainunit==0.1.1
-brainstate==0.1.10
+brainstate==0.2.0
 brainevent==0.0.4
 braincell==0.0.4
-braintools==0.0.12
-brainscale==0.0.10
+braintools==0.1.0
+brainscale==0.0.11
 brainmass==0.0.3
 msgpack>=1.1.0
 matplotlib

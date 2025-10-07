@@ -11,7 +11,7 @@ Brain Simulation Ecosystem
    :maxdepth: 1
 
 
-   core_components.rst
+   ecosystem.rst
 
 
 .. toctree::
