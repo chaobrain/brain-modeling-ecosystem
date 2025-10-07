@@ -20,7 +20,7 @@ Brain Simulation Ecosystem
    :maxdepth: 1
 
    install.md
-   getting_started.md
+   getting_started/index.md
 
 
 .. toctree::
@@ -28,7 +28,7 @@ Brain Simulation Ecosystem
    :caption: Tutorials
    :maxdepth: 1
 
-   basics.md
+   basics/index.md
 
 
 .. toctree::
@@ -36,7 +36,7 @@ Brain Simulation Ecosystem
    :caption: Example applications
    :maxdepth: 1
 
-   brain_simulation_point_neuron.md
+   point_neuron_examples/index.md
 
 
 .. toctree::
@@ -44,7 +44,6 @@ Brain Simulation Ecosystem
    :maxdepth: 2
    :caption: User resources
 
-   doclink.md
    citation.md
    books.md
    ncmp_courses.md

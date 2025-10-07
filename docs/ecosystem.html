@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brain Simulation Ecosystem</title>
 
+    <!-- PWA Meta Tags -->
+    <meta name="description"
+          content="Differentiable, flexible, and extensible ecosystem for large-scale brain simulation">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="./_static/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Brain Ecosystem">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Brain Simulation Ecosystem">
+    <meta property="og:description" content="Advanced tools for brain dynamics modeling, simulation, and analysis">
+    <meta property="og:image" content="./_static/bdp-ecosystem.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brain Simulation Ecosystem">
+    <meta name="twitter:description" content="Advanced tools for brain dynamics modeling, simulation, and analysis">
+
     <style>
         /* 基础重置和全局样式 */
         * {
@@ -33,14 +51,15 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;       /* 使用网格布局 */
-            grid: auto-flow / 1fr .2fr;     /* 自动行高，列比例为5:1 */
-            gap: 20px;           /* 网格间隙 */
+            display: grid; /* 使用网格布局 */
+            grid: auto-flow / 1fr .2fr; /* 自动行高，列比例为5:1 */
+            gap: 20px; /* 网格间隙 */
             align-items: center; /* 垂直居中 */
             margin-bottom: 10px;
             padding: 0 20px;
         }
-         .container {
+
+        .container {
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
@@ -76,15 +95,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 20%);
+            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
         }
 
         html[data-theme="dark"] .hero::before {
-            background:
-                radial-gradient(circle at 20% 80%, rgba(0,0,0,0.2) 0%, transparent 20%),
-                radial-gradient(circle at 80% 20%, rgba(0,0,0,0.2) 0%, transparent 20%);
+            background: radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.2) 0%, transparent 20%),
+            radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.2) 0%, transparent 20%);
         }
 
         .hero-content {
@@ -136,7 +153,7 @@
         .cta-button {
             display: inline-block;
             background: #1A73E8;
-            color:#ffffff !important;
+            color: #ffffff !important;
             padding: 1rem 2rem;
             border-radius: 5px;
             text-decoration: none;
@@ -146,6 +163,7 @@
             align-self: flex-start;
             width: max-content;
         }
+
         html[data-theme="dark"] .cta-button {
             background: #8ab4f8;
             color: #e0e0e0;
@@ -372,13 +390,272 @@
             overflow-x: auto;
             font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
             margin: 1rem 0;
+            position: relative;
+        }
+
+        .code-wrapper {
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .copy-button.copied {
+            background: #27ae60;
+            border-color: #27ae60;
+        }
+
+        /* Scroll animations */
+        .card.fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .card.fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lazy loading images */
+        .card-image img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-image img.loaded {
+            opacity: 1;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        html[data-theme="dark"] .sticky-nav {
+            background: rgba(30, 30, 30, 0.95);
+        }
+
+        .sticky-nav.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0a1172;
+        }
+
+        html[data-theme="dark"] .sticky-nav-title {
+            color: #8ab4f8;
+        }
+
+        .sticky-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .sticky-nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        html[data-theme="dark"] .sticky-nav-links a {
+            color: #e0e0e0;
+        }
+
+        .sticky-nav-links a:hover {
+            color: #03a9f4;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin: 2rem auto 3rem;
+            max-width: 600px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        html[data-theme="dark"] .search-box {
+            background: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #03a9f4;
+            box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        html[data-theme="dark"] .filter-btn {
+            background: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .filter-btn:hover {
+            border-color: #03a9f4;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #03a9f4;
+            border-color: #03a9f4;
+            color: white;
+        }
+
+        /* 3D Card Effect */
+        .card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Clickable card image */
+        .card-image-link {
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .card-image-link:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animated Hero Background */
+        .hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #03a9f4;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(3, 169, 244, 0.3);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(3, 169, 244, 0.4);
         }
 
         html[data-theme="dark"] .footer {
-            background:linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
         }
-
-
 
 
         html[data-theme="dark"] .footer a {
@@ -446,227 +723,439 @@
     </style>
 </head>
 <body>
-    <!-- 主题切换按钮 -->
-    <button class="theme-toggle" id="themeToggle">🌙</button>
-
-
-
-
-    <!----------------------------网页文字内容 ---------------------------------------------->
-
-
-    <header class="hero">
-        <div class="container1">
-            <div class="hero-content">
-                <h1>Brain simulation ecosystem</h1>
-                <p>Advanced tools for brain dynamics modeling, simulation, and analysis.</p>
-                <div class="button-group">
-                    <a href="./index.html" class="cta-button">Homepage</a>
-                    <a href="./getting_started.html" class="cta-button">Get Started</a>
-                </div>
-            </div>
-            <img src="./_static/bdp-ecosystem.png" class="hero-image">
+<!-- Sticky Navigation -->
+<nav class="sticky-nav" id="stickyNav">
+    <div class="container">
+        <div class="sticky-nav-title">Brain Ecosystem</div>
+        <div class="sticky-nav-links">
+            <a href="#modeling">Modeling</a>
+            <a href="#infrastructure">Infrastructure</a>
+            <a href="#compilation">Compilation</a>
+            <a href="#install">Install</a>
         </div>
-    </header>
+    </div>
+</nav>
 
-    <main class="main-content">
-        <div class="container">
-            <h2 class="section-title">Differentiable brain modeling</h2>
+<!-- 主题切换按钮 -->
+<button class="theme-toggle" id="themeToggle">🌙</button>
 
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/brainpy/BrainPy/master/images/logo.png" alt="BrainPy Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainPy</h3>
-                        <p class="card-description">Modeling of point neuron-based spiking neural networks.</p>
-                        <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
-                </div>
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop">↑</button>
 
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/braincell/main/docs/_static/braincell.png" alt="BrainCell Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainCell</h3>
-                        <p class="card-description">Modeling of biologically detailed Hodgkin–Huxley neurons and networks.</p>
-                        <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./_static/brainmass.png" alt="BrainMass Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainMass</h3>
-                        <p class="card-description">Whole-brain modeling with differentiable neural mass models.</p>
-                        <a href="https://brainmass.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
-                </div>
+<!----------------------------网页文字内容 ---------------------------------------------->
+
+
+<header class="hero">
+    <div class="hero-animation" id="heroAnimation"></div>
+    <div class="container1">
+        <div class="hero-content">
+            <h1>Brain simulation ecosystem</h1>
+            <p>Advanced tools for brain dynamics modeling, simulation, and analysis.</p>
+            <div class="button-group">
+                <a href="./index.html" class="cta-button">Homepage</a>
+                <a href="./getting_started.html" class="cta-button">Get Started</a>
             </div>
         </div>
+        <img src="./_static/bdp-ecosystem.png" class="hero-image">
+    </div>
+</header>
 
-        <div class="container">
-            <h2 class="section-title">Infrastructure</h2>
+<main class="main-content">
+    <!-- Search and Filter -->
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search packages...">
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="modeling">Modeling</button>
+            <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            <button class="filter-btn" data-filter="compilation">Compilation</button>
+        </div>
+    </div>
 
-            <div class="card-grid">
+    <div class="container" id="modeling">
+        <h2 class="section-title">Differentiable brain modeling</h2>
 
-                <div class="card">
+        <div class="card-grid" data-category="modeling">
+            <div class="card fade-in" data-name="brainpy" data-category="modeling">
+                <a href="https://github.com/brainpy/BrainPy" target="_blank" class="card-image-link">
                     <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png" alt="BrainTaichi Logo">
+                        <img data-src="https://raw.githubusercontent.com/brainpy/BrainPy/master/images/logo.png"
+                             alt="BrainPy Logo" loading="lazy">
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainTaichi</h3>
-                        <p class="card-description">Event-driven operator customization based on Taichi Lang.</p>
-                        <a href="https://braintaichi.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainPy</h3>
+                    <p class="card-description">Modeling of point neuron-based spiking neural networks.</p>
+                    <a href="https://brainpy.readthedocs.io/" class="card-link">Learn More</a>
                 </div>
+            </div>
 
-                <div class="card">
+            <div class="card fade-in" data-name="braincell" data-category="modeling">
+                <a href="https://github.com/chaobrain/braincell" target="_blank" class="card-image-link">
                     <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/saiunit/main/docs/_static/brainunit.png" alt="BrainUnit Logo">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/braincell/main/docs/_static/braincell.png"
+                             alt="BrainCell Logo" loading="lazy">
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainUnit</h3>
-                        <p class="card-description">Physical units and unit-aware mathematical system for brain modeling.</p>
-                        <a href="https://brainunit.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainCell</h3>
+                    <p class="card-description">Modeling of biologically detailed Hodgkin–Huxley neurons and
+                        networks.</p>
+                    <a href="https://braincell.readthedocs.io/" class="card-link">Learn More</a>
                 </div>
+            </div>
 
-                <div class="card">
+            <div class="card fade-in" data-name="brainmass" data-category="modeling">
+                <a href="https://github.com/chaobrain/brainmass" target="_blank" class="card-image-link">
                     <div class="card-image">
-                        <img src="./_static/brainevent.png" alt="BrainEvent Logo">
+                        <img data-src="./_static/brainmass.png" alt="BrainMass Logo" loading="lazy">
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainEvent</h3>
-                        <p class="card-description">Event-driven algorithms and data structures for brain dynamics.</p>
-                        <a href="https://brainevent.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/brainscale/main/docs/_static/brainscale.jpg" alt="BrainScale Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainScale</h3>
-                        <p class="card-description">Online learning system for large-scale brain models.</p>
-                        <a href="https://brainscale.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/braintools/main/docs/_static/braintools.jpg" alt="BrainTools Logo">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainTools</h3>
-                        <p class="card-description">Modeling tools for general-purpose brain simulation.</p>
-                        <a href="https://braintools.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainMass</h3>
+                    <p class="card-description">Whole-brain modeling with differentiable neural mass models.</p>
+                    <a href="https://brainmass.readthedocs.io/" class="card-link">Learn More</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <h2 class="section-title">Compilation</h2>
+    <div class="container" id="infrastructure">
+        <h2 class="section-title">Infrastructure</h2>
 
-            <div class="card-grid">
-                <div class="card">
+        <div class="card-grid" data-category="infrastructure">
+
+            <div class="card fade-in" data-name="braintaichi" data-category="infrastructure">
+                <a href="https://github.com/chaobrain/braintaichi" target="_blank" class="card-image-link">
                     <div class="card-image">
-                        <img src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png" alt="BrainState Logo">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/braintaichi/main/docs/_static/braintaichi.png"
+                             alt="BrainTaichi Logo" loading="lazy">
                     </div>
-                    <div class="card-content">
-                        <h3 class="card-title">BrainState</h3>
-                        <p class="card-description">State-based IR compilation for brain models.</p>
-                        <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
-                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainTaichi</h3>
+                    <p class="card-description">Event-driven operator customization based on Taichi Lang.</p>
+                    <a href="https://braintaichi.readthedocs.io/" class="card-link">Learn More</a>
                 </div>
             </div>
 
-
-            <section id="install" class="install-section">
-                <h2 class="section-title">Installation</h2>
-
-                <div class="tabs">
-                    <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
-                    <div class="tab" onclick="switchTab(event, 'gpu')">GPU</div>
-                    <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
+            <div class="card fade-in" data-name="brainunit" data-category="infrastructure">
+                <a href="https://github.com/chaobrain/saiunit" target="_blank" class="card-image-link">
+                    <div class="card-image">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/saiunit/main/docs/_static/brainunit.png"
+                             alt="BrainUnit Logo" loading="lazy">
+                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainUnit</h3>
+                    <p class="card-description">Physical units and unit-aware mathematical system for brain
+                        modeling.</p>
+                    <a href="https://brainunit.readthedocs.io/" class="card-link">Learn More</a>
                 </div>
+            </div>
 
-                <div id="cpu" class="tab-content active">
+            <div class="card fade-in" data-name="brainevent" data-category="infrastructure">
+                <a href="https://github.com/chaobrain/brainevent" target="_blank" class="card-image-link">
+                    <div class="card-image">
+                        <img data-src="./_static/brainevent.png" alt="BrainEvent Logo" loading="lazy">
+                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainEvent</h3>
+                    <p class="card-description">Event-driven algorithms and data structures for brain dynamics.</p>
+                    <a href="https://brainevent.readthedocs.io/" class="card-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card fade-in" data-name="brainscale" data-category="infrastructure">
+                <a href="https://github.com/chaobrain/brainscale" target="_blank" class="card-image-link">
+                    <div class="card-image">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/brainscale/main/docs/_static/brainscale.jpg"
+                             alt="BrainScale Logo" loading="lazy">
+                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainScale</h3>
+                    <p class="card-description">Online learning system for large-scale brain models.</p>
+                    <a href="https://brainscale.readthedocs.io/" class="card-link">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card fade-in" data-name="braintools" data-category="infrastructure">
+                <a href="https://github.com/chaobrain/braintools" target="_blank" class="card-image-link">
+                    <div class="card-image">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/braintools/main/docs/_static/braintools.jpg"
+                             alt="BrainTools Logo" loading="lazy">
+                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainTools</h3>
+                    <p class="card-description">Modeling tools for general-purpose brain simulation.</p>
+                    <a href="https://braintools.readthedocs.io/" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="compilation">
+        <h2 class="section-title">Compilation</h2>
+
+        <div class="card-grid" data-category="compilation">
+            <div class="card fade-in" data-name="brainstate" data-category="compilation">
+                <a href="https://github.com/chaobrain/brainstate" target="_blank" class="card-image-link">
+                    <div class="card-image">
+                        <img data-src="https://raw.githubusercontent.com/chaobrain/brainstate/main/docs/_static/brainstate.png"
+                             alt="BrainState Logo" loading="lazy">
+                    </div>
+                </a>
+                <div class="card-content">
+                    <h3 class="card-title">BrainState</h3>
+                    <p class="card-description">State-based IR compilation for brain models.</p>
+                    <a href="https://brainstate.readthedocs.io/" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="install" class="install-section">
+            <h2 class="section-title">Installation</h2>
+
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(event, 'cpu')">CPU</div>
+                <div class="tab" onclick="switchTab(event, 'gpu')">GPU</div>
+                <div class="tab" onclick="switchTab(event, 'tpu')">TPU</div>
+            </div>
+
+            <div id="cpu" class="tab-content active">
+                <div class="code-wrapper">
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    <div class="code-block">pip install BrainX[cpu] -U</div>
+                </div>
+            </div>
+
+            <div id="gpu" class="tab-content" style="display:none;">
+                <div class="code-wrapper">
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
                     <div class="code-block">
-                        pip install BrainX[cpu] -U
-                    </div>
-                </div>
-
-                <div id="gpu" class="tab-content" style="display:none;">
-                    <div class="code-block">
-                        pip install BrainX[cuda12] -U <br/>
+                        pip install BrainX[cuda12] -U
+                        <br>
                         pip install BrainX[cuda13] -U
                     </div>
                 </div>
+            </div>
 
-                <div id="tpu" class="tab-content" style="display:none;">
-                    <div class="code-block">
-                        pip install BrainX[tpu] -U
-                    </div>
+            <div id="tpu" class="tab-content" style="display:none;">
+                <div class="code-wrapper">
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    <div class="code-block">pip install BrainX[tpu] -U</div>
                 </div>
-            </section>
-        </div>
-    </main>
+            </div>
+        </section>
+    </div>
+</main>
 
 
-    <script>
-        function switchTab(event, tabId) {
-            // 隐藏所有标签内容
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.style.display = 'none';
-            });
+<script>
+    // ========== Tab Switching ==========
+    function switchTab(event, tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.style.display = 'none';
+        });
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.getElementById(tabId).style.display = 'block';
+        event.currentTarget.classList.add('active');
+    }
 
-            // 移除所有标签的活动类
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
+    // ========== Copy to Clipboard ==========
+    function copyCode(button) {
+        const codeBlock = button.nextElementSibling;
+        const code = codeBlock.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(() => {
+                button.textContent = 'Copy';
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    }
 
-            // 显示选中的标签内容
-            document.getElementById(tabId).style.display = 'block';
+    // ========== Theme Toggle ==========
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            // 为选中的标签添加活动类
-            event.currentTarget.classList.add('active');
-        }
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        html.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = '☀️';
+    } else {
+        html.removeAttribute('data-theme');
+        themeToggle.textContent = '🌙';
+    }
 
-        // 主题切换功能
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        // 检查本地存储或系统偏好
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-            html.setAttribute('data-theme', 'dark');
-            themeToggle.textContent = '☀️';
-        } else {
+    themeToggle.addEventListener('click', () => {
+        if (html.getAttribute('data-theme') === 'dark') {
             html.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
             themeToggle.textContent = '🌙';
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            themeToggle.textContent = '☀️';
         }
+    });
 
-        // 切换主题
-        themeToggle.addEventListener('click', () => {
-            if (html.getAttribute('data-theme') === 'dark') {
-                html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                themeToggle.textContent = '🌙';
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeToggle.textContent = '☀️';
+    // ========== Lazy Loading Images ==========
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
             }
         });
-    </script>
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+
+    // ========== Animated Card Entrance ==========
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.1});
+
+    document.querySelectorAll('.card.fade-in').forEach(card => {
+        cardObserver.observe(card);
+    });
+
+    // ========== Sticky Navigation ==========
+    const stickyNav = document.getElementById('stickyNav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 300) {
+            stickyNav.classList.add('visible');
+        } else {
+            stickyNav.classList.remove('visible');
+        }
+        lastScroll = currentScroll;
+    });
+
+    // ========== Back to Top Button ==========
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // ========== Search Functionality ==========
+    const searchBox = document.getElementById('searchBox');
+    const cards = document.querySelectorAll('.card');
+
+    searchBox.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const description = card.querySelector('.card-description').textContent.toLowerCase();
+            const name = card.dataset.name.toLowerCase();
+
+            if (title.includes(searchTerm) || description.includes(searchTerm) || name.includes(searchTerm)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // ========== Filter Functionality ==========
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+            cards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ========== 3D Card Effect ==========
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        });
+    });
+
+    // ========== Animated Hero Background ==========
+    const heroAnimation = document.getElementById('heroAnimation');
+    const particleCount = 30;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        heroAnimation.appendChild(particle);
+    }
+
+    // ========== Service Worker Registration (PWA) ==========
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./_static/service-worker.js')
+                .then(registration => {
+                    console.log('ServiceWorker registered:', registration);
+                })
+                .catch(error => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+        });
+    }
+</script>
 </body>
 </html>

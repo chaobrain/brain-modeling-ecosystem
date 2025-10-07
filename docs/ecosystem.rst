@@ -1,5 +1,5 @@
-Core components
-===============
+Ecosystem components
+====================
 
 
 .. raw:: html
