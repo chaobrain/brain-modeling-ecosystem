@@ -95,6 +95,17 @@
             display: flex;
             flex-direction: column;
             padding-inline: 100px;
+            gap: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content .cta-button {
+            margin: 0;
         }
 
         .hero h1 {
@@ -448,9 +459,11 @@
         <div class="container1">
             <div class="hero-content">
                 <h1>Brain simulation ecosystem</h1>
-                <p>Differentiable, flexible, and extensible ecosystem for large-scale brain simulation.</p>
-                <a href="./index.html" class="cta-button">Homepage</a>
-                <a href="./getting_started.html" class="cta-button">Get Started</a>
+                <p>Advanced tools for brain dynamics modeling, simulation, and analysis.</p>
+                <div class="button-group">
+                    <a href="./index.html" class="cta-button">Homepage</a>
+                    <a href="./getting_started.html" class="cta-button">Get Started</a>
+                </div>
             </div>
             <img src="./_static/bdp-ecosystem.png" class="hero-image">
         </div>
