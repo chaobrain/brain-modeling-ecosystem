@@ -34,8 +34,8 @@ sys.path.insert(0, os.path.abspath('./'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Brain Simulation Ecosystem (BrainX)'
-copyright = '2024, Brain Simulation Ecosystem (BrainX)'
+project = 'BrainX Ecosystem'
+copyright = '2024, BrainX Ecosystem'
 author = 'BrainX Developers'
 
 import BrainX
