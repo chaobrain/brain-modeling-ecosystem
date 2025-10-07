@@ -45,8 +45,8 @@ Brain Simulation Ecosystem
    :caption: User resources
 
    citation.md
-   books.md
-   ncmp_courses.md
+   books/index.md
+   courses/index.md
 
 
 
