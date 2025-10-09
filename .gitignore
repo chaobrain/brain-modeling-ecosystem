@@ -189,3 +189,4 @@ cython_debug/
 /docs/apis/deprecated/generated/
 /_build/
 /.claude/
+/docs/CHANGELOG.md

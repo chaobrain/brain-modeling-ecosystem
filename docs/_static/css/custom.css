@@ -177,9 +177,10 @@ body:has(.hero) .bd-article > section > h1 {
     display: flex;            /* 弹性布局 */
     flex-direction: row;      /* 水平方向 */
     justify-content: space-between;  /* 两端对齐 */
+    align-items: center;      /* 垂直居中对齐 */
     gap: 85px;              /* 元素间隙 */
     margin-bottom: 60px;    /* 底部外边距 */
-    
+
 }
 
 /* 图片区域内的图片 */
