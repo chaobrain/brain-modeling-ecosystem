@@ -39,15 +39,6 @@ Brain Simulation Ecosystem
    point_neuron_examples/index.md
 
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-   :caption: User resources
-
-   citation.md
-   books/index.md
-   courses/index.md
-
 
 
 .. toctree::
