@@ -15,9 +15,12 @@
 
 import os
 import sys
+import shutil
 
 sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('./'))
+
+shutil.copy('../CHANGELOG.md', './CHANGELOG.md')
 
 # Configuration file for the Sphinx documentation builder.
 #
