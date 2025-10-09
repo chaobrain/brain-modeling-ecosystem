@@ -1,0 +1,22 @@
+{
+  "name": "Brain Simulation Ecosystem",
+  "short_name": "Brain Ecosystem",
+  "description": "Differentiable, flexible, and extensible ecosystem for large-scale brain simulation",
+  "start_url": "./ecosystem.html",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./_static/bdp-ecosystem.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./_static/bdp-ecosystem.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

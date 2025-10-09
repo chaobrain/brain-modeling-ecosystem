@@ -20,7 +20,7 @@ The following notebooks provide hands-on guides:
 :maxdepth: 1
 
 brainstate_drosophila_wholebrain_simulation.ipynb
-brainstate_spiking_gamma_oscillations.ipynb
+brainpy_spiking_gamma_oscillations.ipynb
 braincell_HH_thalamus_oscillations.ipynb
 ```
 
