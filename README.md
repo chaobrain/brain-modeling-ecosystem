@@ -62,6 +62,8 @@ On GPU platforms, the following command can be used to install the ecosystem wit
 
 ```bash
 pip install BrainX[cuda12] -U
+
+pip install BrainX[cuda13] -U
 ```
 
 On TPU platforms, the following command can be used to install the ecosystem with all components:
