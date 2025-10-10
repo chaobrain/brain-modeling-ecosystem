@@ -1,6 +1,6 @@
 numpy>=1.15
 jax>=0.6.0,<0.8.0
-brainpy==3.0.0
+brainpy==2.7.0
 brainunit==0.1.1
 brainstate==0.2.1
 brainevent==0.0.4
