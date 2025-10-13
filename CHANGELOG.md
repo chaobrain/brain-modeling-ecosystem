@@ -3,6 +3,33 @@
 ↗️ = updated since previous release
 
 
+
+
+
+## v2025.10.13
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0,<0.8.0`](https://pypi.org/project/jax/) ↗️
+  - [`brainpy==2.7.1`](https://pypi.org/project/brainpy/2.7.1/) ↗️
+  - [`brainunit==0.1.1`](https://pypi.org/project/brainunit/0.1.1/)
+  - [`brainstate==0.2.3`](https://pypi.org/project/brainstate/0.2.3/) ↗️
+  - [`brainevent==0.0.4`](https://pypi.org/project/brainevent/0.0.4/)
+  - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/) ↗️
+  - [`braintools==0.1.3`](https://pypi.org/project/braintools/0.1.3/) ↗️
+  - [`brainscale==0.1.0`](https://pypi.org/project/brainscale/0.1.0/) ↗️
+  - [`brainmass==0.0.4`](https://pypi.org/project/brainmass/0.0.4/)
+
+- **Documentation Fixes:**
+  - Updated BrainPy link in ecosystem documentation (#43)
+  - Fixed image sources to use absolute URLs for BrainMass and BrainEvent logos
+  - Copied CHANGELOG.md to the documentation directory for better accessibility
+  - Reorganized static JavaScript files (moved service-worker.js to js subdirectory)
+
+- **README Updates:**
+  - Updated documentation and references (#42, #43)
+
+
+
 ## v2025.10.08
 - **Project Updates:**
   - First integrative version of the BrainX ecosystem (#40)

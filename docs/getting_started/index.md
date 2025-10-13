@@ -42,7 +42,7 @@ Along the way you will:
 ```{toctree}
 :maxdepth: 1
 
-brainpy_LIF_neuron.ipynb
+brainstate_LIF_neuron.ipynb
 brainpy_EI_spiking_network.ipynb
 braincell_HH_neuron.ipynb
 braincell_HH_EI_network.ipynb

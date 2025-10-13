@@ -16,5 +16,5 @@
 # -*- coding: utf-8 -*-
 
 
-__version__ = "2025.10.08"
-__version_info__ = (2025, 10, 8)
+__version__ = "2025.10.13"
+__version_info__ = (2025, 10, 13)
