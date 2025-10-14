@@ -8,8 +8,10 @@
 
 ## v2025.10.13
 
+This is the first release of the **complete** BrainX ecosystem, integrating multiple packages for comprehensive brain simulation and analysis.
+
 - **Package Dependencies:**
-  - [`jax>=0.6.0,<0.8.0`](https://pypi.org/project/jax/) ↗️
+  - [`jax>=0.6.0,<0.8.0`](https://pypi.org/project/jax/) 
   - [`brainpy==2.7.1`](https://pypi.org/project/brainpy/2.7.1/) ↗️
   - [`brainunit==0.1.1`](https://pypi.org/project/brainunit/0.1.1/)
   - [`brainstate==0.2.3`](https://pypi.org/project/brainstate/0.2.3/) ↗️
@@ -30,7 +32,8 @@
 
 
 
-## v2025.10.08
+## v2025.10.08 (yanked)
+
 - **Project Updates:**
   - First integrative version of the BrainX ecosystem (#40)
   - Rebranded to BrainX and revamped documentation (#23)

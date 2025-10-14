@@ -17,11 +17,14 @@ scales.
 
 **Core components** in this ecosystem includes:
 
+- [BrainPy](https://github.com/brainpy/BrainPy): Modeling of point neuron-based spiking neural networks (SNNs), comes
+  from Prof. Si Wu's lab at Peking University.
+
 - [BrainUnit](https://github.com/chaobrain/brainunit): Comprehensive physical units and unit-aware mathematical system
   for brain dynamics.
 
 - [BrainCell](https://github.com/chaobrain/braincell): Intuitive, parallel, and efficient simulation for biologically
-  detailed brain cell modeling.
+  detailed brain cell modeling. Collaborated with Prof. Songting Li's lab at Shanghai Jiao Tong University.
 
 - [BrainMass](https://github.com/chaobrain/brainmass): Whole-brain modeling with differentiable neural mass models.
 

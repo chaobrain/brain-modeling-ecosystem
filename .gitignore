@@ -190,3 +190,4 @@ cython_debug/
 /_build/
 /.claude/
 /docs/CHANGELOG.md
+/dev/
