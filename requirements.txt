@@ -9,4 +9,5 @@ braincell==0.0.6
 brainscale==0.1.0
 brainmass==0.0.4
 msgpack>=1.1.0
+pinnx==0.0.3
 matplotlib
