@@ -1,6 +1,6 @@
 # Contributing to the BrainX Ecosystem
 
-We welcome contributions to the BrainX ecosystem - code, documentation, bug reports, and feature ideas. This repository coordinates components like BrainUnit, BrainCell, BrainState, BrainTaichi, BrainEvent, and BrainScale, and the glue that ensures they interoperate well together.
+We welcome contributions to the BrainX ecosystem - code, documentation, bug reports, and feature ideas. This repository coordinates components like BrainUnit, BrainCell, BrainState, BrainTaichi, BrainEvent, and BrainTrace, and the glue that ensures they interoperate well together.
 
 ## Ways to contribute
 - Report bugs and request features via GitHub issues.

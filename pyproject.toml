@@ -7,7 +7,6 @@ build-backend = "setuptools.build_meta"
 name = "BrainX"
 description = "Ecosystem for Brain Simulation."
 readme = "README.md"
-license = { text = "Apache-2.0" }
 requires-python = ">=3.10"
 authors = [{ name = "BrainX Ecosystem", email = "chao.brain@qq.com" }]
 classifiers = [
@@ -20,7 +19,6 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: Apache Software License",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",

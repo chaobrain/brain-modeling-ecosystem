@@ -36,7 +36,7 @@ scales.
 
 - [BrainEvent](https://github.com/chaobrain/brainevent): Enabling event-driven computations in brain dynamics.
 
-- [BrainScale](https://github.com/chaobrain/brainscale): Enabling scalable online learning for brain dynamics: $O(N)$
+- [BrainTrace](https://github.com/chaobrain/brainscale): Enabling scalable online learning for brain dynamics: $O(N)$
   complexity for SNNs, and $O(N^2)$ for RNN computations.
 
 - [BrainTools](https://github.com/chaobrain/braintools): Commonly used tools for brain dynamics programming, for example
