@@ -6,6 +6,34 @@
 
 
 
+## v2025.12.2
+
+This release introduces BrainTrace (replacing BrainScale) and updates multiple package dependencies.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/) ↗️ (removed upper bound)
+  - [`brainpy==2.7.2`](https://pypi.org/project/brainpy/2.7.2/) ↗️
+  - [`brainunit==0.1.2`](https://pypi.org/project/brainunit/0.1.1/)
+  - [`brainstate==0.2.6`](https://pypi.org/project/brainstate/0.2.5/) ↗️
+  - [`brainevent==0.0.4`](https://pypi.org/project/brainevent/0.0.4/)
+  - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/)
+  - [`braintools==0.1.4`](https://pypi.org/project/braintools/0.1.4/) ↗️
+  - [`braintrace==0.1.1`](https://pypi.org/project/braintrace/0.1.1/) ↗️ (renamed from brainscale)
+  - [`brainmass==0.0.4`](https://pypi.org/project/brainmass/0.0.4/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/) ↗️ (new)
+
+- **Documentation Updates:**
+  - Renamed BrainScale to BrainTrace in documentation and requirements
+  - Updated ecosystem documentation with additional descriptions
+  - Deprecated BrainTaichi component
+  - Removed 3D card effect from ecosystem.html
+  - Added braintools import and updated class inheritance in spiking network notebooks
+
+- **CI/CD:**
+  - Bumped actions/upload-artifact from 4 to 5 (#46)
+
+
+
 ## v2025.10.13
 
 This is the first release of the **complete** BrainX ecosystem, integrating multiple packages for comprehensive brain simulation and analysis.
