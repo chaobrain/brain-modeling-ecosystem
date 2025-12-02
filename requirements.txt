@@ -1,5 +1,4 @@
-numpy>=1.15
-jax>=0.6.0
+# core packages
 brainunit==0.1.2
 brainevent==0.0.4
 brainstate==0.2.6
@@ -8,6 +7,10 @@ brainpy==2.7.2
 braincell==0.0.6
 braintrace==0.1.1
 brainmass==0.0.4
-msgpack>=1.1.0
 pinnx==0.0.3
+
+# dependencies
+numpy>=1.15
+jax>=0.6.0
+msgpack>=1.1.0
 matplotlib
