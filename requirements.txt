@@ -2,7 +2,7 @@
 brainunit==0.1.2
 brainevent==0.0.4
 brainstate==0.2.6
-braintools==0.1.4
+braintools==0.1.5
 brainpy==2.7.2
 braincell==0.0.6
 braintrace==0.1.1
