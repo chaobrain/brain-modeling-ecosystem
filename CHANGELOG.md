@@ -13,8 +13,8 @@ This release introduces BrainTrace (replacing BrainScale) and updates multiple p
 - **Package Dependencies:**
   - [`jax>=0.6.0`](https://pypi.org/project/jax/) ↗️ (removed upper bound)
   - [`brainpy==2.7.2`](https://pypi.org/project/brainpy/2.7.2/) ↗️
-  - [`brainunit==0.1.2`](https://pypi.org/project/brainunit/0.1.1/)
-  - [`brainstate==0.2.6`](https://pypi.org/project/brainstate/0.2.5/) ↗️
+  - [`brainunit==0.1.2`](https://pypi.org/project/brainunit/0.1.2/)
+  - [`brainstate==0.2.6`](https://pypi.org/project/brainstate/0.2.6/) ↗️
   - [`brainevent==0.0.4`](https://pypi.org/project/brainevent/0.0.4/)
   - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/)
   - [`braintools==0.1.4`](https://pypi.org/project/braintools/0.1.4/) ↗️
