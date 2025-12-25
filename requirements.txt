@@ -1,9 +1,9 @@
 # infrastructure packages
-brainunit==0.1.2
-brainevent==0.0.4
-brainstate==0.2.7
-braintools==0.1.5
-braintrace==0.1.1
+brainunit==0.1.3
+brainevent==0.0.5
+brainstate==0.2.8
+braintools==0.1.6
+braintrace==0.1.2
 
 # modeling packages
 braincell==0.0.6
