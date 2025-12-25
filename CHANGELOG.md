@@ -6,6 +6,26 @@
 
 
 
+## v2025.12.26
+
+This release updates multiple package dependencies and improves CI/CD infrastructure.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/) (removed upper bound)
+  - [`brainpy-state==0.0.2`](https://pypi.org/project/brainpy-state/0.0.2/) ↗️
+  - [`brainpy==2.7.5`](https://pypi.org/project/brainpy/2.7.5/) ↗️
+  - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/) 
+  - [`brainstate==0.2.8`](https://pypi.org/project/brainstate/0.2.8/) 
+  - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/) 
+  - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/)
+  - [`braintools==0.1.6`](https://pypi.org/project/braintools/0.1.6/) 
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/) 
+  - [`brainmass==0.0.4`](https://pypi.org/project/brainmass/0.0.4/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+
+
+
 ## v2025.12.25
 
 This release updates multiple package dependencies and improves CI/CD infrastructure.
