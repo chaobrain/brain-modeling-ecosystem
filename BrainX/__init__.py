@@ -16,5 +16,5 @@
 # -*- coding: utf-8 -*-
 
 
-__version__ = "2025.12.26"
+__version__ = "2025.12.27"
 __version_info__ = tuple(map(int, __version__.split(".")))
