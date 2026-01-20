@@ -6,10 +6,10 @@ braintools==0.1.7
 braintrace==0.1.2
 
 # modeling packages
-braincell==0.0.6
+braincell==0.0.7
 brainpy==2.7.5
-brainpy-state==0.0.2
-brainmass==0.0.4
+brainpy-state==0.0.3
+brainmass==0.0.5
 pinnx==0.0.3
 
 # dependencies

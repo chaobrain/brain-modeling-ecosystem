@@ -6,21 +6,21 @@
 
 
 
-## v2026.1.16
+## v2026.1.19
 
 This release updates package dependencies and CI/CD infrastructure.
 
 - **Package Dependencies:**
   - [`jax>=0.6.0`](https://pypi.org/project/jax/) (removed upper bound)
-  - [`brainpy-state==0.0.2`](https://pypi.org/project/brainpy-state/0.0.2/)
+  - [`brainpy-state==0.0.3`](https://pypi.org/project/brainpy-state/0.0.3/)
   - [`brainpy==2.7.5`](https://pypi.org/project/brainpy/2.7.5/)
   - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/)
   - [`brainstate==0.2.9`](https://pypi.org/project/brainstate/0.2.9/) ↗️
   - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/)
-  - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/)
+  - [`braincell==0.0.7`](https://pypi.org/project/braincell/0.0.7/)
   - [`braintools==0.1.7`](https://pypi.org/project/braintools/0.1.7/) ↗️
   - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
-  - [`brainmass==0.0.4`](https://pypi.org/project/brainmass/0.0.4/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
   - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
 
 - **Documentation:**

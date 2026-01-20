@@ -22,3 +22,23 @@ import BrainX
 class Test:
     def test(self):
         print(BrainX.__version__)
+
+    def test_imports(self):
+        import brainmass
+        import brainpy.state
+        import braincell
+        import braintools
+        import brainevent
+        import brainunit
+        import brainstate
+        import pinnx
+
+        print(brainmass.__version__)
+        print(brainpy.__version__)
+        print(braincell.__version__)
+        print(braintools.__version__)
+        print(brainevent.__version__)
+        print(brainunit.__version__)
+        print(brainstate.__version__)
+        print(pinnx.__version__)
+
