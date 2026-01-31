@@ -20,7 +20,7 @@ This installs pinned versions of the core packages:
 - [brainstate](https://github.com/chaobrain/brainstate)
 - [brainevent](https://github.com/chaobrain/brainevent)
 - [braincell](https://github.com/chaobrain/braincell)
-- [brainscale](https://github.com/chaobrain/brainscale)
+- [braintrace](https://github.com/chaobrain/braintrace)
 - [brainmass](https://github.com/chaobrain/brainmass)
 - [braintools](https://github.com/chaobrain/braintools)
 - [jax](https://github.com/jax-ml/jax) 
@@ -36,6 +36,8 @@ pip install -U BrainX[cpu]
 
 # NVIDIA GPU (CUDA 12.x)
 pip install -U BrainX[cuda12]
+# NVIDIA GPU (CUDA 13.x)
+pip install -U BrainX[cuda13]
 
 # TPU
 pip install -U BrainX[tpu]

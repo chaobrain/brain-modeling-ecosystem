@@ -46,7 +46,7 @@ import BrainX
 # The full version, including alpha/beta/rc tags
 release = BrainX.__version__
 
-from highlight_test_lexer import fix_ipython2_lexer_in_notebooks
+from fix_ipython import fix_ipython2_lexer_in_notebooks
 
 fix_ipython2_lexer_in_notebooks(os.path.dirname(os.path.abspath(__file__)))
 

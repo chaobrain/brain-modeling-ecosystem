@@ -6,12 +6,81 @@
 
 
 
+## v2026.1.31
+
+This release updates package dependencies and includes extensive documentation formatting improvements.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0,<0.9.0`](https://pypi.org/project/jax/) ↗️ (added upper bound)
+  - [`brainpy-state==0.0.3`](https://pypi.org/project/brainpy-state/0.0.3/)
+  - [`brainpy==2.7.6`](https://pypi.org/project/brainpy/2.7.6/)
+  - [`brainunit==0.1.4`](https://pypi.org/project/brainunit/0.1.4/) ↗️
+  - [`brainstate==0.2.10`](https://pypi.org/project/brainstate/0.2.10/) ↗️
+  - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/)
+  - [`braincell==0.0.7`](https://pypi.org/project/braincell/0.0.7/)
+  - [`braintools==0.1.8`](https://pypi.org/project/braintools/0.1.8/)
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+- **Documentation:**
+  - Extensive formatting improvements across documentation notebooks and markdown files
+  - Renamed `highlight_test_lexer.py` to `fix_ipython.py` for better clarity
+  - Updated all example notebooks with improved formatting and structure
+  - Refreshed documentation structure and presentation
+
+- **Project Files:**
+  - Updated GitHub templates (issue templates, PR template)
+  - Improved CI/CD workflow configurations
+  - Updated project configuration files (.gitignore, .pre-commit-config.yaml, .readthedocs.yml)
+  - Enhanced contributing guidelines and code of conduct
+
+
+
+## v2026.1.22
+
+This release updates braintools package dependency.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
+  - [`brainpy-state==0.0.3`](https://pypi.org/project/brainpy-state/0.0.3/)
+  - [`brainpy==2.7.6`](https://pypi.org/project/brainpy/2.7.6/)
+  - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/)
+  - [`brainstate==0.2.9`](https://pypi.org/project/brainstate/0.2.9/)
+  - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/)
+  - [`braincell==0.0.7`](https://pypi.org/project/braincell/0.0.7/)
+  - [`braintools==0.1.8`](https://pypi.org/project/braintools/0.1.8/) ↗️
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+
+
+## v2026.1.21
+
+This release updates brainpy package dependency.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
+  - [`brainpy-state==0.0.3`](https://pypi.org/project/brainpy-state/0.0.3/)
+  - [`brainpy==2.7.6`](https://pypi.org/project/brainpy/2.7.6/) ↗️
+  - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/)
+  - [`brainstate==0.2.9`](https://pypi.org/project/brainstate/0.2.9/)
+  - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/)
+  - [`braincell==0.0.7`](https://pypi.org/project/braincell/0.0.7/)
+  - [`braintools==0.1.7`](https://pypi.org/project/braintools/0.1.7/)
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+
+
 ## v2026.1.19
 
 This release updates package dependencies and CI/CD infrastructure.
 
 - **Package Dependencies:**
-  - [`jax>=0.6.0`](https://pypi.org/project/jax/) (removed upper bound)
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
   - [`brainpy-state==0.0.3`](https://pypi.org/project/brainpy-state/0.0.3/)
   - [`brainpy==2.7.5`](https://pypi.org/project/brainpy/2.7.5/)
   - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/)
@@ -31,12 +100,47 @@ This release updates package dependencies and CI/CD infrastructure.
 
 
 
+## v2026.1.16
+
+This release updates package dependencies, documentation, and copyright notices.
+
+- **Package Dependencies:**
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
+  - [`brainpy-state==0.0.2`](https://pypi.org/project/brainpy-state/0.0.2/)
+  - [`brainpy==2.7.5`](https://pypi.org/project/brainpy/2.7.5/)
+  - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/)
+  - [`brainstate==0.2.9`](https://pypi.org/project/brainstate/0.2.9/) ↗️
+  - [`brainevent==0.0.5`](https://pypi.org/project/brainevent/0.0.5/)
+  - [`braincell==0.0.6`](https://pypi.org/project/braincell/0.0.6/)
+  - [`braintools==0.1.7`](https://pypi.org/project/braintools/0.1.7/) ↗️
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
+  - [`brainmass==0.0.4`](https://pypi.org/project/brainmass/0.0.4/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+- **Copyright:**
+  - Updated copyright notice from BDP Ecosystem Limited to BrainX Ecosystem Limited
+
+- **Documentation:**
+  - Updated paper reference for BrainTrace in ecosystem.html
+  - Removed papers_using_us.md file
+
+- **CI/CD:**
+  - Bumped styfle/cancel-workflow-action from 0.12.1 to 0.13.0 (#57)
+  - Bumped braintools from 0.1.6 to 0.1.7 (#56)
+
+- **Code Updates:**
+  - Updated import statements from `brainpy` to `brainpy.state` in notebooks (#55)
+  - Updated CI configuration to use Python 3.13 and adjusted JAX versions
+  - Updated multiple documentation notebooks with corrected imports and examples
+
+
+
 ## v2025.12.26
 
 This release updates multiple package dependencies and improves CI/CD infrastructure.
 
 - **Package Dependencies:**
-  - [`jax>=0.6.0`](https://pypi.org/project/jax/) (removed upper bound)
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
   - [`brainpy-state==0.0.2`](https://pypi.org/project/brainpy-state/0.0.2/) ↗️
   - [`brainpy==2.7.5`](https://pypi.org/project/brainpy/2.7.5/) ↗️
   - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/) 
@@ -56,7 +160,7 @@ This release updates multiple package dependencies and improves CI/CD infrastruc
 This release updates multiple package dependencies and improves CI/CD infrastructure.
 
 - **Package Dependencies:**
-  - [`jax>=0.6.0`](https://pypi.org/project/jax/) (removed upper bound)
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/)
   - [`brainpy-state==0.0.1`](https://pypi.org/project/brainpy-state/0.0.1/) ↗️ (new, replaces brainpy)
   - [`brainunit==0.1.3`](https://pypi.org/project/brainunit/0.1.3/) ↗️
   - [`brainstate==0.2.8`](https://pypi.org/project/brainstate/0.2.8/) ↗️
@@ -77,7 +181,7 @@ This release updates multiple package dependencies and improves CI/CD infrastruc
 This release introduces BrainTrace (replacing BrainScale) and updates multiple package dependencies.
 
 - **Package Dependencies:**
-  - [`jax>=0.6.0`](https://pypi.org/project/jax/) ↗️ (removed upper bound)
+  - [`jax>=0.6.0`](https://pypi.org/project/jax/) ↗️
   - [`brainpy==2.7.2`](https://pypi.org/project/brainpy/2.7.2/) ↗️
   - [`brainunit==0.1.2`](https://pypi.org/project/brainunit/0.1.2/)
   - [`brainstate==0.2.6`](https://pypi.org/project/brainstate/0.2.6/) ↗️
