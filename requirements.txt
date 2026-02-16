@@ -1,6 +1,6 @@
 # infrastructure packages
 brainunit==0.1.4
-brainevent==0.0.5
+brainevent==0.0.6
 brainstate==0.2.10
 braintools==0.1.8
 braintrace==0.1.2
