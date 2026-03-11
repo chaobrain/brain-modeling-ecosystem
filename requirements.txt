@@ -1,19 +1,19 @@
 # infrastructure packages
-brainunit==0.1.4
-brainevent==0.0.5
-brainstate==0.2.10
+brainunit==0.2.0
+brainevent==0.0.7
+brainstate==0.3.0
 braintools==0.1.8
 braintrace==0.1.2
 
 # modeling packages
-braincell==0.0.7
-brainpy==2.7.6
-brainpy-state==0.0.3
+braincell==0.0.8
+brainpy==2.7.7
+brainpy-state==0.0.4
 brainmass==0.0.5
 pinnx==0.0.3
 
 # dependencies
 numpy>=1.15
-jax>=0.6.0,<0.9.0
+jax<=0.9.1,>=0.6.0
 msgpack>=1.1.0
 matplotlib

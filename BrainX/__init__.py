@@ -16,5 +16,5 @@
 # -*- coding: utf-8 -*-
 
 
-__version__ = "2026.1.31"
+__version__ = "2026.3.12"
 __version_info__ = tuple(map(int, __version__.split(".")))

@@ -6,6 +6,29 @@
 
 
 
+## v2026.3.12
+
+This release updates package dependencies and drops Python 3.10 support.
+
+- **Package Dependencies:**
+  - [`jax<=0.9.1,>=0.6.0`](https://pypi.org/project/jax/) ↗️ (adjusted upper bound)
+  - [`brainpy-state==0.0.4`](https://pypi.org/project/brainpy-state/0.0.4/) ↗️
+  - [`brainpy==2.7.7`](https://pypi.org/project/brainpy/2.7.7/) ↗️
+  - [`brainunit==0.2.0`](https://pypi.org/project/brainunit/0.2.0/) ↗️
+  - [`brainstate==0.3.0`](https://pypi.org/project/brainstate/0.3.0/) ↗️
+  - [`brainevent==0.0.7`](https://pypi.org/project/brainevent/0.0.7/) ↗️
+  - [`braincell==0.0.8`](https://pypi.org/project/braincell/0.0.8/) ↗️
+  - [`braintools==0.1.8`](https://pypi.org/project/braintools/0.1.8/)
+  - [`braintrace==0.1.2`](https://pypi.org/project/braintrace/0.1.2/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+- **Project Configuration:**
+  - Dropped Python 3.10 support; minimum Python version is now `>=3.11`
+  - Removed version bounds from JAX optional extras (`cpu`, `cuda12`, `cuda13`, `tpu`)
+
+
+
 ## v2026.1.31
 
 This release updates package dependencies and includes extensive documentation formatting improvements.
