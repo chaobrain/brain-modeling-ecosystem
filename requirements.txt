@@ -13,7 +13,7 @@ brainmass==0.0.5
 pinnx==0.0.3
 
 # dependencies
-numpy>=1.15
+numpy>=2.4.4
 jax<=0.9.1,>=0.6.0
 msgpack>=1.1.0
 matplotlib
