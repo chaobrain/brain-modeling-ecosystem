@@ -191,3 +191,8 @@ cython_debug/
 /.claude/
 /docs/CHANGELOG.md
 /dev/
+
+# BrainX shared header — fetched from brainx.chaobrain.com at build time
+/docs/_brand/
+/docs/_static/css/brainx-header.css
+/docs/_static/js/brainx-header.js

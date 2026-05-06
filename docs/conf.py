@@ -123,12 +123,23 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/bdp-ecosystem.png"
 html_last_updated_fmt = ""
+html_baseurl = "https://brainx.chaobrain.com/docs/"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
-html_css_files = ['css/custom.css']
+
+# Fetch the canonical BrainX header from brainx.chaobrain.com and emit it as
+# static assets. See docs/_brainx_header.py for env-var controls
+# (BRAINX_HEADER_LOCAL / BRAINX_HEADER_OFFLINE / BRAINX_HEADER_TTL).
+import _brainx_header
+_brainx_header.install(os.path.dirname(os.path.abspath(__file__)))
+
+html_css_files = [
+    'css/brainx-header.css',
+]
+
 # jupyter_execute_notebooks = "off"
 nb_execution_mode = "off"
 
@@ -153,5 +164,6 @@ autodoc_default_options = {
 
 # Add Plotly JS once for your whole site (optional but recommended)
 html_js_files = [
+    "js/brainx-header.js",
     "https://cdn.plot.ly/plotly-latest.min.js",  # or pin a specific version
 ]

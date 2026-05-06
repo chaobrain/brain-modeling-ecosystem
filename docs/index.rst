@@ -1,17 +1,9 @@
 Brain Simulation Ecosystem
 ==========================
 
-
-.. raw:: html
-   :file: index.html
-
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-
-   ecosystem.rst
+Documentation for the BrainX brain simulation ecosystem.
+For the project landing page and ecosystem overview, see
+`brainx.chaobrain.com <https://brainx.chaobrain.com/>`_.
 
 
 .. toctree::
@@ -39,8 +31,6 @@ Brain Simulation Ecosystem
    point_neuron_examples/index.md
 
 
-
-
 .. toctree::
    :hidden:
    :caption: Developer resources
@@ -48,4 +38,3 @@ Brain Simulation Ecosystem
 
    contributing.md
    CHANGELOG.md
-
