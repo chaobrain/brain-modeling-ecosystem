@@ -68,6 +68,7 @@ extensions = [
     'sphinx_design',
     'sphinx_copybutton',
     'nbsphinx',
+    'brainx_sphinx_header',
 ]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -130,15 +131,15 @@ html_baseurl = "https://brainx.chaobrain.com/docs/"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-# Fetch the canonical BrainX header from brainx.chaobrain.com and emit it as
-# static assets. See docs/_brainx_header.py for env-var controls
-# (BRAINX_HEADER_LOCAL / BRAINX_HEADER_OFFLINE / BRAINX_HEADER_TTL).
-import _brainx_header
-_brainx_header.install(os.path.dirname(os.path.abspath(__file__)))
+# The BrainX brand header is provided by the `brainx_sphinx_header` extension
+# (added to `extensions` above). It fetches header.html/css from
+# https://brainx.chaobrain.com/shared-header, emits them under _static/, and
+# registers them automatically. Override defaults here if needed:
+#   brainx_header_url     = "https://brainx.chaobrain.com/shared-header"
+#   brainx_header_ttl     = 3600
+#   brainx_header_offline = False
+#   brainx_header_local   = None
 
-html_css_files = [
-    'css/brainx-header.css',
-]
 
 # jupyter_execute_notebooks = "off"
 nb_execution_mode = "off"
@@ -164,6 +165,5 @@ autodoc_default_options = {
 
 # Add Plotly JS once for your whole site (optional but recommended)
 html_js_files = [
-    "js/brainx-header.js",
     "https://cdn.plot.ly/plotly-latest.min.js",  # or pin a specific version
 ]
