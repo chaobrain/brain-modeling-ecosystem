@@ -124,7 +124,7 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 html_favicon = "_static/bdp-ecosystem.png"
 html_last_updated_fmt = ""
-html_baseurl = "https://brainx.chaobrain.com/docs/"
+html_baseurl = "https://brainx.chaobrain.com/summ/"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
