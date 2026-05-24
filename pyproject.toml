@@ -52,7 +52,7 @@ dynamic = [
 
 
 [project.urls]
-Documentation = "https://brainmodeling.readthedocs.io/"
+Documentation = "https://brainx.chaobrain.com/"
 Homepage = "https://github.com/chaobrain/brain-modeling-ecosystem"
 "Source Code" = "https://github.com/chaobrain/brain-modeling-ecosystem"
 "Bug Tracker" = "https://github.com/chaobrain/brain-modeling-ecosystem/issues"

@@ -86,7 +86,7 @@ pip install -e .
 ## Documentation
 
 For detailed documentation, tutorials, and examples, visit
-our [Documentation Portal](https://brainmodeling.readthedocs.io).
+our [Documentation Portal](https://brainx.chaobrain.com).
 
 ## Contributing
 
@@ -100,13 +100,13 @@ This project is licensed under the Apache License, Version 2.0. See the [LICENSE
 ## Citation
 
 If you use the BrainX Ecosystem in your research, please cite it appropriately. Refer to
-the [citation guide](https://brainmodeling.readthedocs.io/citation.html) on our documentation portal.
+the [citation guide](https://brainx.chaobrain.com/citation.html) on our documentation portal.
 
 ## Support
 
 If you have questions, encounter issues, or need support, please:
 
-* Check the [documentation](https://brainmodeling.readthedocs.io).
+* Check the [documentation](https://brainx.chaobrain.com).
 * Search the [existing issues](https://github.com/chaobrain/brain-modeling-ecosystem/issues).
 * [Open a new issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues/new/choose) if your problem is not
   addressed.
