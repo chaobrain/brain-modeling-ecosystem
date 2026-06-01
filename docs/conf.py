@@ -118,11 +118,11 @@ exclude_patterns = [
 ]
 
 html_theme = "sphinx_book_theme"
-html_logo = "_static/bdp-ecosystem.png"
+html_logo = "https://brainx.chaobrain.com/images/brainx-ecosystem.webp"
 html_title = "Brain Modeling Ecosystem"
 html_copy_source = True
 html_sourcelink_suffix = ""
-html_favicon = "_static/bdp-ecosystem.png"
+html_favicon = "https://brainx.chaobrain.com/images/brainx-ecosystem.webp"
 html_last_updated_fmt = ""
 html_baseurl = "https://brainx.chaobrain.com/summ/"
 
@@ -162,8 +162,3 @@ nb_execution_timeout = 200
 autodoc_default_options = {
     'exclude-members': '....,default_rng',
 }
-
-# Add Plotly JS once for your whole site (optional but recommended)
-html_js_files = [
-    "https://cdn.plot.ly/plotly-latest.min.js",  # or pin a specific version
-]
