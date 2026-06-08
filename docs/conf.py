@@ -151,7 +151,7 @@ thebe_config = {
 
 html_theme_options = {
     'show_toc_level': 2,
-    'repository_url': 'https://github.com/chaobrain/brain-modeling-ecosystem',  # 添加GitHub链接
+    'repository_url': 'https://github.com/chaobrain/brainx',  # 添加GitHub链接
     'use_repository_button': True,  # 显示GitHub按钮
 }
 

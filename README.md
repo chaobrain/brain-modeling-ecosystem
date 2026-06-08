@@ -1,17 +1,18 @@
 # Brain Simulation Ecosystem (BrainX)
 
 [![PyPI version](https://img.shields.io/pypi/v/brainx)](https://pypi.org/project/brainx/)
-![Read the Docs](https://img.shields.io/readthedocs/brainmodeling)
-[![Continuous Integration](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml/badge.svg)](https://github.com/chaobrain/brain-modeling-ecosystem/actions/workflows/CI.yml)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/chaobrain/brainx/blob/main/LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-brainx.chaobrain.com-blue)](https://brainx.chaobrain.com)
+[![Continuous Integration](https://github.com/chaobrain/brainx/actions/workflows/CI.yml/badge.svg)](https://github.com/chaobrain/brainx/actions/workflows/CI.yml)
 
 
 <p align="center">
-  	<img alt="Header image of Brain Modeling Ecosystem." src="https://raw.githubusercontent.com/chaobrain/brain-modeling-ecosystem/main/docs/_static/bdp-ecosystem.png" width=50%>
+  	<img alt="Header image of Brain Modeling Ecosystem." src="https://brainx.chaobrain.com/images/brainx-ecosystem.webp" width=50%>
 </p> 
 
 ## Overview
 
-The BrainX ecosystem provides comprehensive framework for brain simulation and modeling.
+The BrainX ecosystem provides a comprehensive framework for brain simulation and modeling.
 It provides tools and libraries for researchers to model, simulate, train, and analyze neural systems at different
 scales.
 
@@ -36,11 +37,13 @@ scales.
 
 - [BrainEvent](https://github.com/chaobrain/brainevent): Enabling event-driven computations in brain dynamics.
 
-- [BrainTrace](https://github.com/chaobrain/brainscale): Enabling scalable online learning for brain dynamics: $O(N)$
-  complexity for SNNs, and $O(N^2)$ for RNN computations.
+- [BrainTrace](https://github.com/chaobrain/braintrace): Eligibility trace-based online learning for brain dynamics:
+  $O(N)$ complexity for SNNs and $O(N^2)$ for RNN computations.
 
 - [BrainTools](https://github.com/chaobrain/braintools): Commonly used tools for brain dynamics programming, for example
   checkpointing.
+
+- [PINNx](https://github.com/chaobrain/pinnx): Physics-informed neural networks for scientific machine learning in JAX.
 
 - More components may be added in the future.
 
@@ -78,8 +81,8 @@ pip install BrainX[tpu] -U
 For development, you might want to clone the repository and install it in editable mode:
 
 ```bash
-git clone https://github.com/chaobrain/brain-modeling-ecosystem.git
-cd brain-modeling-ecosystem
+git clone https://github.com/chaobrain/brainx.git
+cd brainx
 pip install -e .
 ```
 
@@ -100,15 +103,15 @@ This project is licensed under the Apache License, Version 2.0. See the [LICENSE
 ## Citation
 
 If you use the BrainX Ecosystem in your research, please cite it appropriately. Refer to
-the [citation guide](https://brainx.chaobrain.com/citation.html) on our documentation portal.
+the [citation guide](https://brainx.chaobrain.com/research/papers-about-brainx/) on our documentation portal.
 
 ## Support
 
 If you have questions, encounter issues, or need support, please:
 
 * Check the [documentation](https://brainx.chaobrain.com).
-* Search the [existing issues](https://github.com/chaobrain/brain-modeling-ecosystem/issues).
-* [Open a new issue](https://github.com/chaobrain/brain-modeling-ecosystem/issues/new/choose) if your problem is not
+* Search the [existing issues](https://github.com/chaobrain/brainx/issues).
+* [Open a new issue](https://github.com/chaobrain/brainx/issues/new/choose) if your problem is not
   addressed.
 * Contact us via email: `chao.brain@qq.com`.
 
