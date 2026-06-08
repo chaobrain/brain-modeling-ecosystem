@@ -64,8 +64,8 @@ See the change log for the exact component versions: [docs/CHANGELOG.md](./CHANG
 ## From source (development)
 
 ```bash
-git clone https://github.com/chaobrain/brain-modeling-ecosystem.git
-cd brain-modeling-ecosystem
+git clone https://github.com/chaobrain/brainx.git
+cd brainx
 python -m pip install -e .
 ```
 

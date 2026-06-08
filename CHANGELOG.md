@@ -6,6 +6,58 @@
 
 
 
+## v2026.6.8
+
+This release ships inline type information (PEP 561), consolidates the continuous
+integration workflows, completes the repository rename to `brainx`, and refreshes
+the pinned component versions.
+
+- **Package Dependencies:**
+  - [`jax<=0.10.1,>=0.6.0`](https://pypi.org/project/jax/) ↗️ (raised upper bound)
+  - [`brainpy==2.7.8`](https://pypi.org/project/brainpy/2.7.8/) ↗️
+  - [`brainunit==0.3.2`](https://pypi.org/project/brainunit/0.3.2/) ↗️
+  - [`brainstate==0.4.0`](https://pypi.org/project/brainstate/0.4.0/) ↗️
+  - [`brainevent==0.1.0`](https://pypi.org/project/brainevent/0.1.0/) ↗️
+  - [`braintools==0.1.9`](https://pypi.org/project/braintools/0.1.9/) ↗️
+  - [`braintrace==0.2.0`](https://pypi.org/project/braintrace/0.2.0/) ↗️
+  - [`braincell==0.0.8`](https://pypi.org/project/braincell/0.0.8/)
+  - [`brainpy-state==0.0.4`](https://pypi.org/project/brainpy-state/0.0.4/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+- **Typing:**
+  - Added a [PEP 561](https://peps.python.org/pep-0561/) `py.typed` marker so that
+    downstream type checkers (mypy, pyright) treat `BrainX` as a typed package
+  - Declared `py.typed` as package data in `pyproject.toml` so it ships in the wheel
+
+- **Continuous Integration:**
+  - Merged the push/pull-request workflow and the scheduled workflow into a single
+    `CI.yml`
+  - The cross-platform test suite (Linux, macOS, Windows) runs on push, pull
+    request, and manual dispatch
+  - A JAX-version compatibility matrix (`0.7.1`, `0.8.0`, `0.9.0`, and latest) runs
+    on a daily schedule and on manual dispatch
+
+- **Repository:**
+  - Renamed the GitHub repository from `brain-modeling-ecosystem` to `brainx`;
+    updated all source, documentation, and packaging URLs accordingly
+
+- **Documentation:**
+  - Corrected the "Open in Colab/Kaggle" badges in every example notebook to target
+    their actual paths on the `main` branch
+  - Replaced the logo and favicon with hosted WebP assets and removed the bundled
+    3.5 MB `plotly.js`
+  - Removed unused static assets (legacy PWA manifest, service worker, and stale
+    images)
+
+- **README:**
+  - Fixed the BrainTrace link, which previously pointed at the renamed `brainscale`
+    repository
+  - Added PINNx to the list of ecosystem components
+  - Replaced the broken Read the Docs badge with Documentation and License badges
+
+
+
 ## v2026.3.12
 
 This release updates package dependencies and drops Python 3.10 support.

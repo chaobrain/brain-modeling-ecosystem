@@ -53,15 +53,15 @@ dynamic = [
 
 [project.urls]
 Documentation = "https://brainx.chaobrain.com/"
-Homepage = "https://github.com/chaobrain/brain-modeling-ecosystem"
-"Source Code" = "https://github.com/chaobrain/brain-modeling-ecosystem"
-"Bug Tracker" = "https://github.com/chaobrain/brain-modeling-ecosystem/issues"
+Homepage = "https://github.com/chaobrain/brainx"
+"Source Code" = "https://github.com/chaobrain/brainx"
+"Bug Tracker" = "https://github.com/chaobrain/brainx/issues"
 
 
 [project.optional-dependencies]
 cpu = ["jax[cpu]", "numba"]
-cuda12 = ["jax[cuda12]", "ninja"]
-cuda13 = ["jax[cuda13]", "ninja"]
+cuda12 = ["jax[cuda12]"]
+cuda13 = ["jax[cuda13]"]
 tpu = ["jax[tpu]"]
 
 
@@ -78,6 +78,10 @@ exclude = [
     "BrainX.egg-info*",
     "BrainX/__pycache__*"
 ]
+
+
+[tool.setuptools.package-data]
+BrainX = ["py.typed"]
 
 
 [tool.setuptools.dynamic]
