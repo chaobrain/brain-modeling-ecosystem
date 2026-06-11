@@ -1,8 +1,8 @@
 # infrastructure packages
-brainunit==0.3.2
+brainunit==0.4.0
 brainevent==0.1.0
-brainstate==0.4.0
-braintools==0.1.9
+brainstate==0.4.2
+braintools==0.1.10
 braintrace==0.2.0
 
 # modeling packages
