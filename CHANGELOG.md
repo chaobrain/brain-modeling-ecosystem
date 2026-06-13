@@ -5,6 +5,24 @@
 
 
 
+## v2026.6.14
+
+This maintenance release upgrades BrainState to its 0.5.0 release.
+
+- **Package Dependencies:**
+  - [`brainstate==0.5.0`](https://pypi.org/project/brainstate/0.5.0/) ↗️
+  - [`brainunit==0.4.0`](https://pypi.org/project/brainunit/0.4.0/)
+  - [`braintools==0.1.10`](https://pypi.org/project/braintools/0.1.10/)
+  - [`brainevent==0.1.0`](https://pypi.org/project/brainevent/0.1.0/)
+  - [`braintrace==0.2.0`](https://pypi.org/project/braintrace/0.2.0/)
+  - [`braincell==0.0.8`](https://pypi.org/project/braincell/0.0.8/)
+  - [`brainpy==2.7.8`](https://pypi.org/project/brainpy/2.7.8/)
+  - [`brainpy-state==0.0.4`](https://pypi.org/project/brainpy-state/0.0.4/)
+  - [`brainmass==0.0.5`](https://pypi.org/project/brainmass/0.0.5/)
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+
+
 ## v2026.6.11
 
 This maintenance release refreshes the pinned infrastructure component versions.
