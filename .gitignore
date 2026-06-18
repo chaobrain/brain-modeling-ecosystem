@@ -197,3 +197,6 @@ cython_debug/
 /docs/_static/css/brainx-header.css
 /docs/_static/js/brainx-header.js
 /CLAUDE.md
+
+# Version module stamped at build time by _packaging/calver_backend.py
+/BrainX/_version.py
