@@ -15,7 +15,9 @@
 
 [build-system]
 requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+# In-tree backend that stamps __version__ from the build/publish date.
+build-backend = "calver_backend"
+backend-path = ["_packaging"]
 
 
 [project]
@@ -75,6 +77,7 @@ exclude = [
     "benchmark*",
     "build*",
     "dist*",
+    "_packaging*",
     "BrainX.egg-info*",
     "BrainX/__pycache__*"
 ]
@@ -85,5 +88,5 @@ BrainX = ["py.typed"]
 
 
 [tool.setuptools.dynamic]
-version = { attr = "BrainX.__version__" }
+version = { attr = "BrainX._version.__version__" }
 dependencies = { file = ["requirements.txt"] }

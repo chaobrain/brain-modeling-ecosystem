@@ -16,5 +16,14 @@
 # -*- coding: utf-8 -*-
 
 
-__version__ = "2026.6.18"
-__version_info__ = tuple(map(int, __version__.split(".")))
+try:
+    # Generated at build time from the publish date by _packaging/calver_backend.py.
+    from ._version import __version__, __version_info__
+except ImportError:
+    # Running from an un-built source checkout: fall back to today's date (UTC).
+    import datetime as _dt
+
+    _now = _dt.datetime.now(_dt.timezone.utc)
+    __version__ = f"{_now.year}.{_now.month}.{_now.day}"
+    __version_info__ = tuple(map(int, __version__.split(".")))
+    del _dt, _now
