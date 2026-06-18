@@ -1,0 +1,5 @@
+# The in-tree PEP 517 build backend must be present inside the sdist so that
+# building a wheel from the sdist can resolve `build-backend = "calver_backend"`.
+include _packaging/calver_backend.py
+# The generated version module (frozen at build time).
+include BrainX/_version.py
