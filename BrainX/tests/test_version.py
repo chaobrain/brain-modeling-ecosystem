@@ -16,7 +16,36 @@
 # -*- coding: utf-8 -*-
 
 
+import re
+from importlib.metadata import PackageNotFoundError, version
+from pathlib import Path
+
+import pytest
+
 import BrainX
+
+# Repository root: BrainX/tests/test_version.py -> parents[2].
+_REQUIREMENTS = Path(__file__).resolve().parents[2] / "requirements.txt"
+
+# Matches an exact pin, e.g. ``brainstate==0.5.1`` (ignores ``>=``/``<=`` ranges,
+# comments, blank lines, and any trailing environment markers).
+_PIN_RE = re.compile(r"^([A-Za-z0-9][A-Za-z0-9._-]*)==([^\s;#]+)")
+
+
+def _parse_pinned_requirements():
+    """Return the ``name == version`` pins declared in ``requirements.txt``."""
+    pins = {}
+    for raw in _REQUIREMENTS.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        match = _PIN_RE.match(line)
+        if match:
+            pins[match.group(1)] = match.group(2)
+    return pins
+
+
+_PINNED = _parse_pinned_requirements()
 
 
 class Test:
@@ -42,3 +71,30 @@ class Test:
         print(brainstate.__version__)
         print(pinnx.__version__)
 
+    def test_requirements_are_pinned(self):
+        """Every brain* / pinnx ecosystem package must be exactly pinned."""
+        expected = {
+            "brainunit",
+            "brainevent",
+            "brainstate",
+            "braintools",
+            "braintrace",
+            "braincell",
+            "brainpy",
+            "brainpy-state",
+            "brainmass",
+            "pinnx",
+        }
+        missing = sorted(expected - set(_PINNED))
+        assert not missing, f"requirements.txt is missing exact pins for: {missing}"
+
+    @pytest.mark.parametrize("dist, pinned", sorted(_PINNED.items()))
+    def test_installed_version_matches_requirements(self, dist, pinned):
+        """The installed distribution version must equal the requirements.txt pin."""
+        try:
+            installed = version(dist)
+        except PackageNotFoundError:
+            pytest.skip(f"{dist} is not installed in this environment")
+        assert installed == pinned, (
+            f"{dist}: installed {installed!r} != requirements.txt pin {pinned!r}"
+        )
