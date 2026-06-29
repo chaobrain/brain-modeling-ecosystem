@@ -5,7 +5,7 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SPHINXPROJ    = brain-dynamics-ecosystem
+SPHINXPROJ    = brainx
 SOURCEDIR     = .
 BUILDDIR      = _build
 
