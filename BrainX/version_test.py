@@ -24,8 +24,8 @@ import pytest
 
 import BrainX
 
-# Repository root: BrainX/tests/test_version.py -> parents[2].
-_REQUIREMENTS = Path(__file__).resolve().parents[2] / "requirements.txt"
+# Repository root: BrainX/version_test.py -> parents[1].
+_REQUIREMENTS = Path(__file__).resolve().parents[1] / "requirements.txt"
 
 # Matches an exact pin, e.g. ``brainstate==0.5.1`` (ignores ``>=``/``<=`` ranges,
 # comments, blank lines, and any trailing environment markers).
@@ -57,22 +57,22 @@ class Test:
         import brainpy.state
         import braincell
         import braintools
+        import braintrace
         import brainevent
         import brainunit
         import brainstate
-        import pinnx
 
         print(brainmass.__version__)
         print(brainpy.__version__)
         print(braincell.__version__)
         print(braintools.__version__)
+        print(braintrace.__version__)
         print(brainevent.__version__)
         print(brainunit.__version__)
         print(brainstate.__version__)
-        print(pinnx.__version__)
 
     def test_requirements_are_pinned(self):
-        """Every brain* / pinnx ecosystem package must be exactly pinned."""
+        """Every brain* ecosystem package must be exactly pinned."""
         expected = {
             "brainunit",
             "brainevent",
@@ -83,7 +83,6 @@ class Test:
             "brainpy",
             "brainpy-state",
             "brainmass",
-            "pinnx",
         }
         missing = sorted(expected - set(_PINNED))
         assert not missing, f"requirements.txt is missing exact pins for: {missing}"

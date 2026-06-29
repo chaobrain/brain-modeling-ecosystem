@@ -5,6 +5,78 @@
 
 
 
+## v2026.6.29
+
+This is a maintenance and refinement release. It refreshes two ecosystem
+components to their latest releases — **BrainState `0.5.2`** and **BrainTrace
+`0.2.2`** — slims the bundled dependency set by **removing `pinnx`**, and adds a
+cross-package **compatibility / correctness test suite** that exercises the pinned
+stack end-to-end. The two component bumps are *coupled*: BrainTrace `0.2.2`
+requires BrainState `>= 0.5.2`, and BrainState `0.5.2`'s new `in_new_state_probe()`
+is exactly the hook BrainTrace's unified `compile` path uses to cooperate with the
+eager state-discovery probe — so the pinned set stays mutually consistent.
+
+- **Package Dependencies:**
+  - [`jax<=0.10.2,>=0.8.0`](https://pypi.org/project/jax/)
+  - [`brainunit==0.5.1`](https://pypi.org/project/brainunit/0.5.1/)
+  - [`brainevent==0.1.1`](https://pypi.org/project/brainevent/0.1.1/)
+  - [`brainstate==0.5.2`](https://pypi.org/project/brainstate/0.5.2/) ↗️
+  - [`braintools==0.3.0`](https://pypi.org/project/braintools/0.3.0/)
+  - [`braintrace==0.2.2`](https://pypi.org/project/braintrace/0.2.2/) ↗️
+  - [`braincell==0.1.0`](https://pypi.org/project/braincell/0.1.0/)
+  - [`brainpy==2.8.0`](https://pypi.org/project/brainpy/2.8.0/)
+  - [`brainpy-state==0.1.0`](https://pypi.org/project/brainpy-state/0.1.0/)
+  - [`brainmass==0.1.1`](https://pypi.org/project/brainmass/0.1.1/)
+  - `pinnx` — **removed** from the bundled dependency set (see below)
+
+- **BrainState `0.5.2` — additive transform feature:**
+  - Adds `brainstate.transform.in_new_state_probe()`, a public predicate that lets
+    state-bound, one-shot consumers cooperate with the eager discovery probe that
+    `vmap_new_states` / `vmap2_new_states` / `pmap2_new_states` run to enumerate the
+    states a function creates before the real mapped pass
+  - Implemented as a thread-local depth counter, so it composes under nested
+    `*_new_states` calls and resets cleanly even if the probe raises
+  - No public API is removed or renamed, and behavior is unchanged for code that
+    does not call the new helper; 28 new regression tests, green on the JAX
+    `0.7`–latest matrix and the type-check gate
+
+- **BrainTrace `0.2.2` — unified online-learning entry point and vmap fixes:**
+  - `braintrace.compile(model, algorithm, *example_inputs, ...)` is now the
+    canonical single call for building a compiled eligibility-trace learner — it
+    always initializes states, accepts `seed` / `verbose`, adds a `vmap=` option for
+    per-sample state initialization, and exposes a structured `CompilationReport`
+  - Adds a recurrent mixing mode to graph construction, broadening the set of cell
+    topologies the compiler can connect
+  - Fixes eligibility-trace convergence under `vmap` / `brainstate.mixin.Batching()`
+    by deferring compilation during the discovery probe (aligning convolutional and
+    element-wise traces), and routes `LoRA` through the ETP `lora_matmul` primitive
+    so its factors participate in trace learning
+  - Migrates unit handling from `saiunit` to `brainunit` (a re-export, so it is
+    drop-in), raises the `brainstate` floor to `>= 0.5.2`, targets Python 3.14, and
+    renames private modules (`_etrace_*` → `_*`); 1604 tests pass and the documented
+    0.2.x public API is unchanged
+
+- **Removed `pinnx` from the bundled set:**
+  - The default `brainx` install now scopes to the core brain-simulation stack;
+    [PINNx](https://github.com/chaobrain/pinnx) (physics-informed neural networks)
+    remains a fully supported, independently released ecosystem project and can
+    still be installed on its own with `pip install pinnx`
+
+- **Cross-package compatibility testing:**
+  - Adds `BrainX/compatibility_test.py`, a co-located suite that imports the pinned
+    packages together and drives small, deterministic computations across package
+    boundaries: a unit-carrying `brainstate` state integrated by
+    `transform.for_loop`, `brainevent` event/sparse operators checked against dense
+    references, `braintools` initializers/metrics, a `brainpy.state` neuron step, a
+    `braincell.SingleCompartment` integration, a `brainmass` mean-field run, and the
+    `braintrace.compile` eligibility-trace path on BrainState `0.5.2`
+  - Tests are now co-located beside the package in the suffix style: the legacy
+    `BrainX/tests/test_version.py` becomes `BrainX/version_test.py` (the `tests/`
+    folder is removed), it drops its `pinnx` import and pin and now also imports
+    `braintrace`, and `pyproject.toml` configures pytest to collect `*_test.py`
+
+
+
 ## v2026.6.19
 
 This is a landmark release: the **first fully integrated and compatibility-hardened

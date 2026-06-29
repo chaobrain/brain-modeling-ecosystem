@@ -1,16 +1,15 @@
 # infrastructure packages
 brainunit==0.5.1
 brainevent==0.1.1
-brainstate==0.5.1
+brainstate==0.5.2
 braintools==0.3.0
-braintrace==0.2.1
+braintrace==0.2.2
 
 # modeling packages
 braincell==0.1.0
 brainpy==2.8.0
 brainpy-state==0.1.0
 brainmass==0.1.1
-pinnx==0.0.3
 
 # dependencies
 numpy>=2.4.4
