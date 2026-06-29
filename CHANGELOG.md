@@ -5,6 +5,196 @@
 
 
 
+## v2026.6.29
+
+This is a maintenance and refinement release. It refreshes two ecosystem
+components to their latest releases — **BrainState `0.5.2`** and **BrainTrace
+`0.2.2`** — slims the bundled dependency set by **removing `pinnx`**, and adds a
+cross-package **compatibility / correctness test suite** that exercises the pinned
+stack end-to-end. The two component bumps are *coupled*: BrainTrace `0.2.2`
+requires BrainState `>= 0.5.2`, and BrainState `0.5.2`'s new `in_new_state_probe()`
+is exactly the hook BrainTrace's unified `compile` path uses to cooperate with the
+eager state-discovery probe — so the pinned set stays mutually consistent.
+
+- **Package Dependencies:**
+  - [`jax<=0.10.2,>=0.8.0`](https://pypi.org/project/jax/)
+  - [`brainunit==0.5.1`](https://pypi.org/project/brainunit/0.5.1/)
+  - [`brainevent==0.1.1`](https://pypi.org/project/brainevent/0.1.1/)
+  - [`brainstate==0.5.2`](https://pypi.org/project/brainstate/0.5.2/) ↗️
+  - [`braintools==0.3.0`](https://pypi.org/project/braintools/0.3.0/)
+  - [`braintrace==0.2.2`](https://pypi.org/project/braintrace/0.2.2/) ↗️
+  - [`braincell==0.1.0`](https://pypi.org/project/braincell/0.1.0/)
+  - [`brainpy==2.8.0`](https://pypi.org/project/brainpy/2.8.0/)
+  - [`brainpy-state==0.1.0`](https://pypi.org/project/brainpy-state/0.1.0/)
+  - [`brainmass==0.1.1`](https://pypi.org/project/brainmass/0.1.1/)
+  - `pinnx` — **removed** from the bundled dependency set (see below)
+
+- **BrainState `0.5.2` — additive transform feature:**
+  - Adds `brainstate.transform.in_new_state_probe()`, a public predicate that lets
+    state-bound, one-shot consumers cooperate with the eager discovery probe that
+    `vmap_new_states` / `vmap2_new_states` / `pmap2_new_states` run to enumerate the
+    states a function creates before the real mapped pass
+  - Implemented as a thread-local depth counter, so it composes under nested
+    `*_new_states` calls and resets cleanly even if the probe raises
+  - No public API is removed or renamed, and behavior is unchanged for code that
+    does not call the new helper; 28 new regression tests, green on the JAX
+    `0.7`–latest matrix and the type-check gate
+
+- **BrainTrace `0.2.2` — unified online-learning entry point and vmap fixes:**
+  - `braintrace.compile(model, algorithm, *example_inputs, ...)` is now the
+    canonical single call for building a compiled eligibility-trace learner — it
+    always initializes states, accepts `seed` / `verbose`, adds a `vmap=` option for
+    per-sample state initialization, and exposes a structured `CompilationReport`
+  - Adds a recurrent mixing mode to graph construction, broadening the set of cell
+    topologies the compiler can connect
+  - Fixes eligibility-trace convergence under `vmap` / `brainstate.mixin.Batching()`
+    by deferring compilation during the discovery probe (aligning convolutional and
+    element-wise traces), and routes `LoRA` through the ETP `lora_matmul` primitive
+    so its factors participate in trace learning
+  - Migrates unit handling from `saiunit` to `brainunit` (a re-export, so it is
+    drop-in), raises the `brainstate` floor to `>= 0.5.2`, targets Python 3.14, and
+    renames private modules (`_etrace_*` → `_*`); 1604 tests pass and the documented
+    0.2.x public API is unchanged
+
+- **Removed `pinnx` from the bundled set:**
+  - The default `brainx` install now scopes to the core brain-simulation stack;
+    [PINNx](https://github.com/chaobrain/pinnx) (physics-informed neural networks)
+    remains a fully supported, independently released ecosystem project and can
+    still be installed on its own with `pip install pinnx`
+
+- **Cross-package compatibility testing:**
+  - Adds `BrainX/compatibility_test.py`, a co-located suite that imports the pinned
+    packages together and drives small, deterministic computations across package
+    boundaries: a unit-carrying `brainstate` state integrated by
+    `transform.for_loop`, `brainevent` event/sparse operators checked against dense
+    references, `braintools` initializers/metrics, a `brainpy.state` neuron step, a
+    `braincell.SingleCompartment` integration, a `brainmass` mean-field run, and the
+    `braintrace.compile` eligibility-trace path on BrainState `0.5.2`
+  - Tests are now co-located beside the package in the suffix style: the legacy
+    `BrainX/tests/test_version.py` becomes `BrainX/version_test.py` (the `tests/`
+    folder is removed), it drops its `pinnx` import and pin and now also imports
+    `braintrace`, and `pyproject.toml` configures pytest to collect `*_test.py`
+
+
+
+## v2026.6.19
+
+This is a landmark release: the **first fully integrated and compatibility-hardened
+BrainX collection**. Every pinned component has been independently audited for
+correctness, retested, and aligned to a single, mutually-consistent dependency
+contract — resolving the cross-package incompatibilities and latent numerical bugs
+that affected earlier mixed-version combinations. The result is the most complete
+and stable BrainX stack to date, spanning the full modeling spectrum: from
+**morphologically detailed single-cell modeling** (dendritic, multi-compartment),
+through **point-neuron network simulation**, to **neural-mass / firing-rate
+whole-brain modeling** — all differentiable, unit-aware, and built on a shared JAX
+foundation.
+
+- **Package Dependencies:**
+  - [`jax<=0.10.2,>=0.8.0`](https://pypi.org/project/jax/) ↗️ (raised both bounds; JAX 0.10.2 now supported)
+  - [`brainunit==0.5.1`](https://pypi.org/project/brainunit/0.5.1/) ↗️
+  - [`brainevent==0.1.1`](https://pypi.org/project/brainevent/0.1.1/) ↗️
+  - [`brainstate==0.5.1`](https://pypi.org/project/brainstate/0.5.1/) ↗️
+  - [`braintools==0.3.0`](https://pypi.org/project/braintools/0.3.0/) ↗️
+  - [`braintrace==0.2.1`](https://pypi.org/project/braintrace/0.2.1/) ↗️
+  - [`braincell==0.1.0`](https://pypi.org/project/braincell/0.1.0/) ↗️
+  - [`brainpy==2.8.0`](https://pypi.org/project/brainpy/2.8.0/) ↗️
+  - [`brainpy-state==0.1.0`](https://pypi.org/project/brainpy-state/0.1.0/)
+  - [`brainmass==0.1.1`](https://pypi.org/project/brainmass/0.1.1/) ↗️
+  - [`pinnx==0.0.3`](https://pypi.org/project/pinnx/0.0.3/)
+
+- **BrainCell `0.1.0` — multi-compartment, morphologically detailed neurons:**
+  - Evolves from single-compartment Hodgkin–Huxley into a complete multi-compartment
+    framework: a `Cell` declaration frontend, a frozen `RunnableCell` runtime, and a
+    high-level `rcell.run(dt=, duration=)` driver returning a structured `RunResult`
+  - Immutable morphology layer (`Soma` / `Dendrite` / `Axon` / `BasalDendrite` /
+    `ApicalDendrite` / `CustomBranch`) plus a mutable `Morphology` tree
+  - Pure-functional control-volume discretization with composable policies
+    (`CVPerBranch`, `DLambda`, `MaxCVLen`) and an execution-graph compute runtime
+  - Declarative mechanism system (`braincell.mech`), morphology IO (`braincell.io`:
+    SWC / ASC / NeuroML2 readers, NeuroMorpho.Org client), location/region filters,
+    and a 2D/3D visualization stack (matplotlib, PyVista, Plotly)
+  - Added cerebellar dynamics (Purkinje-cell comparison scaffold); package now
+    PEP 561-typed
+
+- **BrainMass `0.1.1` — differentiable whole-brain modeling:**
+  - Turns a library of neural-mass *models* into an end-to-end *simulate → observe →
+    score* toolkit (introduced in `0.1.0`), with gradients flowing through the entire
+    pipeline so parameters can be recovered by gradient descent
+  - High-level `Simulator`, `Network`, and `Fitter` (gradient-based Optax,
+    gradient-free Nevergrad, and Bayesian scikit-optimize backends)
+  - Seven new literature-faithful mean-field models (Epileptor, Larter–Breakspear,
+    Coombes–Byrne, Generic 2-D oscillator, Wong–Wang E/I, Lorenz, Linear) — 17 model
+    families total — plus nonlinear couplings, an HRF-BOLD forward model, and
+    composable differentiable objectives (time-series RMSE, FC, FCD)
+  - Bundled `datasets`, optional `viz` helpers, `list_models()`, and a new
+    Diátaxis-organized documentation site
+  - `0.1.1` raises the `braintools` constraint to `>=0.3.0` (the release that fixed
+    the `init.param` batched-init regression), so brainmass co-installs with
+    `brainpy` 2.8.0 across the ecosystem
+
+- **BrainPy `2.8.0` — library-wide correctness sweep and static typing:**
+  - Audited bug-fix pass across neuron/synapse dynamics, ODE/SDE/FDE integrators, the
+    math and object-transform layer, `dnn` layers, optimizers, losses, analysis, and
+    runners — each fix backed by regression tests (notably a `CondNeuGroup`
+    synaptic-current scaling error that attenuated currents ~1000×)
+  - Static typing with a new `mypy` CI gate (PEP 561); coverage raised from ~84% to
+    92%+; tests co-located as `<module>_test.py`
+  - Removed forked internals by reusing the shared `braintools` (init, metric,
+    surrogate) and `brainstate` (transforms) implementations
+
+- **BrainTools `0.3.0` — completed correctness, coverage, and documentation audit:**
+  - Completes the codebase-wide audit campaign begun in `0.2.0` across `metric`,
+    `trainer`, `optim`, `visualize`, `surrogate`, `quad`, `init`, `conn`, `file`, and
+    `cogtask`, lifting per-module coverage to ~92–100%
+  - Corrected genuine numerical/algorithmic bugs: inverted surrogate-gradient
+    formulas, an `nll_loss` sign error, LFP coherence identically `1`, He/Kaiming
+    initialization variance off by 2×, double-applied SM3 momentum, a centered
+    RMSprop that was a silent no-op, and dropped `cogtask.Parallel` branches
+  - New/restored public API: `file.save_matfile`, gradient accumulation and
+    name-based parameter freezing in `trainer`, an `LBFGS` line-search, exported
+    `metric.safe_norm` / pairwise-cosine helpers, `cogtask.create_task`, and
+    `metric.L1Loss`
+
+- **BrainState `0.5.1` — JAX 0.10.2 compatibility:**
+  - Fixes the `vmap` regression caused by JAX 0.10 removing
+    `jax.interpreters.batching.not_mapped`; the `unvmap` primitives now resolve the
+    sentinel version-agnostically (full suite: 5312 passed). No public API changes;
+    compatible across `jax>=0.7.0`
+
+- **BrainEvent `0.1.1` — custom-operator / FFI hardening:**
+  - Audit of the JAX custom-op / FFI layer fixed ~30 defects that produced
+    silently-wrong output or process crashes (proper `XLA_FFI_Error` propagation,
+    fp16/bf16/complex handling, a multi-GPU device-binding race, corrected
+    `indptr` / CSC construction)
+  - The numba FFI bridge now works across `jax` 0.7–0.9 (not only 0.10+), and
+    compatibility with newer JAX is restored. No public API changes
+
+- **BrainTrace `0.2.1` — ecosystem dependency compatibility:**
+  - Adopts `brainstate` 0.5's typed (PEP 561) surface (clearing 154 mypy errors),
+    updates for hardened convolution validation, and fixes `pytest` 9.1 collection
+    (1367 passed, mypy clean, `py.typed` shipped). No functional/API changes
+
+- **BrainUnit `0.5.1` — unit-contract compatibility patch:**
+  - Resolves the upstream `saiunit` / `brainunit` unit-contract issue surfaced across
+    the ecosystem (the `rtol` dimensionless / `atol` unit-carrying convention),
+    keeping numerical-tolerance handling consistent with `braintrace` 0.2.1 and
+    `brainevent` 0.1.1. No public API changes
+
+- **Cross-ecosystem compatibility:**
+  - BrainState 0.5.1, BrainUnit 0.5.1, BrainEvent 0.1.1, and BrainTrace 0.2.1 jointly
+    resolve the JAX 0.10.x `vmap` / FFI regressions and the `saiunit` tolerance-unit
+    contract, while BrainPy 2.8.0 and BrainTools 0.3.0 eliminate forked-internals
+    drift by reusing the shared `braintools` / `brainstate` implementations. Earlier
+    mixed-version stacks could surface `AttributeError` under `vmap`, silently-wrong
+    FFI results, or unit-handling crashes — all addressed here
+  - BrainMass 0.1.1 raises its `braintools` floor to `>=0.3.0` (matching BrainPy
+    2.8.0's requirement), resolving the last `braintools` version conflict so the
+    entire pinned set co-installs cleanly. The combination was validated end-to-end:
+    the full BrainMass test suite (692 tests) passes against this exact dependency set
+
+
+
 ## v2026.6.18
 
 This maintenance release upgrades BrainPy-State to its 0.1.0 release.

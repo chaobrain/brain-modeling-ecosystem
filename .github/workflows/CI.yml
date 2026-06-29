@@ -50,7 +50,9 @@ jobs:
           python -m pip install --upgrade pip setuptools --no-cache-dir
           python -m pip install -r requirements.txt --no-cache-dir
           python -m pip install pytest --no-cache-dir
-          python -m pip install . --no-cache-dir
+          # Install the CPU extra so brainevent's numba-backed event/sparse
+          # kernels are available to the cross-package compatibility tests.
+          python -m pip install ".[cpu]" --no-cache-dir
       - name: Test with pytest
         run: |
           pytest BrainX/
@@ -78,12 +80,14 @@ jobs:
           python -m pip install --upgrade pip setuptools
           python -m pip install -r requirements.txt
           python -m pip install pytest
+          # Install the CPU extra (numba + jax[cpu]) first, then pin the matrix
+          # JAX version last so it wins over the extra's resolved jax.
+          python -m pip install ".[cpu]" || exit 1
           if [ "${{ matrix.jax-version }}" == "" ]; then
             python -m pip install jax || exit 1
           else
             python -m pip install jax==${{ matrix.jax-version }} || exit 1
           fi
-          python -m pip install . || exit 1
       - name: Test with pytest
         run: |
           pytest BrainX/

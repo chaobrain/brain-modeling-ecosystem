@@ -90,3 +90,9 @@ BrainX = ["py.typed"]
 [tool.setuptools.dynamic]
 version = { attr = "BrainX._version.__version__" }
 dependencies = { file = ["requirements.txt"] }
+
+
+[tool.pytest.ini_options]
+# Tests are co-located beside the package using the suffix style (``*_test.py``),
+# so ``pytest BrainX/`` runs the whole ecosystem suite.
+python_files = ["*_test.py"]

@@ -8,7 +8,7 @@ stateful model construction, biophysical and neural-mass modeling, and
 learning-driven dynamics. For the project landing page and broader ecosystem
 overview, see `brainx.chaobrain.com <https://brainx.chaobrain.com/>`_.
 
-This page is a summary of the BrainX documentation. It introduces the core
+**This page is a summary of the BrainX documentation**. It introduces the core
 packages, shows how the layers fit together, and points you to tutorials that
 move from foundational tools to complete simulation workflows.
 
@@ -17,13 +17,14 @@ If you are setting up BrainX for the first time, start with the
 required packages.
 
 The tutorials are organized around the BrainX package layers:
- - Units :  ``brainunit``
+
+ - Physical Units :  ``brainunit``
  - Events & Tools :  ``brainevent`` ``braintools``
  - State Runtime :  ``brainstate``
  - Models :  ``brainpy.state`` ``braincell`` ``brainmass``
  - Online Learning :  ``braintrace``
 
-**For more detailed information, click a package card to open its full package documentation:**
+**For more detailed information**, click a package card to open its full package documentation:
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -106,11 +107,11 @@ The tutorials are organized around the BrainX package layers:
    :maxdepth: 1
 
    tutorials/brainunit_unit_aware_computations.ipynb
-   tutorials/brainevent.ipynb
-   tutorials/braintools.ipynb
+   tutorials/brainevent_event-driven.ipynb
+   tutorials/braintools_expriment_utilities.ipynb
    tutorials/brainstate_transformations.ipynb
-   tutorials/brainstate_alignpre_aignpost.ipynb
-   tutorials/brainpy.state.ipynb
+   tutorials/brainpy.state_point_neuron_networks.ipynb
+   tutorials/brainpy.state_NEST_compatible.ipynb
    tutorials/braincell_HH_neuron.ipynb
    tutorials/braincell_morphological_golgi_cell.ipynb
    tutorials/brainmass_jansenrit_node_simulation.ipynb
