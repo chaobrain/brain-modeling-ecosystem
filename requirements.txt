@@ -3,7 +3,7 @@ brainunit==0.5.1
 brainevent==0.1.1
 brainstate==0.5.2
 braintools==0.3.0
-braintrace==0.2.2
+braintrace==0.2.3
 
 # modeling packages
 braincell==0.1.0
