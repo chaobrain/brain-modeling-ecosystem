@@ -98,6 +98,7 @@ The tutorials are organized around the BrainX package layers:
    :caption: Getting started
    :maxdepth: 1
 
+   CHANGELOG.md
    install.md
 
 
@@ -125,4 +126,3 @@ The tutorials are organized around the BrainX package layers:
    :maxdepth: 1
 
    contributing.md
-   CHANGELOG.md

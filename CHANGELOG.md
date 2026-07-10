@@ -5,6 +5,93 @@
 
 
 
+## v2026.7.9
+
+This maintenance release advances three ecosystem components to their latest
+releases — **BrainEvent `0.1.2`**, **BrainTrace `0.2.4`**, and **BrainPy
+`2.8.1`** — and pins **Optax `>= 0.2.8`** as an explicit supporting dependency
+for the gradient-based tooling. The bumps are mutually consistent: BrainTrace
+(from `0.2.3`) now depends on BrainEvent at runtime — its `sparse_matmul`
+operand must be a `brainevent.DataRepresentation` — and BrainEvent `0.1.2` lands
+the batched `dt2t` operators that implement the D-RTRL eligibility-trace update
+BrainTrace drives, so the two move together and the pinned set stays coherent.
+
+- **Package Dependencies:**
+  - [`jax<=0.10.2,>=0.8.0`](https://pypi.org/project/jax/)
+  - [`brainunit==0.5.1`](https://pypi.org/project/brainunit/0.5.1/)
+  - [`brainevent==0.1.2`](https://pypi.org/project/brainevent/0.1.2/) ↗️
+  - [`brainstate==0.5.2`](https://pypi.org/project/brainstate/0.5.2/)
+  - [`braintools==0.3.0`](https://pypi.org/project/braintools/0.3.0/)
+  - [`braintrace==0.2.4`](https://pypi.org/project/braintrace/0.2.4/) ↗️
+  - [`braincell==0.1.0`](https://pypi.org/project/braincell/0.1.0/)
+  - [`brainpy==2.8.1`](https://pypi.org/project/brainpy/2.8.1/) ↗️
+  - [`brainpy-state==0.1.0`](https://pypi.org/project/brainpy-state/0.1.0/)
+  - [`brainmass==0.1.1`](https://pypi.org/project/brainmass/0.1.1/)
+  - [`optax>=0.2.8`](https://pypi.org/project/optax/) ↗️ (now pinned explicitly)
+
+- **BrainEvent `0.1.2` — batched `dt2t` operators, naming cleanup, GPU fixes:**
+  - Adds batched (`mm`) variants of the per-synapse `dt2t` operators —
+    `csrmm_dt2t` / `cscmm_dt2t` (CSR/CSC) and `fcnmm_dt2t`
+    (fixed-connection-number / ELL) — implementing the batched `Dᵗ εᵗ⁻¹` term of
+    the D-RTRL eligibility-trace update `εᵗ ≈ Dᵗ εᵗ⁻¹ + diag(D_fᵗ) ⊗ xᵗ`, with
+    `numba` (CPU), `cuda_raw` (GPU), and `jax_raw` (CPU/GPU/TPU) kernels plus JVP
+    rules
+  - Folds the `DT2T` / `DT_to_T` naming convention into a single lowercase
+    `dt2t` spelling across the public API (the JIT-connectivity variants gain an
+    `mv` infix: `jitnmv_dt2t` / `jitsmv_dt2t` / `jitumv_dt2t`) and consolidates
+    the GPU cuSPARSE SpMV/SpMM backends under one `'cusparse'` selector — a
+    rename with unchanged behavior. **Breaking:** no compatibility aliases are
+    kept, so call sites must be updated (the default `'cuda_raw'` GPU backend is
+    unaffected)
+  - Fixes several GPU-only autodiff and output-shape defects in the event-driven
+    CSR and fixed-connection-number kernels
+
+- **BrainTrace `0.2.4` — online learning through JAX control flow (spans `0.2.3` and `0.2.4`):**
+  - **Control-flow-aware compilation:** ETP operations inside `vmap`, `cond`,
+    `scan` / `brainstate.transform.for_loop`, and weight-free `while` bodies now
+    participate in online learning via a new canonicalization + descent
+    pipeline, so recurrent cells built with control flow no longer silently drop
+    parameters from the trace graph; the compiler is now deterministic across
+    processes and transparently inlines user `jax.jit` bodies
+  - **New ETP operators:** `grouped_matmul`, `embedding`, and `einsum`, each with
+    hand-written ETP rules, a matching `braintrace.nn` layer (`GroupedLinear`,
+    `Embedding`), and single-step BPTT-oracle coverage; the D-RTRL multi-step
+    trace update is chunk-factorized for a 2.4–4.5× speedup on multi-step windows
+  - **Parameter-transform hooks (from `0.2.3`):** optional, shape-preserving
+    `weight_fn` / `bias_fn` / `kernel_fn` hooks on the ETP operators apply a
+    transform to a trainable parameter *before* it enters the op while the
+    eligibility trace and gradient stay with respect to the raw stored parameter
+    (D-RTRL matches backprop-through-time for non-identity transforms); threaded
+    through the `braintrace.nn` linear layers
+  - **Correctness & contract:** a full `_op` / `_algorithm` audit closes 24
+    findings. **Breaking:** `element_wise` renames `fn` → `weight_fn`,
+    `sparse_matmul` renames `weight_data` → `weight`, and `sparse_matmul` now
+    requires a `brainevent.DataRepresentation` operand (`brainunit` `u.sparse`
+    types are no longer accepted), which adds `brainevent` as a runtime dependency
+
+- **BrainPy `2.8.1` — second audited correctness sweep:**
+  - A library-wide bug-fix sweep (#868) fixes 18 confirmed defects — each backed
+    by a co-located regression test — across `dnn`, the integrators, encoders,
+    initializers, connectivity, optimizers, `dynold` short-term plasticity, the
+    offline / online training algorithms, the object-transform layer, and the
+    simulation runners
+  - Representative fixes: `LayerNorm` now normalizes over the trailing
+    `normalized_shape`; a never-spiking `WeightedPhaseEncoder` and a
+    `PoissonGroup` spiking regression; the Stratonovich Euler–Heun predictor
+    `sqrt(dt)` scaling; the `MomentumNesterov` look-ahead and `Adadelta` learning
+    rate; a `Ridge` / `LinearRegression` IRLS seed that returned the untrained
+    initial weights; and adaptive pooling on up-sampling
+  - Drives package-wide `mypy` to zero errors and moves `__version__` /
+    `__version_info__` into a dedicated `brainpy._version` module
+
+- **Optax pinned explicitly:**
+  - `optax>=0.2.8` is now listed directly in `requirements.txt` (previously
+    pulled in transitively) so the gradient-based tooling — e.g. BrainMass's
+    Optax `Fitter` and the BrainTools optimizers — installs deterministically
+    with the bundle
+
+
+
 ## v2026.6.29
 
 This is a maintenance and refinement release. It refreshes two ecosystem
