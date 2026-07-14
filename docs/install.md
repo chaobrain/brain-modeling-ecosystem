@@ -4,7 +4,7 @@ BrainX is a meta-package that installs a curated set of BrainX components known 
 
 ## Requirements
 
-- Python 3.10-3.13
+- Python ≥ 3.10 (officially tested on 3.10, 3.11, 3.12, 3.13, 3.14)
 - pip 23+ (`python -m pip install --upgrade pip`)
 - Optional: GPU/TPU drivers and libraries if you plan to use accelerators
 
@@ -18,13 +18,15 @@ This installs pinned versions of the core packages:
 
 - [brainunit](https://github.com/chaobrain/brainunit)
 - [brainstate](https://github.com/chaobrain/brainstate)
+- [brainpy](https://brainpy.readthedocs.io/)
+- [brainpy.state](https://brainx.chaobrain.com/brainpy-state)
 - [brainevent](https://github.com/chaobrain/brainevent)
 - [braincell](https://github.com/chaobrain/braincell)
 - [braintrace](https://github.com/chaobrain/braintrace)
 - [brainmass](https://github.com/chaobrain/brainmass)
 - [braintools](https://github.com/chaobrain/braintools)
-- [jax](https://github.com/jax-ml/jax) 
-- and common utilities (numpy, msgpack, matplotlib)
+- [jax](https://github.com/jax-ml/jax)
+- and common utilities (numpy, msgpack, matplotlib,optax)
 
 ## Hardware-specific installs
 
@@ -43,13 +45,8 @@ pip install -U BrainX[cuda13]
 pip install -U BrainX[tpu]
 ```
 
-
 For detailed JAX wheel options and compatible CUDA/cuDNN versions,
 see [JAX installation](https://docs.jax.dev/en/latest/installation.html).
-
-
-
-
 
 ## Pin a specific BrainX release
 
