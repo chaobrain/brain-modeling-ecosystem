@@ -11,8 +11,8 @@ Install the BrainX meta-package into one confirmed Python virtual environment, v
 
 ## Core Rules
 
-1. Confirm an exact Python interpreter at version `>=3.11` and an exact virtual-environment path.
-2. For a clean environment with no requested version, use the unpinned BrainX install matching the confirmed device. For an existing BrainX environment or a requested pin, select one non-separated release from the compatibility matrix. Never mix component versions from different rows.
+1. BrainX package must use a Python interpreter at version `>=3.11`.
+2. For a clean environment with no requested version, prefer to use the unpinned BrainX install matching the confirmed device. If a BrainX component already exists in the environment, or a requested version is specified, select one non-separated release from [compatibility-and-release-matching.md].  Never mix component versions from different rows.
 3. Require the user to explicitly choose `cpu`, `cuda12`, `cuda13`, or `tpu`. Detection is evidence, not consent.
 4. Before any mutation, must present the complete specification to the user clearly, show the run location, interpreter, venv path, device extra, release, complete component set, existing packages, expected results, and exact commands.
 5. Create or modify nothing until the user confirms that complete specification.
