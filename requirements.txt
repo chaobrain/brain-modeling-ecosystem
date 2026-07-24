@@ -7,7 +7,7 @@ braintrace==0.2.4
 
 # modeling packages
 braincell==0.1.0
-brainpy==2.8.1
+brainpy==2.8.2
 brainpy-state==0.1.0
 brainmass==0.1.1
 
