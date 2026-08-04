@@ -4,9 +4,9 @@ orphan: true
 
 # brainpy to brainx
 
-`brainpy` is the experimental precursor to `brainx`. It served as an embryo for
+`brainpy` is the experimental precursor to `brainx`. It served as an prototype for
 the later `brainx` ecosystem: the initial ideas explored in `brainpy` inspired
-the architecture of `brainx`, where those ideas were developed into focused,
+the `brainx`, where those ideas were developed into focused,
 production-level packages.
 
 For example, the neural-mass modeling explored in `brainpy` later evolved into
@@ -14,15 +14,14 @@ the dedicated `brainmass` package. The Hodgkin-Huxley cell models in `brainpy`
 inspired the more comprehensive conductance-based models, ion-channel systems,
 and neuronal morphology support now provided by `braincell`.
 
-`brainpy` remains useful as an experimental package and as the origin of many
+`brainpy` remains useful as an experimental, legacy package and as the origin of many
 of the ecosystem's concepts. For new projects, `brainx` provides the
 production-level implementations, broader capabilities, and better performance.
 
 ## Where brainpy fits
 
 `brainpy` was designed as a general-purpose package for brain dynamics
-programming. Its main advantage was point-neuron modeling, including individual
-neurons, synapses, and spiking neural networks. That point-neuron scale has
+programming. Its main advantage was point-neuron modeling, that point-neuron scale has
 evolved into `brainpy.state`, the production-level point-neuron modeling package
 within `brainx`.
 
@@ -39,13 +38,13 @@ packages and with the modeling packages built on the same infrastructure.
 
 | package | compatibility |
 | --- | --- |
-| `brainstate` | Compatible; the reconstructed `brainpy` runtime is based on `brainstate` |
-| `brainevent` | Compatible; reconstructed event-driven operations use `brainevent` |
-| `braintools` | Compatible; reconstructed utilities use `braintools` |
-| `braincell` | Compatible, but new cellular models should use `braincell` directly |
-| `brainmass` | Compatible, but new neural-mass models should use `brainmass` directly |
-| `brainunit` | Not compatible |
-| `braintrace` | Not compatible |
+| `brainstate` | compatible |
+| `brainevent` | compatible |
+| `braintools` | compatible |
+| `braincell` | compatible |
+| `brainmass` | compatible |
+| `brainunit` | not compatible |
+| `braintrace` | not compatible |
 
 The `brainunit` and `braintrace` exceptions limit how fully a `brainpy` project
 can participate in the production-level `brainx` ecosystem.
