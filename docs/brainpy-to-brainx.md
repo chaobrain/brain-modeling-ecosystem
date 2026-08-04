@@ -1,75 +1,92 @@
-# BrainPy to BrainX
+---
+orphan: true
+---
 
-BrainPy was the early stage foundation of the **BrainX ecosystem**. It was
-originally designed as a standalone package, before the other BrainX packages
-existed. Today, BrainPy should be considered **a legacy package**: it remains
-usable, but new projects should generally start with the corresponding BrainX
-packages.
+# brainpy to brainx
 
-BrainX is the more complete modeling ecosystem with more variety of features
-and better performance. Together, BrainX packages cover BrainPy's modeling and
-simulation capabilities while providing a more complete foundation for modern
-development.
+`brainpy` is the experimental precursor to `brainx`. It served as an embryo for
+the later `brainx` ecosystem: the initial ideas explored in `brainpy` inspired
+the architecture of `brainx`, where those ideas were developed into focused,
+production-level packages.
 
-## Where BrainPy fits
+For example, the neural-mass modeling explored in `brainpy` later evolved into
+the dedicated `brainmass` package. The Hodgkin-Huxley cell models in `brainpy`
+inspired the more comprehensive conductance-based models, ion-channel systems,
+and neuronal morphology support now provided by `braincell`.
 
-BrainPy is primarily a framework for **point-neuron network modeling,
-simulation, and analysis**. In today's BrainX ecosystem, point-neuron modeling
-is provided by **BrainPy-State**.
+`brainpy` remains useful as an experimental package and as the origin of many
+of the ecosystem's concepts. For new projects, `brainx` provides the
+production-level implementations, broader capabilities, and better performance.
 
-BrainPy is compatible with **BrainState**, **BrainCell**, **BrainMass**,
-**BrainEvent**, and **BrainTools**. However, it is not compatible with
-**BrainUnit** or **BrainTrace**. These two exceptions limit how fully a
-BrainPy-based project can participate in the current ecosystem.
+## Where brainpy fits
 
-## Recommendation for point-neuron models
+`brainpy` was designed as a general-purpose package for brain dynamics
+programming. Its main advantage was point-neuron modeling, including individual
+neurons, synapses, and spiking neural networks. That point-neuron scale has
+evolved into `brainpy.state`, the production-level point-neuron modeling package
+within `brainx`.
 
-For new point-neuron models, use **BrainPy-State**. It provides the relevant
-modeling capabilities in a form designed to work with the broader BrainX
-ecosystem and its state, unit, event, and tracing infrastructure.
+For new point-neuron projects, use `brainpy.state`. Existing `brainpy` projects
+do not need to be rewritten immediately if they already meet their goals.
+Migration becomes more valuable when a project needs deeper integration with
+the rest of `brainx`, newer infrastructure, or long-term ecosystem support.
 
-Existing BrainPy point-neuron projects do not need to be rewritten immediately.
-If BrainPy already meets your needs, continuing to use it is reasonable.
-Migration becomes more valuable when you need deeper integration with other
-BrainX packages, stronger unit handling, newer infrastructure, or long-term
-ecosystem support.
+## Compatibility
 
-## Do not use BrainPy for cellular modeling
+The current `brainpy` codebase has been reconstructed on top of `brainstate`,
+`brainevent`, and `braintools`. This makes it compatible with those foundational
+packages and with the modeling packages built on the same infrastructure.
 
-For biophysical neuron models involving **ions, ion channels, or neuronal
-morphology**, migrate completely to **BrainPy-State + BrainCell**.
+| package | compatibility |
+| --- | --- |
+| `brainstate` | Compatible; the reconstructed `brainpy` runtime is based on `brainstate` |
+| `brainevent` | Compatible; reconstructed event-driven operations use `brainevent` |
+| `braintools` | Compatible; reconstructed utilities use `braintools` |
+| `braincell` | Compatible, but new cellular models should use `braincell` directly |
+| `brainmass` | Compatible, but new neural-mass models should use `brainmass` directly |
+| `brainunit` | Not compatible |
+| `braintrace` | Not compatible |
 
-BrainPy's older ion and channel APIs have known design limitations, and its
-compartmental modeling support is restricted to single-compartment models.
-BrainCell is the BrainX package designed for conductance-based, ion-channel, and
-morphologically structured cell models. Mixing the legacy BrainPy cell APIs
-into new BrainCell-based work is therefore not recommended.
+The `brainunit` and `braintrace` exceptions limit how fully a `brainpy` project
+can participate in the production-level `brainx` ecosystem.
 
-## The remaining BrainPy exception: analysis
+## Cellular modeling
 
-BrainPy's **analysis module** is the main capability that does not yet have a
-direct replacement elsewhere in the BrainX ecosystem. If your workflow depends
-on this module, BrainPy may still be the appropriate tool for that part of the
+For biophysical neuron models involving ions, ion channels, compartments, or
+neuronal morphology, migrate completely to `brainpy.state` and `braincell`.
+
+The older ion and channel APIs in `brainpy` have known design limitations, and
+its compartmental modeling support is restricted to single-compartment models.
+`braincell` provides more comprehensive conductance-based and Hodgkin-Huxley
+models together with morphologically structured, multicompartment cells.
+Mixing the experimental `brainpy` cell APIs into new `braincell`-based work is
+therefore not recommended.
+
+## The remaining brainpy exception: analysis
+
+The analysis module in `brainpy` is the main capability that does not yet have
+a direct replacement elsewhere in `brainx`. If a workflow depends on this
+module, `brainpy` may still be the appropriate tool for that part of the
 project.
 
-This is the important exception to the general migration guidance: BrainX
-covers BrainPy's modeling and simulation roles, but BrainPy's dedicated
+This is the important exception to the general migration guidance: `brainx`
+covers the modeling and simulation roles of `brainpy`, but its dedicated
 analysis functionality remains unique for now.
 
 ## Quick decision guide
 
-| Your use case | Recommended choice |
+| use case | recommended choice |
 | --- | --- |
-| Starting a new point-neuron project | BrainPy-State |
-| Maintaining an existing BrainPy project | Continue with BrainPy; migrate for integration |
-| Modeling ions, ion channels, or morphology | BrainPy-State + BrainCell |
-| Using BrainUnit or BrainTrace | Migrate away from BrainPy |
-| Relying on BrainPy's analysis module | Continue using BrainPy for the analysis workflow |
+| Starting a new point-neuron project | `brainpy.state` |
+| Maintaining an existing `brainpy` project | Continue with `brainpy`; migrate for integration |
+| Modeling ions, ion channels, or morphology | `brainpy.state` and `braincell` |
+| Using `brainunit` or `braintrace` | Migrate away from `brainpy` |
+| Relying on the analysis module in `brainpy` | Continue using `brainpy` for analysis |
 
 ## In short
 
-Treat BrainPy as the legacy, early-stage form of the BrainX ecosystem. It is
-still usable, especially for established point-neuron projects and its unique
-analysis tools, but it is no longer the preferred starting point. Use
-BrainPy-State for new point-neuron modeling, and use BrainPy-State together with
-BrainCell for any work involving ions, channels, compartments, or morphology.
+Treat `brainpy` as the experimental embryo that inspired the `brainx` ecosystem.
+It remains usable for established projects and its unique analysis tools, but
+`brainx` is the production-level destination for new work. Use `brainpy.state`
+for point-neuron modeling, `braincell` for ions, channels, and morphology, and
+`brainmass` for neural-mass and whole-brain models.
