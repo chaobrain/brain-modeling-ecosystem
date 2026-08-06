@@ -9,7 +9,8 @@ the [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io).
 - From the repo root: `pip install -r docs/requirements.txt`
 
 ## Where to edit
-- Most pages are Markdown files in `docs/` (for example, `install.md`, `getting_started.md`).
+- Most pages are Markdown files in `docs/` (for example, `install.md`, `brainpy-to-brainx.md`).
+- Tutorials are Jupyter notebooks in `docs/tutorials/`.
 - The table of contents is defined in `docs/index.rst` via Sphinx `toctree` entries.
 
 ## Add or edit a page
