@@ -32,6 +32,24 @@ The current [`brainpy`][brainpy] codebase has been reconstructed on top of [`bra
 [`brainevent`][brainevent], and [`braintools`][braintools]. This makes it compatible with those foundational
 packages and with the modeling packages built on the same infrastructure.
 
+This is not only a dependency relationship. Many internal functions of
+[`brainpy`][brainpy] have been rewritten to delegate to the production-level
+implementations, so the two share the same underlying code rather than
+maintaining parallel ports. For example:
+
+- `brainpy.math.surrogate` is an alias of `braintools.surrogate`, and the
+  einops-style helpers in `brainpy.math` are re-exported from `brainunit.math`.
+- The sparse and event-driven operators in `brainpy.math.sparse`,
+  `brainpy.math.event`, and `brainpy.math.jitconn` build [`brainevent`][brainevent]
+  structures such as `CSR`, `COO`, and the just-in-time connectivity types,
+  then hand the computation over to them.
+- `brainpy.losses` and `brainpy.measure` delegate to `braintools.metric`,
+  and `brainpy.initialize` delegates to `braintools.init`.
+- `brainpy.inputs` builds its current waveforms from `braintools.input`, and
+  `brainpy.visualization` from `braintools.visualize`.
+- State handling, environment settings, and compiled transformations come from
+  [`brainstate`][brainstate], through `State`, `environ`, and `transform`.
+
 | package | compatibility |
 | --- | --- |
 | [`brainstate`][brainstate] | compatible |
@@ -57,6 +75,25 @@ models together with morphologically structured, multicompartment cells.
 Mixing the experimental [`brainpy`][brainpy] cell APIs into new [`braincell`][braincell]-based work is
 therefore not recommended.
 
+## Neural-mass modeling
+
+For neural-mass, whole-brain, and rate-based models, migrate to [`brainmass`][brainmass].
+
+The rate models in [`brainpy`][brainpy] cover FitzHugh-Nagumo, Stuart-Landau,
+threshold-linear, and Wilson-Cowan dynamics. [`brainmass`][brainmass] provides direct
+counterparts for these, together with many models [`brainpy`][brainpy] never had, including
+Jansen-Rit, Epileptor, Hopf, Montbrió-Pazó-Roxin, Wong-Wang, and Larter-Breakspear.
+
+Beyond the models themselves, [`brainmass`][brainmass] adds the infrastructure that
+whole-brain work needs: explicit coupling schemes, structured noise processes,
+forward models for BOLD, EEG, and MEG signals, and parameter fitting against
+empirical data.
+
+Unlike the cellular case, this is not a warning. The [`brainpy`][brainpy] rate models
+remain usable, and [`brainmass`][brainmass] is compatible with the same foundational
+packages. It is simply that this modeling scale is now developed in
+[`brainmass`][brainmass].
+
 ## The remaining brainpy exception: analysis
 
 The analysis module in [`brainpy`][brainpy] is the main capability that does not yet have
@@ -75,6 +112,7 @@ analysis functionality remains unique for now.
 | Starting a new point-neuron project | [`brainpy.state`][brainpy.state] |
 | Maintaining an existing [`brainpy`][brainpy] project | Continue with [`brainpy`][brainpy]; migrate for integration |
 | Modeling ions, ion channels, or morphology | [`brainpy.state`][brainpy.state] and [`braincell`][braincell] |
+| Modeling neural-mass or whole-brain dynamics | [`brainmass`][brainmass] |
 | Using [`brainunit`][brainunit] or [`braintrace`][braintrace] | Migrate away from [`brainpy`][brainpy] |
 | Relying on the analysis module in [`brainpy`][brainpy] | Continue using [`brainpy`][brainpy] for analysis |
 

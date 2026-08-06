@@ -98,9 +98,9 @@ The tutorials are organized around the BrainX package layers:
    :caption: Getting started
    :maxdepth: 1
 
-   CHANGELOG.md
    install.md
    brainpy-to-brainx.md
+   CHANGELOG.md
 
 
 .. toctree::
