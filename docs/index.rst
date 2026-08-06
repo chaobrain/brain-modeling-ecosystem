@@ -100,6 +100,7 @@ The tutorials are organized around the BrainX package layers:
 
    CHANGELOG.md
    install.md
+   brainpy-to-brainx.md
 
 
 .. toctree::
