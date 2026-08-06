@@ -112,8 +112,8 @@ The tutorials are organized around the BrainX package layers:
    tutorials/brainevent_event-driven.ipynb
    tutorials/braintools_expriment_utilities.ipynb
    tutorials/brainstate_transformations.ipynb
-   tutorials/brainpy.state_point_neuron_networks.ipynb
-   tutorials/brainpy.state_NEST_compatible.ipynb
+   tutorials/brainpy_point_neuron_networks.ipynb
+   tutorials/brainpy_NEST_compatible.ipynb
    tutorials/braincell_HH_neuron.ipynb
    tutorials/braincell_morphological_golgi_cell.ipynb
    tutorials/brainmass_jansenrit_node_simulation.ipynb
