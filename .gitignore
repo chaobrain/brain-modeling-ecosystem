@@ -200,3 +200,4 @@ cython_debug/
 
 # Version module stamped at build time by _packaging/calver_backend.py
 /BrainX/_version.py
+/.agents/
