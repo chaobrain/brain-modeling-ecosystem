@@ -32,9 +32,6 @@ scales.
 - [BrainState](https://github.com/chaobrain/brainstate): State-based IR compilation for efficient simulation of brain
   models on CPUs, GPUs, and TPUs.
 
-- [BrainTaichi](https://github.com/chaobrain/braintaichi): The first-generation framework for customizing event-driven
-  operators based on Taichi Lang syntax.
-
 - [BrainEvent](https://github.com/chaobrain/brainevent): Enabling event-driven computations in brain dynamics.
 
 - [BrainTrace](https://github.com/chaobrain/braintrace): Eligibility trace-based online learning for brain dynamics:
@@ -86,6 +83,14 @@ cd brainx
 pip install -e .
 ```
 
+### BrainX Skill
+
+Install the BrainX skill for your coding agent with:
+
+```bash
+npx brainx-skill install
+```
+
 ## Documentation
 
 For detailed documentation, tutorials, and examples, visit
@@ -114,6 +119,5 @@ If you have questions, encounter issues, or need support, please:
 * [Open a new issue](https://github.com/chaobrain/brainx/issues/new/choose) if your problem is not
   addressed.
 * Contact us via email: `chao.brain@qq.com`.
-
 
 
