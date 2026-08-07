@@ -2,8 +2,8 @@
 
 [`brainpy`][brainpy] is the experimental precursor of [`brainx`][brainx]. It served as
 the prototype for the later ecosystem: the ideas first explored in
-[`brainpy`][brainpy] — stateful dynamical systems, event-driven operators, unit-aware
-parameters — were developed into the focused, production-level packages that make up
+[`brainpy`][brainpy] — stateful dynamical systems, event-driven operators — 
+were developed into the focused, production-level packages that make up
 [`brainx`][brainx] today.
 
 The neural-mass modeling explored in [`brainpy`][brainpy] evolved into the dedicated
