@@ -1,16 +1,29 @@
 # BrainPy to BrainX
 
-[`brainpy`][brainpy] is the experimental precursor of [`brainx`][brainx]. It served as
-the prototype for the later ecosystem: the ideas first explored in
-[`brainpy`][brainpy] — stateful dynamical systems, event-driven operators — 
-were developed into the focused, production-level packages that make up
-[`brainx`][brainx] today.
+[`brainpy`][brainpy] is the experimental precursor of [`brainx`][brainx]. It was
+initially developed in [Professor Si Wu's lab at Peking University][wu-lab], where the
+group works on computational neuroscience and brain-inspired computing.
+
+The ideas first explored in it — stateful dynamical systems, event-driven operators,
+and unit-aware parameters — were developed into the focused, production-level packages
+that make up [`brainx`][brainx] today.
 
 The neural-mass modeling explored in [`brainpy`][brainpy] evolved into the dedicated
 [`brainmass`][brainmass] package. Its Hodgkin-Huxley cell models inspired the more
 comprehensive conductance-based models, ion-channel systems, and neuronal morphology
 support now provided by [`braincell`][braincell]. Its point-neuron modeling — the part
 [`brainpy`][brainpy] was best at — became [`brainpy.state`][brainpy.state].
+
+The development unfolded in three broad stages:
+
+- **2021:** The BrainPy 1.0 approach was presented at ICONIP in
+  [*A Just-In-Time Compilation Approach for Neural Dynamics Simulation*][brainpy-1-paper].
+- **2022–2023:** The broader BrainPy 2.x framework appeared as a
+  [2022 preprint][brainpy-preprint] and a peer-reviewed
+  [2023 eLife article][brainpy-paper].
+- **2025:** The work expanded into the BrainX ecosystem, separating shared
+  infrastructure and different modeling scales into focused packages; the
+  [change log](./CHANGELOG.md) records the first integrated BrainX releases.
 
 This page explains how the packages relate and whether your project should move.
 When you decide to move, the [migration notes](./brainpy-migration-notes.md) cover the
@@ -131,3 +144,7 @@ Ready to move? Continue with the
 [brainmass]: https://brainx.chaobrain.com/brainmass/
 [brainunit]: https://brainx.chaobrain.com/brainunit/
 [braintrace]: https://brainx.chaobrain.com/braintrace/
+[wu-lab]: https://www.psy.pku.edu.cn/english/people/faculty/professor/wusi/index.htm
+[brainpy-1-paper]: https://doi.org/10.1007/978-3-030-92238-2_2
+[brainpy-preprint]: https://doi.org/10.1101/2022.10.28.514024
+[brainpy-paper]: https://doi.org/10.7554/eLife.86365
