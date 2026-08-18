@@ -5,6 +5,182 @@
 
 
 
+## v2026.8.18
+
+This release brings the bundle to **JAX 0.11**. JAX 0.11.0 and 0.11.1 changed
+the tracing internals the whole stack is built on — the `scan` primitive dropped
+its `num_consts` / `num_carry` parameters, `Jaxpr` and `ClosedJaxpr` were merged
+into a single class, `core.CallPrimitive` was deleted, and `is_constant_dim` and
+`concrete_or_error` moved namespaces — and every affected component has now
+adapted. Five packages advance: **BrainUnit `0.5.2`**, **BrainEvent `0.2.1`**,
+**BrainState `0.5.4`**, **BrainTrace `0.2.6`**, and **BrainPy `2.8.2`**. The
+supported JAX range widens from `<= 0.10.2` to **`<= 0.11.1`**, which is what
+actually delivers that work to users of the bundle.
+
+The set stays coherent because the fixes interlock: BrainState `0.5.4` is the
+floor at which `import brainstate` — and therefore BrainCell, BrainPy-State and
+everything else downstream — survives JAX 0.11.1, and BrainTrace `0.2.6`
+requires BrainEvent `>= 0.1.2`, satisfied by `0.2.1`. Alongside the compatibility
+work, BrainEvent `0.2.1` lands a substantial correctness overhaul of the
+just-in-time-connectivity and CUDA kernels, and BrainTrace `0.2.5` is that
+project's largest feature release since `0.2.0`. **Both carry breaking changes;
+see their sections below before upgrading.**
+
+- **Package Dependencies:**
+  - [`jax<=0.11.1,>=0.8.0`](https://pypi.org/project/jax/) ↗️ (ceiling raised from `0.10.2`)
+  - [`brainunit==0.5.2`](https://pypi.org/project/brainunit/0.5.2/) ↗️
+  - [`brainevent==0.2.1`](https://pypi.org/project/brainevent/0.2.1/) ↗️
+  - [`brainstate==0.5.4`](https://pypi.org/project/brainstate/0.5.4/) ↗️
+  - [`braintools==0.3.0`](https://pypi.org/project/braintools/0.3.0/)
+  - [`braintrace==0.2.6`](https://pypi.org/project/braintrace/0.2.6/) ↗️
+  - [`braincell==0.1.0`](https://pypi.org/project/braincell/0.1.0/)
+  - [`brainpy==2.8.2`](https://pypi.org/project/brainpy/2.8.2/) ↗️
+  - [`brainpy-state==0.1.0`](https://pypi.org/project/brainpy-state/0.1.0/)
+  - [`brainmass==0.1.1`](https://pypi.org/project/brainmass/0.1.1/)
+  - [`optax>=0.2.8`](https://pypi.org/project/optax/)
+
+- **BrainEvent `0.2.1` — JITC connectivity parity, a new `Dense` representation,
+  and a CUDA correctness sweep (spans `0.2.0` and `0.2.1`):**
+  - **Just-in-time connectivity now draws one matrix everywhere.** In `0.1.x` the
+    `numba` CPU kernels generated connectivity from an LFSR stream while the
+    `cuda_raw` kernels used the light-RNG walk, so the same `(prob, seed, shape)`
+    described a *different* matrix on each platform — and the matrix-vector and
+    matrix-matrix paths differed again. The `numba` kernels were rebuilt on the
+    CUDA walk and the `mm` path folded onto the 32-lane `mv` walk, so `jits`,
+    `jitsmv`, `jitsmm`, `binary_jitsmv`, `binary_jitsmm`, `jits_to_csr` and
+    `jitsmv_dt2t` — and the `jitn` / `jitu` equivalents — now materialize one
+    matrix, identically on CPU and GPU. **Breaking:** JITC values recorded
+    against `0.1.x` will not reproduce, and seeds are not portable across the
+    change; re-record any golden outputs. Only the drawn matrix changed, not the
+    operator semantics
+  - **New `brainevent.Dense` data representation** — the dense counterpart to
+    `CSR` / `CSC` / `FixedNumPerPre` / `FixedNumPerPost`, with the same contract:
+    unit-aware `data`, named `buffers`, event-driven binary matmul dispatch, the
+    `update_dense_on_binary_pre` / `_post` plasticity helpers, and pytree
+    registration
+  - **`int64` `indptr` for `CSR` / `CSC`** via the new `indptr_dtype` argument
+    (`"auto"` promotes only when `nnz` exceeds the `int32` range; requires
+    `jax_enable_x64`), plus a tunable CSR hybrid CUDA scheduler (`HybridConfig`,
+    `get_hybrid_config`, `init_csr_config`, which benchmarks and caches a winning
+    configuration per GPU model), a `'cublas'` GPU backend for
+    `binary_densemv` / `binary_densemm`, and `numba` CPU kernels for the JITC CSR
+    and `dt2t` paths that were previously CUDA-only
+  - **Correctness:** an operator-registration audit closes 19 defects — stale
+    backend dispatch after a runtime backend switch, silently dropped JVP rules,
+    incomplete compilation-cache keys, order-dependent FFI target names, and
+    incorrect `vmap` execution of `numba.cuda` kernels among them. A sweep of the
+    whole CUDA tree fixes an out-of-bounds shared-memory request that aborted the
+    context for `float64` `binary_csrmm`, widens 54 index expressions that wrapped
+    past `INT32_MAX`, and restores the missing warp-per-row CSRMV dispatch tier
+    (up to 3.4× on the row lengths typical of sparse connectivity)
+  - **Breaking, beyond the JITC values:** `CSR` / `CSC` validate their structure
+    at construction and now raise `TypeError` / `ValueError` / `OverflowError`
+    immediately rather than failing later inside a kernel;
+    `CSR.fromdense(..., index_dtype=jnp.int64)` raises (use `indptr_dtype=`);
+    the retired `brainevent.pararnn` subpackage is removed; and 154 unreachable
+    CUDA entry points were retired in favor of the auto-dispatching wrappers that
+    already selected them. Note that the `matrix_mode` keyword and the
+    `mat.mv` / `mat.mm` materialization views introduced by `0.2.0` were removed
+    again in `0.2.1`, so signatures return to their `0.1.2` shape — upgrading
+    straight from `0.1.2` sees no signature change
+
+- **BrainState `0.5.4` — JAX 0.11.0 and 0.11.1 compatibility (spans `0.5.3`):**
+  - Both releases are pure compatibility patches: **no public API is added,
+    removed, or renamed**, and behavior is unchanged on every supported JAX
+    version. The supported floor is now `jax>=0.8.0`
+  - `0.5.3` repairs `brainstate.transform`'s intermediate-representation tooling
+    for JAX 0.11.0, which replaced the `scan` equation's `num_consts` /
+    `num_carry` integers with `FlatTree` descriptors and merged `Jaxpr` into
+    `ClosedJaxpr`. A version-agnostic `scan_num_consts_carry()` helper recovers
+    the constant/carry split for the IR code generator and visualizer, taking
+    `transform` from 18 failures to a clean 1282-test pass on 0.11.0
+  - `0.5.4` restores `import brainstate` itself on JAX 0.11.1, which deleted
+    `core.CallPrimitive` — the name is now reconstructed over
+    `register_call_primitive_rules()` when absent. It also fixes an
+    `eqns_to_closed_jaxpr()` length check that had silently stopped validating
+    (0.11.1 derives `constvars` from attached *values*, so the check read an
+    always-empty list and accepted mismatched `consts`), and converts an
+    installed-but-unimportable optional interop framework into an actionable
+    `InteropError` naming the package and JAX version
+  - **Known issue:** `flax==0.12.8` cannot be imported under JAX 0.11.1
+    (`jax.experimental.hijax.MutableHiType` no longer exists), so
+    `brainstate.interop`'s Flax conversions are unavailable there until Flax
+    ships a compatible release. This is upstream and has no BrainState-side fix;
+    **Equinox interop is unaffected**. Pin `jax==0.11.0` if you need Flax interop
+
+- **BrainTrace `0.2.6` — sequence drivers, five new learning rules, and a JAX 0.11
+  gradient fix (spans `0.2.5` and `0.2.6`):**
+  - **Sequence-driver API.** `etrace_grad` / `etrace_evolve` on every algorithm
+    remove the hand-written scan-and-accumulate loop from the call site, with
+    `mask`, `chunk_size`, `weights`, `reduction`, `loss_output`, `has_aux` and
+    `return_value`; `compile(..., vmap=True)` returns an `ETraceVmap` exposing the
+    same methods, so batched and unbatched call sites are identical
+  - **Five new learning rules** — `SnAp` (sparse *n*-step approximation, with
+    `recurrence_scope` generalized to an *n*-step neighbourhood computed from the
+    compiled graph), `UORO` (unbiased rank-1 estimate at O(P) memory),
+    `ThreeFactor` (neuromodulation-style third factor), `DNI` (synthetic
+    gradients) and the public `RandomProjectionVjpAlgorithm` engine — expressed
+    as coordinates in the new **`ETraceConfig`** six-axis space rather than as
+    bespoke implementations. Illegal combinations are rejected at construction,
+    equivalent coordinates canonicalize, and the named algorithms become thin
+    factories pinned by 24 frozen golden gradients
+  - **Robustness:** the hidden↔gradient correspondence is now checked with
+    explicit `raise`s rather than `assert`s that vanished under `python -O` (and
+    that only ever compared cardinalities); the three control-flow
+    canonicalization fixpoint loops are bounded by
+    `ControlFlowPolicy.fixpoint_iteration_limit`, so a non-converging rewrite
+    raises `CompilationError` instead of hanging the compiler; and `nn.Embedding`
+    rejects unsupported arguments at construction rather than from a `jit` trace
+  - **JAX 0.11 fix (`0.2.6`).** The merged `Jaxpr` representation derives the
+    `constvars` / `invars` boundary from attached constant *values*, but the ETP
+    compiler builds transition jaxprs whose constvars carry symbols with no
+    values — so they began reporting `constvars == []`, passing too few arguments
+    to `eval_jaxpr` and taking down essentially every gradient path (D-RTRL,
+    ES-D-RTRL / pp_prop, EProp, OSTL, SnAp, UORO, DNI and the BPTT oracles) across
+    every ETP primitive family: **690 of 2902 tests failed on JAX 0.11.1**. The
+    split is now derived from the invar count with no version branching, and the
+    full suite passes. The same change fixes SnAp-*n* position analysis, whose
+    adjacency walk had silently widened to include every constvar and typically
+    collapsed to the conservative all-positions-couple fallback
+  - **Breaking:** `OTTT`, `OSTTP`, `OTPE` and `PresynapticTrace` are removed —
+    none was model-agnostic (all whitelisted dense matmul and raised
+    `NotImplementedError` for LoRA / sparse / conv / element-wise) and all were
+    single-step only. Migrate `OTTT` → `pp_prop`, `OTPE` → `D_RTRL` or `pp_prop`,
+    `OSTTP` → `EProp(feedback='random')`; the new axis decomposition covers their
+    coordinates for *every* ETP primitive. `IODimVjpAlgorithm.decay` is now a
+    read-only property that raises when the x-side and f-side decays differ, and
+    the private module `_state_managment` is spelled `_state_management`
+  - Also: `braintrace.nn.CFNCell` is exported, `decay_or_rank=0.0` is accepted,
+    `jax>=0.8.0` is a declared dependency instead of one borrowed from BrainEvent,
+    and the wheel no longer ships the test suite (1.24 MB, down from 2.90 MB)
+
+- **BrainPy `2.8.2` — JAX 0.11 compatibility and infrastructure:**
+  - Imports `concrete_or_error` from `jax.extend.core` on JAX `>= 0.11`, where it
+    was removed from `jax.interpreters.partial_eval`
+  - Completes the `master` → `main` branch rename begun in `2.8.1`, and adds a
+    `codecov.yml` pinning the default branch so the coverage badge reports real
+    numbers again
+  - Adds a `brainpy.state` relationship admonition to the API reference and
+    repoints the `brainpy.state` documentation links at the canonical
+    `brainx.chaobrain.com/brainpy-state` URLs
+
+- **BrainUnit `0.5.2` — `einsum` restored on JAX 0.11:**
+  - JAX 0.11 removed `is_constant_dim` from the public `jax.core` namespace with
+    no `jax.extend.core` replacement, so the constant-dimension check in
+    `brainunit.math.einsum` raised `AttributeError`. The symbol now resolves
+    through the version-aware `_compatible_import` shim, keeping the einsum
+    contraction path working across JAX 0.6–0.11
+  - The public API is unchanged, so `0.5.2` is a drop-in upgrade from `0.5.1`
+
+- **JAX range widened to `<= 0.11.1`:**
+  - The ceiling moves from `0.10.2` to `0.11.1` now that every component in the
+    pinned set has been fixed and verified against the new release. The floor
+    stays at `0.8.0`, and the daily compatibility matrix gains pinned `0.10.0`
+    and `0.11.0` legs so each supported minor keeps its own coverage alongside
+    the unpinned latest run
+
+
+
 ## v2026.7.9
 
 This maintenance release advances three ecosystem components to their latest
